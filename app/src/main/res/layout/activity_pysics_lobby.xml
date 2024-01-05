@@ -92,7 +92,7 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
         android:fontFamily="casual"
-        android:text="ВЫБЕРИТЕ ТЕМУ"
+        android:text="ВЫБЕРИТЕ РАЗДЕЛ"
         android:textColor="@color/white"
         android:textSize="35dp"
         app:layout_constraintEnd_toEndOf="parent"

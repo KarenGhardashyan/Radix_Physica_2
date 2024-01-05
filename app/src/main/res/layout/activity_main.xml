@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_3">
+    android:background="@drawable/img_6">
 
 
     <EditText
@@ -34,7 +34,7 @@
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
-        android:backgroundTint="@color/button1"
+        android:backgroundTint="#A88031"
         android:layout_height="wrap_content"
         android:layout_marginTop="28dp"
         android:background="@drawable/buttons"
@@ -49,15 +49,14 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
+        android:backgroundTint="#A88031"
         android:text="SIGN UP"
-        android:backgroundTint="@color/button1"
-        android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.168" />
+        app:layout_constraintVertical_bias="0.069" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/without_acc"
@@ -65,7 +64,7 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/buttons"
-        android:backgroundTint="#9AD2D6"
+        android:backgroundTint="#785C24"
         android:text=" without account "
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
