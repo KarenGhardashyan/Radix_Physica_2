@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/img_6"
+    android:padding="16dp">
+
+    <!-- Toolbar -->
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#AED1A848"
+        android:minHeight="?attr/actionBarSize"
+        android:theme="?attr/actionBarTheme"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <!-- TextView "ВЫБЕРИТЕ РАЗДЕЛ МЕХАНИКИ" -->
+
+    <!-- Кнопки для разделов механики -->
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="374dp"
+        android:layout_height="56dp"
+        android:layout_marginTop="8dp"
+        android:fontFamily="casual"
+        android:text="ВЫБЕРИТЕ РАЗДЕЛ МЕХАНИКИ"
+        android:textColor="@color/white"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.4"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="@+id/toolbar" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnBasics"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="184dp"
+        android:background="@drawable/button_background_simple"
+        android:fontFamily="sans-serif-medium"
+        android:text="Основы основ"
+        android:textSize="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/textView" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnAcceleration"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Ускорение"
+        android:background="@drawable/button_background_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnBasics"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnNewtonLaws"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Законы Ньютона"
+        android:background="@drawable/button_background_simple"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnAcceleration"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnImpulse"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Импульс"
+        android:background="@drawable/button_background_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintTop_toBottomOf="@id/btnNewtonLaws"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnEnergy"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Энергия"
+        android:background="@drawable/button_background_simple"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnImpulse"
+        android:layout_marginTop="8dp"/>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/btnOscillations"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="Маятники"
+        android:background="@drawable/button_background_gradient"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textSize="20dp"
+        android:fontFamily="sans-serif-medium"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/btnEnergy"
+        android:layout_marginTop="8dp"/>
+
+    <FrameLayout
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="@+id/navigation_bar"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent" />
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/navigation_bar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintEnd_toStartOf="parent"
+        app:menu="@menu/bottom_nav_menu" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
