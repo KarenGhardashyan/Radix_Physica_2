@@ -184,21 +184,6 @@
         app:layout_constraintVertical_bias="0.479" />
 
     <TextView
-        android:id="@+id/electricity_text"
-        android:layout_width="150dp"
-        android:layout_height="25dp"
-        android:fontFamily="sans-serif-black"
-        android:text="ЭЛЕКТРИЧЕСТВО"
-        android:textColor="@color/black"
-        android:textSize="18dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.248"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.665" />
-
-    <TextView
         android:id="@+id/thermodynamics_procent"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -237,6 +222,21 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.698" />
+
+    <TextView
+        android:id="@+id/electricity_text"
+        android:layout_width="166dp"
+        android:layout_height="24dp"
+        android:fontFamily="sans-serif-black"
+        android:text="ЭЛЕКТРИЧЕСТВО"
+        android:textColor="@color/black"
+        android:textSize="18dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.248"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.665" />
 
     <FrameLayout
         android:layout_width="0dp"
