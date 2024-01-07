@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@drawable/img_6"
+    android:background="@drawable/bg_test"
     android:padding="16dp">
 
     <!-- Toolbar -->
@@ -12,16 +12,13 @@
         android:id="@+id/toolbar"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:background="#AED1A848"
+        android:background="#54F1A0D3"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <!-- TextView "ВЫБЕРИТЕ РАЗДЕЛ МЕХАНИКИ" -->
-
-    <!-- Кнопки для разделов механики -->
 
     <TextView
         android:id="@+id/textView"
@@ -41,7 +38,7 @@
         android:id="@+id/btnBasics"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="184dp"
+        android:layout_marginTop="164dp"
         android:background="@drawable/button_background_simple"
         android:fontFamily="sans-serif-medium"
         android:text="Основы основ"

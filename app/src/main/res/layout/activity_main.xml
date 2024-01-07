@@ -4,38 +4,45 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/img_6">
+    android:background="@drawable/bg_test">
 
 
     <EditText
         android:id="@+id/editTextEmail"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="416dp"
+        android:layout_height="48dp"
+        android:layout_marginTop="320dp"
+        android:background="@drawable/buttons"
+        android:backgroundTint="#C7D4F8"
         android:hint="Email"
         android:textColorHint="#919191"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.517"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
 
     <EditText
         android:id="@+id/editTextPassword"
         android:layout_width="300dp"
-        android:layout_height="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="12dp"
+        android:background="@drawable/buttons"
+        android:backgroundTint="#C7D4F8"
         android:hint="Password"
         android:inputType="textPassword"
         android:textColorHint="#919191"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
-
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/buttonLogin"
         android:layout_width="wrap_content"
-        android:backgroundTint="#A88031"
+        android:backgroundTint="#D5DFFB"
         android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
         android:layout_marginTop="28dp"
         android:background="@drawable/buttons"
         android:text="SIGN in"
@@ -49,8 +56,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
-        android:backgroundTint="#A88031"
-        android:text="SIGN UP"
+        android:backgroundTint="#D5DFFB"
+        android:fontFamily="sans-serif-black"
+        android:text=" REGISTRATION "
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
@@ -64,7 +72,8 @@
         android:layout_height="wrap_content"
         android:layout_marginBottom="16dp"
         android:background="@drawable/buttons"
-        android:backgroundTint="#785C24"
+        android:fontFamily="sans-serif-black"
+        android:backgroundTint="#C4CBFE"
         android:text=" without account "
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -75,13 +84,17 @@
 
     <ImageView
         android:id="@+id/imageView"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="16dp"
         android:backgroundTint="@color/button1"
-        android:layout_width="190dp"
-        android:layout_height="196dp"
+        android:contentDescription="thelogo"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.3"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintWidth_percent="0.5"
         app:srcCompat="@drawable/physica" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
