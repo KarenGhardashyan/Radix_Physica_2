@@ -5,52 +5,21 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/bg_test"
-    tools:context=".Chooseing_teory_game_exercises"
+    tools:context=".Chooseing_theory_game_exercises"
     android:padding="16dp">
 
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Teory"
-        android:layout_width="162dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="172dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="ТЕОРИИ"
+    <TextView
+        android:id="@+id/header_title"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
         android:background="@drawable/buttons"
+        android:fontFamily="sans-serif-light"
+        android:text="  ТЕОРИИ  "
         android:textSize="30dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/Examles"
-        android:background="@drawable/buttons"
-        android:layout_width="162dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="ЗАДАНИЯ"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Teory"
-        tools:ignore="MissingConstraints" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/GAMES"
-        android:layout_width="162dp"
-        android:layout_height="60dp"
-        android:layout_marginTop="48dp"
-        android:fontFamily="sans-serif-medium"
-        android:text="ИГРЫ"
-        android:background="@drawable/buttons"
-        android:textSize="30dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Examles"
-        app:layout_constraintWidth_percent="0.6"
         tools:ignore="MissingConstraints" />
 
     <FrameLayout
@@ -59,6 +28,37 @@
         app:layout_constraintBottom_toBottomOf="@+id/navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent" />
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/theory"
+        android:layout_width="162dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="256dp"
+        android:background="@drawable/buttons"
+        android:fontFamily="sans-serif-light"
+        android:text="ТЕОРИИ"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.502"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        tools:ignore="MissingConstraints" />
+
+
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/exercises"
+        android:background="@drawable/buttons"
+        android:layout_width="162dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="48dp"
+        android:fontFamily="sans-serif-light"
+        android:text="ЗАДАНИЯ"
+        android:textSize="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/theory"
+        tools:ignore="MissingConstraints" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/navigation_bar"

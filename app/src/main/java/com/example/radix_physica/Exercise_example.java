@@ -10,5 +10,6 @@ public class Exercise_example extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_exercise_example);
+
     }
 }
