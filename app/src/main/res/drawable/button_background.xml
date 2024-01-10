@@ -1,0 +1,7 @@
+<!-- button_background.xml -->
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="rectangle">
+    <!-- Установите нужный цвет фона кнопки -->
+    <solid android:color="#BE00FFD9" /> <!-- Например, красный цвет -->
+    <!-- Опционально, задайте углы закругления, градиенты или другие свойства -->
+</shape>

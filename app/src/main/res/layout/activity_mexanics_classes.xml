@@ -39,7 +39,7 @@
         android:id="@+id/btnBasics"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="164dp"
+        android:layout_marginTop="36dp"
         android:background="@drawable/button_background_simple"
         android:fontFamily="sans-serif-medium"
         android:text="Основы основ"
@@ -54,7 +54,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Ускорение"
-        android:background="@drawable/button_background_gradient"
+        android:background="@drawable/button_background_simple"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20dp"
         android:fontFamily="sans-serif-medium"
@@ -80,7 +80,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Импульс"
-        android:background="@drawable/button_background_gradient"
+        android:background="@drawable/button_background_simple"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         android:textSize="20dp"
@@ -106,7 +106,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:text="Маятники"
-        android:background="@drawable/button_background_gradient"
+        android:background="@drawable/button_background_simple"
         app:layout_constraintStart_toStartOf="parent"
         android:textSize="20dp"
         android:fontFamily="sans-serif-medium"
@@ -129,5 +129,20 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+    <FrameLayout
+        android:id="@+id/frameforfragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintHeight_percent="0.3"
+        android:layout_marginTop="12dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/btnOscillations"
+        app:layout_constraintVertical_bias="0.0">
+
+    </FrameLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
