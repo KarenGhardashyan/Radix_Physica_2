@@ -9,6 +9,8 @@ import androidx.fragment.app.FragmentTransaction;
 import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
+import android.view.animation.Animation;
+import android.view.animation.AnimationUtils;
 import android.widget.Button;
 
 import com.example.radix_physica.R;
@@ -49,6 +51,12 @@ public class Mexanics_classes extends AppCompatActivity {
         Button btnImpulse = findViewById(R.id.btnImpulse);
         Button btnOscillations = findViewById(R.id.btnOscillations);
         Button btnNewtonLaws = findViewById(R.id.btnNewtonLaws);
+
+        //открытие анимацией
+        Animation slideUpAnimation = AnimationUtils.loadAnimation(this, R.anim.activity_anim_up);
+        View rootView = findViewById(android.R.id.content);
+        rootView.startAnimation(slideUpAnimation);
+
         btnbasics.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
