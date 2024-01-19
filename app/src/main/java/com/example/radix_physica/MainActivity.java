@@ -21,7 +21,7 @@ public class MainActivity extends AppCompatActivity {
         without_account.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(MainActivity.this, physics_lobby.class);
+                Intent intent = new Intent(MainActivity.this, physics_lobby.class );
                 startActivity(intent);
             }
         });
