@@ -3,7 +3,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:id="@+id/fragment_container"
+    android:id="@+id/main_layout"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/bg_test"
     android:padding="16dp">
@@ -129,6 +129,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintEnd_toStartOf="parent"
         app:menu="@menu/bottom_nav_menu" />
+
+
 
     <FrameLayout
         android:id="@+id/frameforfragment"

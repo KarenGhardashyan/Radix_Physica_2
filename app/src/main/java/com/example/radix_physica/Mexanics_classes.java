@@ -1,6 +1,7 @@
 package com.example.radix_physica;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.constraintlayout.widget.ConstraintLayout;
 import androidx.core.content.ContextCompat;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
@@ -9,11 +10,14 @@ import androidx.fragment.app.FragmentTransaction;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.graphics.Color;
+import android.graphics.drawable.ColorDrawable;
 import android.os.Bundle;
 import android.view.View;
+import android.view.ViewGroup;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 import android.widget.Button;
+import android.widget.FrameLayout;
 
 import com.example.radix_physica.R;
 import com.example.radix_physica.TheoryTaskFragment;
@@ -23,6 +27,7 @@ public class Mexanics_classes extends AppCompatActivity {
 
     //переменные по вкл. фрагмента
 
+    private FrameLayout blurredBackgroundLayout;
     private boolean isFragmentBasicOn = false;
     private boolean isFragmentAcceleratioOn = false;
     private boolean isFragmentEnergyOn = false;
@@ -63,7 +68,6 @@ public class Mexanics_classes extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 fragment_logic();
-                btnbasics.setBackgroundResource(R.drawable.button_background);
                 basicOn = true;
             }
         });
@@ -72,7 +76,6 @@ public class Mexanics_classes extends AppCompatActivity {
             public void onClick(View v) {
                 fragment_logic();
                 acceleratioOn = true;
-                btnAcceleration.setBackgroundResource(R.drawable.button_background);
             }
         });
         btnEnergy.setOnClickListener(new View.OnClickListener() {
@@ -80,7 +83,6 @@ public class Mexanics_classes extends AppCompatActivity {
             public void onClick(View v) {
                 fragment_logic();
                 energyOn = true;
-                btnEnergy.setBackgroundResource(R.drawable.button_background);
             }
         });
         btnImpulse.setOnClickListener(new View.OnClickListener() {
@@ -88,7 +90,6 @@ public class Mexanics_classes extends AppCompatActivity {
             public void onClick(View v) {
                 fragment_logic();
                 impulsOn = true;
-                btnImpulse.setBackgroundResource(R.drawable.button_background);
             }
         });
         btnOscillations.setOnClickListener(new View.OnClickListener() {
@@ -96,7 +97,6 @@ public class Mexanics_classes extends AppCompatActivity {
             public void onClick(View v) {
                 fragment_logic();
                 oscillationsOn = true;
-                btnOscillations.setBackgroundResource(R.drawable.button_background);
             }
         });
         btnNewtonLaws.setOnClickListener(new View.OnClickListener() {
@@ -105,7 +105,6 @@ public class Mexanics_classes extends AppCompatActivity {
                 fragment_logic();
                 newtonLawsOn = true;
                 if (isFragmentBasicOn){
-                    btnNewtonLaws.setBackgroundResource(R.drawable.button_background);
                 }
             }
         });
@@ -125,15 +124,40 @@ public class Mexanics_classes extends AppCompatActivity {
 
         if (isFragmentBasicOn == false){
             FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            TheoryTaskFragment fragment = new TheoryTaskFragment();
             transaction.setCustomAnimations(R.anim.slide_up, 0, 0, R.anim.slide_down);
             transaction.replace(R.id.frameforfragment, theoryTaskFragment);
             transaction.addToBackStack(null);
             transaction.commit();
 
             isFragmentBasicOn = true;
+            blurBackground(true); // Передаем флаг, указывающий исключить TheoryTaskFragment
         }
     }
 
+
+
+    //TODO
+    private void blurBackground(boolean excludeTheoryTaskFragment) {
+        ViewGroup rootView = findViewById(android.R.id.content);
+
+        if (!excludeTheoryTaskFragment) {
+            blurredBackgroundLayout = new FrameLayout(this);
+            blurredBackgroundLayout.setLayoutParams(new FrameLayout.LayoutParams(FrameLayout.LayoutParams.MATCH_PARENT, FrameLayout.LayoutParams.MATCH_PARENT));
+
+            ColorDrawable colorDrawable = new ColorDrawable(Color.parseColor("#80000000"));
+            blurredBackgroundLayout.setBackground(colorDrawable);
+
+            rootView.addView(blurredBackgroundLayout);
+        }
+    }
+
+
+    private void removeBlurredBackground() {
+        if (blurredBackgroundLayout != null && blurredBackgroundLayout.getParent() != null) {
+            ((ViewGroup) blurredBackgroundLayout.getParent()).removeView(blurredBackgroundLayout);
+        }
+    }
 
     private void closeTheoryTaskFragment() {
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -146,26 +170,14 @@ public class Mexanics_classes extends AppCompatActivity {
             transaction.setCustomAnimations(0, R.anim.slide_down);
             transaction.commit();
 
-            Button btnbasics = findViewById(R.id.btnBasics);
-            Button btnAcceleration  = findViewById(R.id.btnAcceleration);
-            Button btnEnergy = findViewById(R.id.btnEnergy);
-            Button btnImpulse = findViewById(R.id.btnImpulse);
-            Button btnOscillations = findViewById(R.id.btnOscillations);
-            Button btnNewtonLaws = findViewById(R.id.btnNewtonLaws);
-
-            btnNewtonLaws.setBackgroundResource(R.drawable.button_background_simple);
-            btnAcceleration.setBackgroundResource(R.drawable.button_background_simple);
-            btnOscillations.setBackgroundResource(R.drawable.button_background_simple);
-            btnEnergy.setBackgroundResource(R.drawable.button_background_simple);
-            btnImpulse.setBackgroundResource(R.drawable.button_background_simple);
-            btnbasics.setBackgroundResource(R.drawable.button_background_simple);
-
             basicOn = false;
             acceleratioOn = false;
             energyOn = false;
             impulsOn = false;
             oscillationsOn = false;
             newtonLawsOn = false;
+
+            removeBlurredBackground();
         }
     }
 

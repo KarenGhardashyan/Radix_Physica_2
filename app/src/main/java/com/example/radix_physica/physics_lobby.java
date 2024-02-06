@@ -43,13 +43,6 @@ public class physics_lobby extends AppCompatActivity {
                 Intent intent = new Intent(physics_lobby.this, Profile.class );
                 startActivity(intent);
             }
-
-            if (selectedFragment != null) {
-                FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-                transaction.replace(R.id.fragment_container, selectedFragment);
-                transaction.commit();
-            }
-
             return true;
         });
 

@@ -3,6 +3,7 @@
     android:layout_height="match_parent"
     android:orientation="vertical"
     android:gravity="center"
+    android:id="@+id/fragment_main_layout"
     android:background="#43271A9E">
 
     <androidx.appcompat.widget.AppCompatButton
@@ -22,4 +23,5 @@
         android:fontFamily="sans-serif-light"
         android:text="Задания"
         android:textSize="35dp" />
+
 </LinearLayout>

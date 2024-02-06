@@ -14,7 +14,7 @@
         android:layout_marginTop="320dp"
         android:background="@drawable/buttons"
         android:backgroundTint="#C7D4F8"
-        android:hint="Email"
+        android:hint="  Email"
         android:textColorHint="#919191"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.504"
@@ -52,7 +52,7 @@
         app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonCreateAccount"
+        android:id="@+id/Registration_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:background="@drawable/buttons"
@@ -86,7 +86,7 @@
         android:id="@+id/imageView"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginTop="16dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="@color/button1"
         android:contentDescription="thelogo"
         app:layout_constraintEnd_toEndOf="parent"
