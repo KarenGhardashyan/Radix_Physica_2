@@ -22,6 +22,7 @@ public class RegistrationActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_registration);
         Button save = findViewById(R.id.submit);
+        init();
 
         save.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -38,7 +39,6 @@ public class RegistrationActivity extends AppCompatActivity {
         });
 
 
-        init();
     }
 
     private void init(){

@@ -29,6 +29,8 @@ public class physics_lobby extends AppCompatActivity {
 
         ImageButton mechanicsButton = findViewById(R.id.mexanics);
 
+        Button game = findViewById(R.id.game);
+
 
 
 
@@ -50,6 +52,13 @@ public class physics_lobby extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(physics_lobby.this, Mexanics_classes.class);
+                startActivity(intent);
+            }
+        });
+        game.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(physics_lobby.this, GameActivity.class);
                 startActivity(intent);
             }
         });

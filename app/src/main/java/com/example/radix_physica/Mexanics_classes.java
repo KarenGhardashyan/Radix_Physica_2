@@ -104,8 +104,6 @@ public class Mexanics_classes extends AppCompatActivity {
             public void onClick(View v) {
                 fragment_logic();
                 newtonLawsOn = true;
-                if (isFragmentBasicOn){
-                }
             }
         });
     }
