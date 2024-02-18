@@ -2,35 +2,33 @@ package com.example.radix_physica;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.view.View;
+import android.view.MenuItem;
 import android.view.animation.Animation;
 import android.view.animation.AnimationUtils;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
-public class Profile extends AppCompatActivity {
+public class Settings extends AppCompatActivity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile);
+        setContentView(R.layout.activity_settings);
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-
-        bottomNavigationView.getMenu().findItem(R.id.profile).setChecked(true);
+        bottomNavigationView.getMenu().findItem(R.id.settings).setChecked(true);
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.home) {
-                Intent intent = new Intent(Profile.this, physics_lobby.class );
+                Intent intent = new Intent(Settings.this, physics_lobby.class );
                 startActivity(intent);
-            } else if (item.getItemId() == R.id.settings) {
-                Intent intent = new Intent(Profile.this, Settings.class );
+            } else if (item.getItemId() == R.id.profile) {
+                Intent intent = new Intent(Settings.this, Profile.class );
                 startActivity(intent);
             }
 

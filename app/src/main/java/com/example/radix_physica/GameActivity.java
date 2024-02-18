@@ -15,7 +15,7 @@ public class GameActivity extends AppCompatActivity {
 
     EditText rhoEditText, heightEditText, areaEditText, strengthEditText, safetyCoefficientEditText;
     Button calculateButton;
-    float density, height, area,  maxPressure, strength, safetyCoefficient,  force, ourForce, volume,p;
+    long density, height, area,  maxPressure, strength,   force, ourForce, volume, p;
 
 
     boolean isFragmentBasicOn = false;
@@ -31,7 +31,6 @@ public class GameActivity extends AppCompatActivity {
         heightEditText = findViewById(R.id.height);
         areaEditText = findViewById(R.id.area);
         strengthEditText = findViewById(R.id.strength);
-        safetyCoefficientEditText = findViewById(R.id.safetyCoefficient);
 
 
 
@@ -44,20 +43,17 @@ public class GameActivity extends AppCompatActivity {
                 String heightText = heightEditText.getText().toString();
                 String areaText = areaEditText.getText().toString();
                 String strengthText = strengthEditText.getText().toString();
-                String safetyCoefficientText = safetyCoefficientEditText.getText().toString();
 
                 try {
-                    density = Float.parseFloat(rhoText);
-                    height = Float.parseFloat(heightText);
-                    area = Float.parseFloat(areaText);
-                    strength = Float.parseFloat(strengthText);
-                    safetyCoefficient = Float.parseFloat(safetyCoefficientText);
+                    density = Long.parseLong(rhoText);
+                    height = Long.parseLong(heightText);
+                    area = Long.parseLong(areaText);
+                    strength = Long.parseLong(strengthText);
 
                     volume = area * height;
-                    maxPressure = calculateMaxPressure(strength, safetyCoefficient);
+                    maxPressure = strength * 1000000;
                     force = maxPressure * area;
-                    p = volume * density / area;
-
+                    p = volume * density * 10 / area;
                     ourForce = p * area;
 
                     if (ourForce < force) {
@@ -97,30 +93,26 @@ public class GameActivity extends AppCompatActivity {
         recreate();
     }
 
-
-    private float calculateMaxPressure(float strength, float safetyCoefficient) {
-        return strength / safetyCoefficient;
-    }
-
     //TODO
-private void openResultFragment() {
-    if (!isFragmentBasicOn) {
-        ResultFragment fragment = new ResultFragment();
-        Bundle bundle = new Bundle();
-        bundle.putFloat("volume", volume);
-        bundle.putFloat("force", force);
-        bundle.putFloat("ourForce", ourForce);
-        fragment.setArguments(bundle);
+    private void openResultFragment() {
+        if (!isFragmentBasicOn) {
+            ResultFragment fragment = new ResultFragment();
+            Bundle bundle = new Bundle();
+            bundle.putFloat("volume", volume);
+            bundle.putFloat("force", force);
+            bundle.putFloat("ourForce", ourForce);
+            fragment.setArguments(bundle);
 
-        FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
-        transaction.setCustomAnimations(R.anim.slide_up, 0, 0, R.anim.slide_down);
-        transaction.replace(R.id.frameforfragment, fragment);
-        transaction.addToBackStack(null);
-        transaction.commit();
+            FragmentTransaction transaction = getSupportFragmentManager().beginTransaction();
+            transaction.setCustomAnimations(R.anim.slide_up, 0, 0, R.anim.slide_down);
+            transaction.replace(R.id.frameforfragment, fragment);
+            transaction.addToBackStack(null);
+            transaction.commit();
 
-        isFragmentBasicOn = true;
-      }
+            isFragmentBasicOn = true;
+        }
     }
+
 
     private void animateVibration() {
         ImageView imageView = findViewById(R.id.bashnya);

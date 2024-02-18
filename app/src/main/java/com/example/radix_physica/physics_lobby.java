@@ -31,19 +31,19 @@ public class physics_lobby extends AppCompatActivity {
 
         Button game = findViewById(R.id.game1);
 
+        bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
 
 
 
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
-
             if (item.getItemId() == R.id.profile) {
-                Intent intent = new Intent(physics_lobby.this, Profile.class );
-                startActivity(intent);
+                Intent profileIntent = new Intent(physics_lobby.this, Profile.class );
+                startActivity(profileIntent);
             } else if (item.getItemId() == R.id.settings) {
-                Intent intent = new Intent(physics_lobby.this, Profile.class );
-                startActivity(intent);
+                Intent settingsIntent = new Intent(physics_lobby.this, Profile.class );
+                startActivity(settingsIntent);
             }
             return true;
         });

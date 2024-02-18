@@ -4,13 +4,20 @@
         android:id="@+id/home"
         android:checkable="false"
         android:enabled="true"
-        android:icon="@drawable/baseline_home_24"
+        android:icon="@drawable/baseline_bungalow_24"
+        android:iconTint="@color/white"
         android:title="Home"
         android:visible="true" />
     <item
         android:id="@+id/profile"
         android:icon="@drawable/baseline_menu_book_24"
-        android:title="Profile" />
+        android:title="Profile"
+        android:visible="true"/>
+    <item
+        android:id="@+id/about"
+        android:icon="@drawable/baseline_emoji_people_24"
+        android:title="about us"
+        android:visible="true"/>
     <item
         android:id="@+id/settings"
         android:enabled="true"

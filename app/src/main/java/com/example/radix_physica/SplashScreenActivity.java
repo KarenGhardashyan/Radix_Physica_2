@@ -16,7 +16,7 @@ import com.example.radix_physica.R;
 
 public class SplashScreenActivity extends AppCompatActivity {
 
-    private static final int SPLASH_DELAY = 2100;
+    private static final int SPLASH_DELAY = 2000;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -26,21 +26,23 @@ public class SplashScreenActivity extends AppCompatActivity {
         ImageView logoImageView = findViewById(R.id.logo_image_view);
 
         Animation animation = AnimationUtils.loadAnimation(this, R.anim.logo_animation);
-
         logoImageView.startAnimation(animation);
 
         new Handler().postDelayed(new Runnable() {
             @Override
             public void run() {
                 Intent intent = new Intent(SplashScreenActivity.this, MainActivity.class);
-
                 Pair<View, String> pair = new Pair<>(logoImageView, "logo_image");
-
                 ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(SplashScreenActivity.this, pair);
-
                 startActivity(intent, options.toBundle());
 
-                finish();
+                new Handler().postDelayed(new Runnable() {
+                    @Override
+                    public void run() {
+                        finish();
+                    }
+                },200);
+
             }
         }, SPLASH_DELAY);
     }
