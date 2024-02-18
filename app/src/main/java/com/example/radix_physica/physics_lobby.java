@@ -27,9 +27,9 @@ public class physics_lobby extends AppCompatActivity {
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
 
-        ImageButton mechanicsButton = findViewById(R.id.mexanics);
+        ImageButton mechanicsButton = findViewById(R.id.mechanics);
 
-        Button game = findViewById(R.id.game);
+        Button game = findViewById(R.id.game1);
 
 
 

@@ -9,15 +9,17 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button without_account;
+    Button without_account, registration, login;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Button without_account = findViewById(R.id.without_acc);
-        Button registration = findViewById(R.id.Registration_act);
+        without_account = findViewById(R.id.without_acc);
+        registration = findViewById(R.id.Registration_act);
+        login = findViewById(R.id.login);
+
 
         without_account.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -31,6 +33,13 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(MainActivity.this, RegistrationActivity.class);
+                startActivity(intent);
+            }
+        });
+        login.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(MainActivity.this, LoginActivity.class);
                 startActivity(intent);
             }
         });

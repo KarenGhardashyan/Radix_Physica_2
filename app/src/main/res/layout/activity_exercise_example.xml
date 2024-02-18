@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Exercise_example"
-    android:background="@drawable/img_6"
+    android:background="@color/background"
     android:padding="16dp">
 
 
@@ -15,7 +15,7 @@
         android:layout_height="400dp"
         android:layout_marginTop="4dp"
         android:background="?attr/colorPrimary"
-        android:backgroundTint="#BCD1A848"
+        android:backgroundTint="#939393"
         android:minHeight="?attr/actionBarSize"
         android:theme="?attr/actionBarTheme"
         app:layout_constraintEnd_toEndOf="parent"
@@ -99,11 +99,14 @@
         android:layout_width="160dp"
         android:layout_height="50dp"
         android:layout_marginTop="36dp"
-        android:background="#DDBA6B"
+        android:background="#939393"
         android:text="Закончить"
+        app:layout_constraintBottom_toTopOf="@+id/navigation_bar"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Toolbar" />
+        app:layout_constraintTop_toBottomOf="@+id/Toolbar"
+        app:layout_constraintVertical_bias="0.248" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

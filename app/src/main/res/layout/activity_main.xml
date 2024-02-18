@@ -4,67 +4,36 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/bg_test">
+    android:background="@drawable/background1">
 
-
-    <EditText
-        android:id="@+id/editTextEmail"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="320dp"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
-        android:hint="  Email"
-        android:textColorHint="#919191"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <EditText
-        android:id="@+id/editTextPassword"
-        android:layout_width="300dp"
-        android:layout_height="48dp"
-        android:layout_marginTop="12dp"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
-        android:hint="Password"
-        android:inputType="textPassword"
-        android:textColorHint="#919191"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextEmail" />
 
     <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/buttonLogin"
+        android:id="@+id/login"
         android:layout_width="wrap_content"
-        android:backgroundTint="#D5DFFB"
         android:layout_height="wrap_content"
-        android:fontFamily="sans-serif-black"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="336dp"
         android:background="@drawable/buttons"
-        android:text="SIGN in"
+        android:backgroundTint="#95E3E3E3"
+        android:fontFamily="sans-serif-black"
+        android:text="log in"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/editTextPassword" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/Registration_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="4dp"
         android:background="@drawable/buttons"
-        android:backgroundTint="#D5DFFB"
+        android:backgroundTint="#95E3E3E3"
         android:fontFamily="sans-serif-black"
         android:text=" REGISTRATION "
-        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonLogin"
-        app:layout_constraintVertical_bias="0.069" />
+        app:layout_constraintTop_toBottomOf="@+id/login" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/without_acc"
@@ -73,13 +42,13 @@
         android:layout_marginBottom="16dp"
         android:background="@drawable/buttons"
         android:fontFamily="sans-serif-black"
-        android:backgroundTint="#C4CBFE"
+        android:backgroundTint="#C3C8C8C8"
         android:text=" without account "
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/buttonCreateAccount"
+        app:layout_constraintTop_toBottomOf="@+id/Registration_act"
         app:layout_constraintVertical_bias="0.521" />
 
     <ImageView
@@ -89,6 +58,7 @@
         android:layout_marginTop="4dp"
         android:backgroundTint="@color/button1"
         android:contentDescription="thelogo"
+        android:transitionName="logo_image"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHeight_percent="0.3"
         app:layout_constraintHorizontal_bias="0.497"

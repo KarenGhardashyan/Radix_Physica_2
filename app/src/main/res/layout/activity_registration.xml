@@ -5,85 +5,113 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".RegistrationActivity"
-    android:background="@drawable/bg_test">
+    android:background="@drawable/background2">
 
     <EditText
         android:id="@+id/All_Name"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="212dp"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
-        android:ems="12"
-        android:hint="all name"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
+        android:layout_marginTop="40dp"
+        android:background="@color/buttons"
+        android:hint="username"
+        android:padding="10dp"
         android:inputType="text"
-        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/textView6"
+        android:drawableLeft="@drawable/baseline_person_outline_24"
+        android:drawablePadding="10dp"/>
 
     <EditText
-        android:id="@+id/Email"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:id="@+id/email"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
-        android:ems="12"
+        android:background="@color/buttons"
         android:hint="Email"
         android:inputType="textEmailAddress"
-        android:textSize="22dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/All_Name" />
+        app:layout_constraintTop_toBottomOf="@+id/All_Name"
+        android:drawableLeft="@drawable/baseline_attach_email_24"
+        android:padding="10dp"
+        android:drawablePadding="10dp" />
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
-        android:ems="12"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
+        android:background="@color/buttons"
         android:hint="Password"
-        android:textSize="22dp"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Email" />
+        app:layout_constraintTop_toBottomOf="@+id/email"
+        android:drawableLeft="@drawable/baseline_app_blocking_24"
+        android:padding="10dp"
+        android:drawablePadding="10dp"/>
 
     <EditText
         android:id="@+id/password_retry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_height="48dp"
         android:layout_marginTop="24dp"
-        android:ems="12"
-        android:background="@drawable/buttons"
-        android:backgroundTint="#C7D4F8"
+        android:background="@color/buttons"
         android:hint="Password retry"
-        android:textSize="22dp"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.497"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/password" />
+        app:layout_constraintTop_toBottomOf="@+id/password"
+        android:drawableLeft="@drawable/baseline_app_blocking_24"
+        android:padding="10dp"
+        android:drawablePadding="10dp"/>
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/submit"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text=" Submit "
-        android:onClick=""
-        android:backgroundTint="#C6C9FE"
-        android:textSize="25dp"
+        android:backgroundTint="@color/buttons"
+        android:textSize="20dp"
         android:fontFamily="sans-serif-medium"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/baseline_child_care_24"
+        android:drawableRight="@drawable/baseline_child_care_24"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password_retry"
         app:layout_constraintVertical_bias="0.36" />
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:layout_marginTop="52dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHeight_percent="0.2"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/common_full_open_on_phone" />
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="Создай аккаунт"
+        android:textSize="30dp"
+        android:textColor="@color/white"
+        android:fontFamily="sans-serif-black"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
