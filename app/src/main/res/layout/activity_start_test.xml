@@ -1,0 +1,194 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/buttons">
+
+        <ImageView
+            android:id="@+id/imageView2"
+            android:layout_width="match_parent"
+            android:layout_gravity="center"
+            android:layout_height="200dp"
+            app:srcCompat="@drawable/physica"
+            android:background="@color/background" />
+
+
+        <!-- Вопрос 1 -->
+
+        <TextView
+            android:layout_width="match_parent"
+            android:paddingTop="20dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1. Как называется закон, описывающий взаимодействие тел силой?" />
+
+        <!-- Выбор ответа на вопрос 1 -->
+        <RadioGroup
+            android:id="@+id/question1_radiogroup"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/answer1_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Закон Архимеда" />
+
+            <RadioButton
+                android:id="@+id/answer1_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Закон Гука" />
+
+            <RadioButton
+                android:id="@+id/answer1_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Закон Ньютона" />
+
+        </RadioGroup>
+
+        <!-- Вопрос 2 -->
+        <TextView
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="2. Как называется явление, при котором свет отклоняется при прохождении через прозрачный материал?" />
+
+        <!-- Выбор ответа на вопрос 2 -->
+        <RadioGroup
+            android:id="@+id/question2_radiogroup"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/answer2_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Дифракция" />
+
+            <RadioButton
+                android:id="@+id/answer2_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Рассеяние" />
+
+            <RadioButton
+                android:id="@+id/answer2_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Преломление" />
+
+        </RadioGroup>
+
+        <!-- и так далее... -->
+
+        <!-- Вопрос 5 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="5. Как называется явление, при котором тело сохраняет свою скорость и направление движения?" />
+
+        <!-- Выбор ответа на вопрос 5 -->
+        <RadioGroup
+            android:id="@+id/question5_radiogroup"
+            android:padding="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <RadioButton
+                android:id="@+id/answer3_option1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Инерция" />
+
+            <RadioButton
+                android:id="@+id/answer3_option2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Гравитация" />
+
+            <RadioButton
+                android:id="@+id/answer3_option3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Сила тяжести" />
+
+        </RadioGroup>
+
+        <!-- Задача 1 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="1. Два маленьких шарика, каждый массой 0.1 кг, подвешены на одинаковых невесомых нитях длиной 1 метр. Один из шариков начинают раскачивать так, что амплитуда колебаний составляет 10 см. Какую скорость имеют шарики в точке максимального отклонения?" />
+
+        <!-- Ответ на задачу 1 -->
+        <EditText
+            android:id="@+id/problem1_answer"
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:hint="Ответ"
+            android:inputType="numberDecimal" />
+
+        <!-- Задача 2 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="2. Пусть имеется газ, занимающий объем V1 при температуре T1 и давлении P1 Газ расширяется изначального объема до V2 под постоянным давлением P1 после чего его объем увеличивается до V3 при постоянной температуре T2 Необходимо найти конечное давление P3 газа."/>
+
+        <!-- Ответ на задачу 2 -->
+        <EditText
+            android:id="@+id/problem2_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Ответ"
+            android:inputType="numberDecimal" />
+
+        <!-- Задача 3 -->
+        <TextView
+            android:layout_width="match_parent"
+            android:padding="10dp"
+            android:layout_height="wrap_content"
+            android:text="3.У вас есть 3 резистора.Пусть у каждого резистора R = 3 Ом найдите найдите сумму полных сопротивлений во всех возможных соединениях. "/>
+
+        <!-- Ответ на задачу 3 -->
+        <EditText
+            android:id="@+id/problem3_answer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:hint="Ответ"
+            android:inputType="numberDecimal" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/enter"
+            android:layout_gravity="center"
+            android:text="Завершить попытку"
+            android:textColor="@color/white"
+            android:fontFamily="sans-serif-black"
+            android:drawablePadding="10dp"
+            android:drawableLeft="@drawable/baseline_emoji_people_24"
+            android:drawableRight="@drawable/baseline_emoji_people_24"
+            android:background="#5E5959"/>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragment_container"/>
+
+    </LinearLayout>
+</ScrollView>

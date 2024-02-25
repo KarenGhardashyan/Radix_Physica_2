@@ -25,11 +25,11 @@ public class Settings extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.home) {
-                Intent intent = new Intent(Settings.this, physics_lobby.class );
-                startActivity(intent);
+                startActivity(new Intent(Settings.this, physics_lobby.class));
+                overridePendingTransition(0, 0);
             } else if (item.getItemId() == R.id.profile) {
-                Intent intent = new Intent(Settings.this, Profile.class );
-                startActivity(intent);
+                startActivity(new Intent(Settings.this, Profile.class));
+                overridePendingTransition(0, 0);
             }
 
             return true;

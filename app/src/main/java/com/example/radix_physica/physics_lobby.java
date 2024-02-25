@@ -2,17 +2,13 @@ package com.example.radix_physica;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
-import android.view.animation.Animation;
-import android.view.animation.AnimationUtils;
 import android.widget.Button;
 import android.widget.ImageButton;
-import android.widget.Toast;
+
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 
@@ -30,7 +26,7 @@ public class physics_lobby extends AppCompatActivity {
         ImageButton mechanicsButton = findViewById(R.id.mechanics);
 
         Button game = findViewById(R.id.game1);
-
+        Button startTest = findViewById(R.id.startTest);
         bottomNavigationView.getMenu().findItem(R.id.home).setChecked(true);
 
 
@@ -39,11 +35,11 @@ public class physics_lobby extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.profile) {
-                Intent profileIntent = new Intent(physics_lobby.this, Profile.class );
-                startActivity(profileIntent);
+                startActivity(new Intent(physics_lobby.this, Profile.class));
+                overridePendingTransition(0, 0);
             } else if (item.getItemId() == R.id.settings) {
-                Intent settingsIntent = new Intent(physics_lobby.this, Profile.class );
-                startActivity(settingsIntent);
+                startActivity(new Intent(physics_lobby.this, Settings.class));
+                overridePendingTransition(0, 0);
             }
             return true;
         });
@@ -59,6 +55,13 @@ public class physics_lobby extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(physics_lobby.this, GameActivity.class);
+                startActivity(intent);
+            }
+        });
+        startTest.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(physics_lobby.this, StartTest.class);
                 startActivity(intent);
             }
         });

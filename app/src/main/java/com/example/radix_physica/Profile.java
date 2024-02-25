@@ -27,11 +27,11 @@ public class Profile extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.home) {
-                Intent intent = new Intent(Profile.this, physics_lobby.class );
-                startActivity(intent);
+                startActivity(new Intent(Profile.this, physics_lobby.class));
+                overridePendingTransition(0, 0);
             } else if (item.getItemId() == R.id.settings) {
-                Intent intent = new Intent(Profile.this, Settings.class );
-                startActivity(intent);
+                startActivity(new Intent(Profile.this, Settings.class));
+                overridePendingTransition(0, 0);
             }
 
             return true;
