@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".LoginActivity"
-    android:background="@drawable/background2">
+    android:background="@drawable/background1">
 
 
     <ImageView
@@ -33,23 +33,25 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView6" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/emailLogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
+        android:transitionName="email"
         android:layout_marginTop="168dp"
         android:inputType="textEmailAddress"
         android:background="@color/buttons"
         android:drawableLeft="@drawable/baseline_attach_email_24"
         android:drawablePadding="10dp"
         android:hint="email"
+
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView4" />
 
-    <EditText
+    <com.google.android.material.textfield.TextInputEditText
         android:id="@+id/passwordLogin"
         android:layout_width="match_parent"
         android:layout_height="48dp"
@@ -58,6 +60,7 @@
         android:background="@color/buttons"
         android:drawableLeft="@drawable/baseline_app_blocking_24"
         android:drawablePadding="10dp"
+        android:transitionName="password"
         android:hint="password"
         android:padding="10dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -69,18 +72,33 @@
         android:id="@+id/submitLogin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text=" Submit "
         android:backgroundTint="@color/buttons"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        android:padding="10dp"
         android:drawableLeft="@drawable/baseline_child_care_24"
         android:drawableRight="@drawable/baseline_child_care_24"
+        android:fontFamily="sans-serif-medium"
+        android:padding="10dp"
+        android:transitionName="submit"
+        android:text=" Submit "
+        android:textSize="20dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/passwordLogin"
-        app:layout_constraintVertical_bias="0.36" />
+        app:layout_constraintVertical_bias="0.222" />
+
+    <TextView
+        android:id="@+id/RegisterNow"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:fontFamily="sans-serif-black"
+        android:text="Нажмите для регистрации"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/submitLogin"
+        app:layout_constraintVertical_bias="0.354" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

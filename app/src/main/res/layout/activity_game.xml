@@ -1,113 +1,124 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:background="@color/background"
-    tools:context=".GameActivity">
+    android:layout_height="match_parent">
 
-    <FrameLayout
-        android:id="@+id/frameforfragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="10dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/area"
-        tools:layout_editor_absoluteX="15dp" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/calculate"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:background="@drawable/buttons1"
-        android:backgroundTint="#F1F1F1"
-        android:padding="10dp"
-        android:text=" потвердить "
-        app:layout_constraintBottom_toBottomOf="@+id/bashnya"
-        app:layout_constraintEnd_toEndOf="@+id/bashnya"
-        app:layout_constraintHorizontal_bias="0.496"
-        app:layout_constraintStart_toStartOf="@+id/bashnya"
-        app:layout_constraintTop_toBottomOf="@+id/header_title"
-        app:layout_constraintVertical_bias="1.0" />
-
-    <TextView
-        android:id="@+id/header_title"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_marginTop="15dp"
-        android:fontFamily="sans-serif-black"
-        android:padding="5dp"
-        android:text="Смысл игры в созданиии высокой башни. Вы должны найти материал сделать замеры. В ответе укажите плотность метериала, высоту  и площадь "
-        android:textColor="@color/white"
-        android:textSize="15dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:orientation="vertical">
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/game1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttons1"
+            android:backgroundTint="#886BFB"
+            android:drawablePadding="10dp"
+            android:drawableRight="@drawable/pizastower"
+            android:fontFamily="sans-serif-medium"
+            android:gravity="center"
+            android:padding="20dp"
+            android:text="строение башни"
+            android:textColor="@color/white"
+            android:textSize="20dp"
+            android:transitionName="build_the_town" />
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="20dp"
+            android:text="Смысл игры в созданиии высокой башни. Вы должны найти материал сделать замеры. В ответе укажите плотность метериала, высоту  и площадь"
+            android:textSize="16dp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:padding="20dp">
 
 
-    <ImageView
-        android:id="@+id/bashnya"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="4dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHeight_percent="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/header_title"
-        app:layout_constraintWidth_percent="0.6"
-        app:srcCompat="@drawable/bashnya2" />
+            <EditText
+                android:id="@+id/strength"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:hint=" модуль прочности (МПа)"
+                android:inputType="number" />
 
-    <EditText
-        android:id="@+id/rho"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttons"
-        android:hint=" плотность кг/м^3"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/strength" />
+            <EditText
+                android:id="@+id/rho"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:hint=" плотность кг/м^3"
+                android:inputType="number" />
 
-    <EditText
-        android:id="@+id/strength"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttons"
-        android:hint=" модуль прочности (МПа)"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bashnya" />
+            <EditText
+                android:id="@+id/height"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:hint=" высота (м)"
+                android:inputType="number" />
 
-    <EditText
-        android:id="@+id/height"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttons"
-        android:hint=" высота (м)"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rho" />
+            <EditText
+                android:id="@+id/area"
+                android:layout_width="match_parent"
+                android:layout_height="48dp"
+                android:layout_marginTop="8dp"
+                android:hint=" площадь S м^2"
+                android:inputType="number" />
 
-    <EditText
-        android:id="@+id/area"
-        android:layout_width="match_parent"
-        android:layout_height="48dp"
-        android:layout_marginTop="8dp"
-        android:background="@color/buttons"
-        android:hint=" площадь S м^2"
-        android:inputType="number"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/height" />
+        </LinearLayout>
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/build"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/buttons1"
+            android:backgroundTint="#3F51B5"
+            android:drawableLeft="@drawable/buildicon"
+            android:drawableRight="@drawable/buildthetown"
+            android:fontFamily="sans-serif-black"
+            android:gravity="center"
+            android:text="построить"
+            android:textColor="@color/white"
+            android:textSize="20dp" />
+
+        <TextView
+            android:id="@+id/h"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/force"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:text="" />
+
+        <TextView
+            android:id="@+id/ourForce"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:layout_gravity="center"
+            android:text="" />
 
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
+
+</ScrollView>

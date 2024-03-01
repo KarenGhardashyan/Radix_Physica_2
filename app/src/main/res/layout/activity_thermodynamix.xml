@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/thermodynamicsbutton"
+            android:layout_width="250dp"
+            android:transitionName="thermodynamics"
+            android:layout_height="160dp"
+            android:layout_gravity="center"
+            android:background="@drawable/thermodynamics"
+            android:contentDescription="Termodynamics button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rules"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/thermodynamics"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Термодинамика - это раздел физики, изучающий тепловые и энергетические процессы в системах. Она описывает, как тепло и энергия переходят между различными формами и как эти процессы влияют на физические системы в целом. В термодинамике используются различные законы и принципы, позволяющие анализировать и предсказывать поведение систем в различных условиях."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_laws"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Законы термодинамики:"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_first_law"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1. Первый закон термодинамики (закон сохранения энергии):"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_first_law_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон утверждает, что количество энергии в замкнутой системе остается неизменным со временем. Энергия может переходить из одной формы в другую или из одной системы в другую, но суммарная энергия остается постоянной."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_second_law"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="2. Второй закон термодинамики:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_second_law_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон утверждает, что тепло не может самопроизвольно переходить от тела с низкой температурой к телу с более высокой температурой без внешнего вмешательства. Он также утверждает, что энтропия увеличивается в изолированной системе со временем."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_third_law"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="3. Третий закон термодинамики:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/thermodynamics_third_law_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон утверждает, что при абсолютном нуле температуры у системы энтропия достигает минимального значения. Он также утверждает, что невозможно достичь абсолютного нуля температуры путем конечного числа процессов."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+    </LinearLayout>
+
+</ScrollView>

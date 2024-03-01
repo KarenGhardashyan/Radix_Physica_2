@@ -1,111 +1,16 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background">
-
-    <HorizontalScrollView
-        android:id="@+id/scrollView"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="100dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView">
-
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="horizontal">
-
-            <ImageButton
-                android:id="@+id/thermodynamics"
-                android:layout_width="250dp"
-                android:layout_height="160dp"
-                android:background="@drawable/thermodynamics"
-                android:contentDescription="Termodynamics button"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/mechanics"
-                android:layout_width="250dp"
-                android:layout_height="160dp"
-                android:background="@drawable/mexanics_button"
-                android:contentDescription="Mechanics button"
-                app:layout_constraintStart_toEndOf="@id/thermodynamics"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/optics"
-                android:layout_width="250dp"
-                android:layout_height="160dp"
-                android:background="@drawable/optic"
-                android:contentDescription="Optics button"
-                app:layout_constraintStart_toEndOf="@id/mechanics"
-                app:layout_constraintTop_toTopOf="parent" />
-
-            <ImageButton
-                android:id="@+id/electricity"
-                android:layout_width="250dp"
-                android:layout_height="160dp"
-                android:background="@drawable/electricity"
-                android:contentDescription="Electricity button"
-                app:layout_constraintStart_toEndOf="@id/optics"
-                app:layout_constraintTop_toTopOf="parent" />
-        </LinearLayout>
-    </HorizontalScrollView>
-
-
-    <FrameLayout
-        android:id="@+id/fragment_container"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="match_parent"
-        android:layout_height="44dp"
-        android:background="#9F3D5778"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="298dp"
-        android:layout_height="58dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="casual"
-        android:text="ВЫБЕРИТЕ РАЗДЕЛ"
-        android:textColor="@color/white"
-        android:textSize="30dp"
-        app:layout_constraintBottom_toBottomOf="@+id/toolbar"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
+    android:background="@color/background"
+    android:orientation="vertical">
 
     <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="50dp"
-        android:layout_marginBottom="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/scrollView"
-        app:layout_constraintVertical_bias="0.849">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -113,13 +18,85 @@
             android:orientation="vertical"
             android:gravity="center">
 
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:fontFamily="casual"
+                android:text="ВЫБЕРИТЕ"
+                android:gravity="center"
+                android:background="#66A191E3"
+                android:textColor="@color/white"
+                android:textSize="30dp"/>
+
+            <HorizontalScrollView
+                android:id="@+id/scrollView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/textView">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <ImageButton
+                        android:id="@+id/mechanics"
+                        android:layout_width="250dp"
+                        android:layout_height="160dp"
+                        android:transitionName="mexanics"
+                        android:layout_marginLeft="10dp"
+                        android:background="@drawable/mexanics_button"
+                        android:contentDescription="Mechanics button"
+                        app:layout_constraintStart_toEndOf="@id/thermodynamics"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/thermodynamics"
+                        android:layout_width="250dp"
+                        android:transitionName="thermodynamics"
+                        android:layout_height="160dp"
+                        android:background="@drawable/thermodynamics"
+                        android:contentDescription="Termodynamics button"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+
+                    <ImageButton
+                        android:id="@+id/optics"
+                        android:transitionName="optics"
+                        android:layout_width="250dp"
+                        android:layout_height="160dp"
+                        android:background="@drawable/optic"
+                        android:contentDescription="Optics button"
+                        app:layout_constraintStart_toEndOf="@id/mechanics"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <ImageButton
+                        android:id="@+id/electricity"
+                        android:layout_width="250dp"
+                        android:transitionName="electricity"
+                        android:layout_height="160dp"
+                        android:background="@drawable/electricity"
+                        android:contentDescription="Electricity button"
+                        app:layout_constraintStart_toEndOf="@id/optics"
+                        app:layout_constraintTop_toTopOf="parent" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/startTest"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
+                android:drawablePadding="10dp"
+                android:drawableRight="@drawable/testicon"
                 android:text="начальный тест"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:padding="20dp"
                 android:background="@drawable/buttons1"
                 android:backgroundTint="#FFBF00"
@@ -128,12 +105,31 @@
                 android:layout_margin="10dp"/>
 
             <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/questions"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:text="посмотреть задания"
+                android:drawablePadding="10dp"
+                android:textSize="20dp"
+                android:drawableRight="@drawable/questionicon"
+                android:padding="20dp"
+                android:background="@drawable/buttons1"
+                android:backgroundTint="#9C27B0"
+                android:fontFamily="sans-serif-medium"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/game1"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="строение башни"
-                android:textSize="30dp"
+                android:drawablePadding="10dp"
+                android:textSize="20dp"
+                android:transitionName="build_the_town"
+                android:drawableRight="@drawable/pizastower"
                 android:padding="20dp"
                 android:background="@drawable/buttons1"
                 android:backgroundTint="#886BFB"
@@ -143,12 +139,15 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/game2"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="строение моста"
-                android:textSize="30dp"
+                android:textSize="20dp"
+                android:transitionName="build_bridge_transition"
+                android:drawablePadding="10dp"
                 android:padding="20dp"
+                android:drawableRight="@drawable/bridgeicon"
                 android:background="@drawable/buttons1"
                 android:backgroundTint="#886BFB"
                 android:fontFamily="sans-serif-medium"
@@ -157,12 +156,14 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/finishingtest"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="конечный тест"
-                android:textSize="30dp"
+                android:textSize="20dp"
                 android:padding="20dp"
+                android:drawableRight="@drawable/testicon"
+                android:drawablePadding="10dp"
                 android:background="@drawable/buttons1"
                 android:backgroundTint="#FFBF00"
                 android:fontFamily="sans-serif-medium"
@@ -171,11 +172,13 @@
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/leaderboards"
-                android:layout_width="wrap_content"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:text="лидерборды"
-                android:textSize="30dp"
+                android:textSize="20dp"
+                android:drawablePadding="30dp"
+                android:drawableRight="@drawable/leaderboardicon"
                 android:padding="20dp"
                 android:background="@drawable/buttons1"
                 android:backgroundTint="#FE5300"
@@ -187,24 +190,15 @@
         </LinearLayout>
     </ScrollView>
 
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#00AEAEAE"
-        app:itemIconTint="@color/white"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background"
         app:itemTextColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
+        app:itemIconTint="@color/white"
         app:menu="@menu/bottom_nav_menu" />
 
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</RelativeLayout>

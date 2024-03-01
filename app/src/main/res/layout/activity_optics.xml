@@ -1,0 +1,150 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/optics"
+            android:transitionName="optics"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:layout_height="160dp"
+            android:background="@drawable/optic"
+            android:contentDescription="Optics button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/look"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+
+        <TextView
+            android:id="@+id/optics1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Оптика - это раздел физики, изучающий свет и его взаимодействие с материей. Она описывает явления, такие как отражение, преломление, дифракция и интерференция, а также свойства света, такие как его скорость, длина волны и частота. В оптике также изучаются оптические приборы, такие как линзы, зеркала и призмы, и их применение в различных областях, включая фотографию, микроскопию и телекоммуникации."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/optics_phenomena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Основные явления оптики:"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/light"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/optics_reflection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1. Отражение света:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+
+        <TextView
+            android:id="@+id/optics_reflection_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Отражение света - это явление, при котором свет отражается от поверхности и направляется обратно в среду, из которой он пришел. Отражение может быть зеркальным, когда свет отражается под определенным углом, или диффузным, когда свет отражается во все стороны."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/difraction"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/optics_refraction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="2. Преломление света:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/optics_refraction_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Преломление света - это явление, при котором свет изменяет свое направление при переходе из одной среды в другую. Это происходит из-за различной скорости света в различных средах. Угол преломления зависит от индекса преломления среды и угла падения света."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/optics_diffraction"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="3. Дифракция света:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/optics_diffraction_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Дифракция света - это явление, при котором свет изгибается вокруг угловых препятствий или проходит через щели. Она приводит к образованию интерференционных узоров и является основой для многих оптических приборов, таких как дифракционные решетки и интерферометры."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <TextView
+            android:id="@+id/optics_interference"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="4. Интерференция света:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/optics_interference_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Интерференция света - это явление, при котором две или более волны перекрываются друг с другом и образуют интерференционные узоры. Она проявляется как усиление или ослабление света в зависимости от фазового сдвига между волнами и может использоваться для измерения длины волн и толщины тонких слоев."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+    </LinearLayout>
+
+</ScrollView>

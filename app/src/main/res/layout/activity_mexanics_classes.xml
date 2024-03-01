@@ -1,149 +1,240 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:id="@+id/main_layout"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="@color/background"
-    android:padding="16dp">
+    android:layout_height="match_parent">
 
-    <androidx.appcompat.widget.Toolbar
-        android:id="@+id/toolbar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:background="#54F1A0D3"
-        android:minHeight="?attr/actionBarSize"
-        android:theme="?attr/actionBarTheme"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="374dp"
-        android:layout_height="56dp"
-        android:layout_marginTop="8dp"
-        android:fontFamily="casual"
-        android:text="ВЫБЕРИТЕ РАЗДЕЛ МЕХАНИКИ"
-        android:textColor="@color/white"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.4"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/toolbar" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnBasics"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
-        android:background="@drawable/button_background_simple"
-        android:fontFamily="sans-serif-medium"
-        android:text="Основы основ"
-        android:textSize="20dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/textView" />
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnAcceleration"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Ускорение"
-        android:background="@drawable/button_background_simple"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnBasics"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnNewtonLaws"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Законы Ньютона"
-        android:background="@drawable/button_background_simple"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnAcceleration"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnImpulse"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Импульс"
-        android:background="@drawable/button_background_simple"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintTop_toBottomOf="@id/btnNewtonLaws"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnEnergy"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Энергия"
-        android:background="@drawable/button_background_simple"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnImpulse"
-        android:layout_marginTop="8dp"/>
-
-    <androidx.appcompat.widget.AppCompatButton
-        android:id="@+id/btnOscillations"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:text="Маятники"
-        android:background="@drawable/button_background_simple"
-        app:layout_constraintStart_toStartOf="parent"
-        android:textSize="20dp"
-        android:fontFamily="sans-serif-medium"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/btnEnergy"
-        android:layout_marginTop="8dp"/>
-
-    <FrameLayout
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:layout_constraintBottom_toBottomOf="@+id/bottom_navigation"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
+    <LinearLayout
+        android:id="@+id/main_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="#AEAEAE"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintEnd_toStartOf="parent"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/background">
+
+        <ImageButton
+            android:id="@+id/mechanics"
+            android:layout_width="250dp"
+            android:layout_height="160dp"
+            android:layout_marginTop="10dp"
+            android:layout_gravity="center"
+            android:transitionName="mexanics_button"
+            android:background="@drawable/mexanics_button"
+            android:contentDescription="Mechanics button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/kilogramm"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/mass"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Масса тела - ключевой аспект физики, определяющий инертность и влияние на движение объекта. Она является основной характеристикой тела, неизменной в различных условиях. Измеряется в килограммах и играет важную роль во многих физических явлениях, начиная от механики и заканчивая космологией. Понимание массы тела помогает объяснить множество феноменов, включая гравитацию, инерцию и многие другие аспекты нашего мира."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/velocity"
+            android:contentDescription="image"
+            android:backgroundTint="#9EA7D9"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/velocity"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Скорость тела - одно из ключевых понятий в физике, описывающее изменение положения объекта в пространстве со временем. Это понятие широко используется в различных областях физики, от механики и динамики до электромагнетизма и кинетики газов. В этом тексте рассмотрим значение скорости тела, её измерение, формулы и применение в различных физических явлениях."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/constructions"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/constructions"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Лебедка - это механическое устройство, используемое для подъема или перемещения грузов. Она состоит из неподвижного блока и одного или нескольких шкивов (барабанов), через которые проходит верёвка или цепь, соединённая с грузом. Принцип работы лебедки основан на использовании механического преимущества для уменьшения усилия, необходимого для подъема груза."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/constructions2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Лебедки могут быть классифицированы по различным критериям, таким как тип привода (ручной, электрический, гидравлический), конструкция шкива (одиночный или множественный) и назначение (промышленные, автомобильные, для строительства и т. д.)."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/constructions3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Принцип работы лебедки основан на законах механики, включая закон сохранения энергии и второй закон Ньютона. При использовании лебедки с множественными шкивами усилие, приложенное к концу верёвки, уменьшается в несколько раз по сравнению с весом груза. Это происходит за счёт увеличения пути, по которому передаётся сила, что компенсирует уменьшение силы, приложенной к каждому конкретному шкиву."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/constructions4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Лебедки находят применение во многих областях, включая строительство, грузоподъемные работы, автомобильную промышленность, морское дело и даже в бытовых целях. Их эффективность и простота в использовании делают их неотъемлемой частью различных процессов, требующих подъёма или перемещения грузов."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/forces"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/forces1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text=""
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/forces2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1.Сила тяжести(Fтяж = mg ):
+Это сила, с которой Земля притягивает объекты вниз. Она направлена к центру Земли и зависит от массы тела и ускорения свободного падения."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/forces3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="2.Сила натяжения (Fнат = -kx):
+Это сила, которая действует вдоль натянутой струны, верёвки или цепи. Например, когда вы тянете предмет за верёвку или цепь, сила, которую вы применяете, называется силой натяжения."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/forces4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="3.Сила трения (Fтр. = μ ⋅ N ):
+Это сила, которая возникает между поверхностями движущихся объектов и препятствует их скольжению друг по отношению к другу. Сила трения может быть как статической (когда объекты находятся в состоянии покоя), так и динамической (когда объекты движутся друг относительно друга)."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/forces5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="4.Сила тяги (Fтяг. = N / V):
+Это сила, которую выполняют тяговые машины, такие как двигатели и двигатели внутреннего сгорания, для перемещения тел вдоль определенного пути. Сила тяги может использоваться для транспортировки грузов, движения транспортных средств и т. д."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/isaacnewton"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/newtonlaws1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Закон 1: Тело остается в покое или движется равномерно и прямолинейно, если на него не действует никаких внешних сил."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/newtonlaws1context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон объясняет поведение тела в отсутствие сил, и он формализует понятие инерции, которая представляет собой стремление тела сохранить свое состояние покоя или равномерного прямолинейного движения."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/newtonlaws2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Закон 2: Изменение движения тела пропорционально приложенной силе и происходит по направлению линии действия этой силы."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/newtonlaws2context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон устанавливает математическую связь между силой, массой и ускорением тела. Формулируется он следующим образом: F=ma, где
+
+F - сила,
+m - масса тела,
+a - ускорение тела."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/newtonlaws3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Закон 3: Действие равно противодействию: с каждым действием сила тела, воздействующая на другое тело, вызывает равную и противоположно направленную силу со стороны этого тела."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+        <TextView
+            android:id="@+id/newtonlaws3context"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Этот закон говорит о том, что взаимодействие между двумя телами всегда включает в себя пару равных и противоположно направленных сил. Например, когда тело A оказывает силу на тело
+
+B, тело
+
+B одновременно оказывает равную и противоположно направленную силу на тело
+
+A."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
 
 
+    </LinearLayout>
 
-    <FrameLayout
-        android:id="@+id/frameforfragment"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/btnOscillations"
-        app:layout_constraintVertical_bias="0.0">
-
-    </FrameLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

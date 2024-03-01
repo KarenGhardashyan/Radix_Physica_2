@@ -1,0 +1,195 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main_layout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@color/background"
+        android:padding="16dp">
+
+        <ImageButton
+            android:id="@+id/electricity"
+            android:layout_width="250dp"
+            android:layout_gravity="center"
+            android:transitionName="electricity"
+            android:layout_height="160dp"
+            android:background="@drawable/electricity"
+            android:contentDescription="Electricity button" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/electrocircutwithlight"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электричество - это явление, связанное с движением электрических зарядов. Оно играет важную роль в нашей повседневной жизни и используется в различных областях, таких как электроника, электротехника, электроэнергетика и т. д. В электричестве используются различные законы и принципы, позволяющие понять его поведение и применение."
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"/>
+
+
+        <TextView
+            android:id="@+id/electricity_phenomena"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Основные явления электричества:"
+            android:textSize="22dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/rain"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity_charge"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="1. Электрический заряд:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/electricity_charge_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электрический заряд - это физическая величина, характеризующая количество электричества в объекте. Он может быть положительным или отрицательным, в зависимости от типа носителей заряда (протоны или электроны). Заряды одинакового знака отталкиваются, а заряды разного знака притягиваются."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/electr2"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity_current"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="2. Электрический ток:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/electricity_current_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электрический ток - это направленное движение электрических зарядов в проводнике. Он измеряется в амперах и обозначается символом I. Ток может быть постоянным или переменным в зависимости от временных изменений зарядов в проводнике."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/denger"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity_voltage"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="3. Электрическое напряжение:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/electricity_voltage_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электрическое напряжение - это разница потенциалов между двумя точками в электрической цепи. Оно создается источником энергии, таким как батарея или генератор, и вызывает движение электрических зарядов в проводнике. Напряжение измеряется в вольтах и обозначается символом U или V."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/electrocity"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity_resistance"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="4. Электрическое сопротивление:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/electricity_resistance_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электрическое сопротивление - это мера того, насколько хорошо проводник сопротивляется потоку электрического тока. Оно зависит от материала проводника, его формы и размеров. Сопротивление измеряется в омах и обозначается символом R."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:background="@drawable/circut"
+            android:contentDescription="image"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp"/>
+
+        <TextView
+            android:id="@+id/electricity_circuit"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="5. Электрическая цепь:"
+            android:textSize="20dp"
+            android:fontFamily="sans-serif-medium"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/electricity_circuit_content"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Электрическая цепь - это замкнутый путь, по которому происходит движение электрических зарядов. Она состоит из источника энергии, проводников и электрических приборов, таких как лампы и моторы. В цепи может быть один или несколько источников энергии, а также различные соединения проводников."
+            android:textSize="18dp"
+            android:fontFamily="sans-serif"/>
+
+    </LinearLayout>
+
+</ScrollView>

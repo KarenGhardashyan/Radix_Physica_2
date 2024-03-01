@@ -1,0 +1,147 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_above="@id/bottom_navigation">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/background">
+
+        <TextView
+            android:id="@+id/Header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:gravity="center"
+            android:text="KAREN KRAKIN GMAIL.com" />
+
+        <EditText
+            android:id="@+id/editTextQuestion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="16dp"
+            android:layout_below="@id/Header"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Введите задание"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+
+        <EditText
+            android:id="@+id/editTextAnswer"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextQuestion"
+            android:layout_margin="16dp"
+            android:hint="Введите ответ"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
+
+        <RadioGroup
+            android:id="@+id/radioGroupTopic"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/editTextAnswer"
+            android:layout_margin="16dp"
+            android:orientation="vertical">
+
+            <RadioButton
+                android:id="@+id/radioButtonMexanics"
+                android:layout_width="wrap_content"
+                android:layout_below="@+id/editTextAnswer"
+                android:layout_centerHorizontal="true"
+                android:layout_gravity="center"
+                android:layout_height="wrap_content"
+                android:drawableRight="@drawable/mexanicsicon"
+                android:drawablePadding="58dp"
+                android:text="Механика" />
+
+            <RadioButton
+                android:id="@+id/radioButtonOptics"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:drawableRight="@drawable/opticicon"
+                android:layout_height="wrap_content"
+                android:drawablePadding="10dp"
+                android:layout_below="@+id/radioButtonThermodynamics"
+                android:layout_centerHorizontal="true"
+                android:text="Геометр. Оптика" />
+
+            <RadioButton
+                android:id="@+id/radioButtonThermodynamics"
+                android:layout_width="wrap_content"
+                android:drawableRight="@drawable/thermodynamicsicon"
+                android:layout_below="@+id/radioButtonElectricity"
+                android:drawablePadding="10dp"
+                android:layout_gravity="center"
+                android:layout_centerHorizontal="true"
+                android:layout_height="wrap_content"
+                android:text="Термодинамика" />
+
+            <RadioButton
+                android:id="@+id/radioButtonElectricity"
+                android:layout_width="wrap_content"
+                android:drawableRight="@drawable/electrocity"
+                android:layout_height="wrap_content"
+                android:drawablePadding="20dp"
+                android:layout_below="@+id/radioButtonMexanics"
+                android:layout_gravity="center"
+                android:text="Электричество" />
+
+
+
+        </RadioGroup>
+
+
+
+        <Button
+            android:id="@+id/buttonAddQuestion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/radioGroupTopic"
+            android:backgroundTint="#CFBBFE"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/baseline_add_circle_outline_24"
+            android:drawableRight="@drawable/baseline_add_circle_outline_24"
+            android:text="Добавить задание" />
+
+
+        <Button
+            android:id="@+id/buttonShowQuestions"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:backgroundTint="#CFBBFE"
+            android:layout_below="@id/buttonAddQuestion"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="16dp"
+            android:drawableLeft="@drawable/baseline_architecture_24"
+            android:drawableRight="@drawable/baseline_architecture_24"
+            android:text="покозать другие задания" />
+
+
+    </RelativeLayout>
+
+</ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="@color/background"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        app:menu="@menu/bottom_nav_menu" />
+
+</RelativeLayout>

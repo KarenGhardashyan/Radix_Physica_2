@@ -30,6 +30,9 @@ public class Settings extends AppCompatActivity {
             } else if (item.getItemId() == R.id.profile) {
                 startActivity(new Intent(Settings.this, Profile.class));
                 overridePendingTransition(0, 0);
+            } else if (item.getItemId() == R.id.exercises) {
+                startActivity(new Intent(Settings.this, AddQuestionActivity.class));
+                overridePendingTransition(0, 0);
             }
 
             return true;
