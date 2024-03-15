@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/Quiztest"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/buttons1"
+        android:backgroundTint="#716F6F"
+        android:drawableLeft="@drawable/generate"
+        android:drawablePadding="10dp"
+        android:fontFamily="sans-serif-light"
+        android:gravity="center"
+        android:padding="20dp"
+        android:text="Сгенерированный Контрольный опрос"
+        android:textColor="@color/white"
+        android:textSize="20dp"
+        android:transitionName="quiz" />
+
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/Quiztest"
+        android:textSize="18sp"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
+
+    <Button
+        android:id="@+id/option1Button"
+        android:layout_width="wrap_content"
+        android:text="здесь будет один из ответов"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/questionTextView"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/option2Button"
+        android:layout_width="wrap_content"
+        android:text="здесь будет один из ответов"
+        android:layout_centerHorizontal="true"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option1Button"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/option3Button"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:text="здесь будет один из ответов"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option2Button"
+        android:layout_marginTop="16dp"/>
+
+    <Button
+        android:id="@+id/option4Button"
+        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:text="здесь будет один из ответов"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option3Button"
+        android:layout_marginTop="16dp"/>
+
+    <TextView
+        android:id="@+id/incorrectCounterTextView"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option4Button"
+        android:layout_marginTop="16dp"
+        android:text="Incorrect Answers: 0"/>
+
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:padding="10dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/incorrectCounterTextView"
+        android:layout_marginTop="16dp"
+        android:text="очки: 0"/>
+
+    <Button
+        android:id="@+id/nextButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/scoreTextView"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="16dp"
+        android:text="Далее" />
+
+</RelativeLayout>

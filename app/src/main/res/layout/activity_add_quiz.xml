@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="16dp">
+
+    <Button
+        android:id="@+id/switchToAddQuestion"
+        android:layout_centerHorizontal="true"
+        android:transitionName="addquiz"
+        android:fontFamily="sans-serif-medium"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Добавить вопрос с одним ответом" />
+
+    <EditText
+        android:id="@+id/questionEditText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/switchToAddQuestion"
+        android:layout_margin="15dp"
+        android:hint="Напишите Вопрос" />
+
+    <EditText
+        android:id="@+id/option1EditText"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/questionEditText"
+        android:hint="Ответ 1" />
+
+    <EditText
+        android:id="@+id/option2EditText"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option1EditText"
+        android:hint="Ответ 2" />
+
+    <EditText
+        android:id="@+id/option3EditText"
+        android:layout_width="match_parent"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option2EditText"
+        android:hint="Ответ 3" />
+
+    <EditText
+        android:id="@+id/option4EditText"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option3EditText"
+        android:hint="Ответ 4" />
+
+    <EditText
+        android:id="@+id/correctAnswerEditText"
+        android:layout_margin="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/option4EditText"
+        android:hint="Правельный Ответ" />
+
+    <Button
+        android:id="@+id/addButton"
+        android:layout_width="wrap_content"
+        android:layout_margin="15dp"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/correctAnswerEditText"
+        android:layout_centerHorizontal="true"
+        android:text="Добавить на рассмотрение" />
+
+</RelativeLayout>

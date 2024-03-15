@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/background"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@color/background">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -18,17 +18,6 @@
             android:orientation="vertical"
             android:gravity="center">
 
-            <TextView
-                android:id="@+id/textView"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="8dp"
-                android:fontFamily="casual"
-                android:text="ВЫБЕРИТЕ"
-                android:gravity="center"
-                android:background="#66A191E3"
-                android:textColor="@color/white"
-                android:textSize="30dp"/>
 
             <HorizontalScrollView
                 android:id="@+id/scrollView"
@@ -36,8 +25,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/textView">
+                app:layout_constraintStart_toStartOf="parent">
 
                 <LinearLayout
                     android:layout_width="wrap_content"
@@ -49,7 +37,7 @@
                         android:layout_width="250dp"
                         android:layout_height="160dp"
                         android:transitionName="mexanics"
-                        android:layout_marginLeft="10dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/mexanics_button"
                         android:contentDescription="Mechanics button"
                         app:layout_constraintStart_toEndOf="@id/thermodynamics"
@@ -66,11 +54,29 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
 
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <HorizontalScrollView
+                android:id="@+id/scrollView4"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+
                     <ImageButton
                         android:id="@+id/optics"
                         android:transitionName="optics"
                         android:layout_width="250dp"
                         android:layout_height="160dp"
+                        android:layout_marginLeft="20dp"
                         android:background="@drawable/optic"
                         android:contentDescription="Optics button"
                         app:layout_constraintStart_toEndOf="@id/mechanics"
@@ -81,12 +87,18 @@
                         android:layout_width="250dp"
                         android:transitionName="electricity"
                         android:layout_height="160dp"
+                        android:layout_marginRight="20dp"
                         android:background="@drawable/electricity"
                         android:contentDescription="Electricity button"
                         app:layout_constraintStart_toEndOf="@id/optics"
                         app:layout_constraintTop_toTopOf="parent" />
+
                 </LinearLayout>
             </HorizontalScrollView>
+
+            <Space
+                android:layout_width="match_parent"
+                android:layout_height="30dp" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/startTest"
@@ -94,13 +106,30 @@
                 android:layout_height="wrap_content"
                 android:gravity="center"
                 android:drawablePadding="10dp"
-                android:drawableRight="@drawable/testicon"
-                android:text="начальный тест"
+                android:drawableLeft="@drawable/testicon"
+                android:text="контрольный тест это тест где вы можете узнать уровень ваших знаниий"
                 android:textSize="20dp"
                 android:padding="20dp"
                 android:background="@drawable/buttons1"
-                android:backgroundTint="#FFBF00"
-                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="#716F6F"
+                android:fontFamily="sans-serif-light"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"/>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Quiztest"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:transitionName="quiz"
+                android:text="Сгенерированный Контрольный опрос"
+                android:textSize="20dp"
+                android:padding="20dp"
+                android:drawableLeft="@drawable/generate"
+                android:drawablePadding="10dp"
+                android:background="@drawable/buttons1"
+                android:backgroundTint="#716F6F"
+                android:fontFamily="sans-serif-light"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
 
@@ -109,64 +138,15 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:gravity="center"
-                android:text="посмотреть задания"
+                android:text="здаесь вы можете увидеть все задания которые добавили пользователи"
                 android:drawablePadding="10dp"
+                android:transitionName="showquestions"
                 android:textSize="20dp"
-                android:drawableRight="@drawable/questionicon"
+                android:drawableLeft="@drawable/questionicon"
                 android:padding="20dp"
                 android:background="@drawable/buttons1"
-                android:backgroundTint="#9C27B0"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/game1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="строение башни"
-                android:drawablePadding="10dp"
-                android:textSize="20dp"
-                android:transitionName="build_the_town"
-                android:drawableRight="@drawable/pizastower"
-                android:padding="20dp"
-                android:background="@drawable/buttons1"
-                android:backgroundTint="#886BFB"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/game2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="строение моста"
-                android:textSize="20dp"
-                android:transitionName="build_bridge_transition"
-                android:drawablePadding="10dp"
-                android:padding="20dp"
-                android:drawableRight="@drawable/bridgeicon"
-                android:background="@drawable/buttons1"
-                android:backgroundTint="#886BFB"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/finishingtest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="конечный тест"
-                android:textSize="20dp"
-                android:padding="20dp"
-                android:drawableRight="@drawable/testicon"
-                android:drawablePadding="10dp"
-                android:background="@drawable/buttons1"
-                android:backgroundTint="#FFBF00"
-                android:fontFamily="sans-serif-medium"
+                android:backgroundTint="#A762B3"
+                android:fontFamily="sans-serif-light"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
 
@@ -185,7 +165,6 @@
                 android:fontFamily="sans-serif-medium"
                 android:textColor="@color/white"
                 android:layout_margin="10dp"/>
-
 
         </LinearLayout>
     </ScrollView>

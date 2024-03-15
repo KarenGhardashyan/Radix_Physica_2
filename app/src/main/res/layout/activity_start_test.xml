@@ -1,151 +1,57 @@
 <?xml version="1.0" encoding="utf-8"?>
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:orientation="vertical">
 
-    <LinearLayout
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/startTest"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
-        android:padding="16dp">
+        android:gravity="center"
+        android:drawablePadding="10dp"
+        android:drawableLeft="@drawable/testicon"
+        android:text="контрольный тест это тест где вы можете узнать уровень ваших знаниий"
+        android:textSize="20dp"
+        android:padding="20dp"
+        android:background="@drawable/buttons1"
+        android:backgroundTint="#716F6F"
+        android:fontFamily="sans-serif-light"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"/>
 
-        <!-- Механика -->
+    <TextView
+        android:id="@+id/questionTextView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:layout_marginBottom="16dp"/>
 
-        <LinearLayout
-            android:id="@+id/mechanicsQuestionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+    <EditText
+        android:id="@+id/answerEditText"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="48dp"
+        android:hint="Введите ваш ответ"
+        android:inputType="text" />
 
-            <!-- Вопрос 1 -->
-            <TextView
-                android:id="@+id/mechanicsQuestionTextView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 1"/>
-            <EditText
-                android:id="@+id/mechanicsAnswerEditText1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
+    <Button
+        android:layout_margin="10dp"
+        android:id="@+id/submitButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Проверить ответ" />
 
-            <!-- Вопрос 2 -->
-            <TextView
-                android:id="@+id/mechanicsQuestionTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 2"/>
-            <EditText
-                android:id="@+id/mechanicsAnswerEditText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-        </LinearLayout>
+    <TextView
+        android:id="@+id/scoreTextView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="16sp"
+        android:layout_margin="10dp"
+        android:text="Очки: 0"
+        android:layout_marginTop="16dp"/>
 
-
-        <LinearLayout
-            android:id="@+id/thermodynamicsQuestionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Вопрос 1 -->
-            <TextView
-                android:id="@+id/thermodynamicsQuestionTextView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 1"/>
-            <EditText
-                android:id="@+id/thermodynamicsAnswerEditText1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-
-            <!-- Вопрос 2 -->
-            <TextView
-                android:id="@+id/thermodynamicsQuestionTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 2"/>
-            <EditText
-                android:id="@+id/thermodynamicsAnswerEditText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-        </LinearLayout>
-
-
-
-        <LinearLayout
-            android:id="@+id/electronicsQuestionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Вопрос 1 -->
-            <TextView
-                android:id="@+id/electronicsQuestionTextView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 1"/>
-            <EditText
-                android:id="@+id/electronicsAnswerEditText1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-
-            <!-- Вопрос 2 -->
-            <TextView
-                android:id="@+id/electronicsQuestionTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 2"/>
-            <EditText
-                android:id="@+id/electronicsAnswerEditText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-        </LinearLayout>
-
-
-        <LinearLayout
-            android:id="@+id/opticsQuestionsLayout"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <!-- Вопрос 1 -->
-            <TextView
-                android:id="@+id/opticsQuestionTextView1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 1"/>
-            <EditText
-                android:id="@+id/opticsAnswerEditText1"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-
-            <!-- Вопрос 2 -->
-            <TextView
-                android:id="@+id/opticsQuestionTextView2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="Question 2"/>
-            <EditText
-                android:id="@+id/opticsAnswerEditText2"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Enter your answer"/>
-        </LinearLayout>
-
-        <!-- Кнопка "Submit" -->
-        <Button
-            android:backgroundTint="#CFBBFE"
-            android:id="@+id/submit_Button"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Submit"/>
-
-    </LinearLayout>
-</ScrollView>
+</LinearLayout>

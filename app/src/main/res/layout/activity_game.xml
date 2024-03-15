@@ -14,18 +14,18 @@
             android:id="@+id/game1"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_margin="10dp"
-            android:background="@drawable/buttons1"
-            android:backgroundTint="#886BFB"
-            android:drawablePadding="10dp"
-            android:drawableRight="@drawable/pizastower"
-            android:fontFamily="sans-serif-medium"
             android:gravity="center"
-            android:padding="20dp"
-            android:text="строение башни"
-            android:textColor="@color/white"
+            android:text="здесь вы сможете создать башню с вашими параметрами"
+            android:drawablePadding="10dp"
             android:textSize="20dp"
-            android:transitionName="build_the_town" />
+            android:transitionName="build_the_town"
+            android:drawableLeft="@drawable/pizastower"
+            android:padding="20dp"
+            android:background="@drawable/buttons1"
+            android:backgroundTint="#CB9C89E6"
+            android:fontFamily="sans-serif-light"
+            android:textColor="@color/white"
+            android:layout_margin="10dp"/>
 
         <TextView
             android:id="@+id/textView7"

@@ -15,79 +15,91 @@
         android:theme="@style/Theme.Material3.Dark"
         tools:targetApi="31">
         <activity
-            android:name=".ElectricityActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".OpticsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".ThermodynamixActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".BuildBridgeActivity"
+            android:name=".AddQuizAndQuestion.ModerateQuizActivity"
             android:exported="false" />
         <activity
-            android:name=".ShowQuestionsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".AddQuestionActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".StartTestActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".Settings"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".MainActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".LoginActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
-            android:name=".GameActivity"
+            android:name=".AddQuizAndQuestion.AddModeratorActivity"
             android:exported="false" />
         <activity
-            android:name=".RegistrationActivity"
+            android:name=".Manu.ModeratorsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Games.LeaderboardActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Games.GenerateQuizActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuizAndQuestion.AddQuiz"
+            android:exported="false" />
+        <activity
+            android:name=".Topics.ElectricityActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".TopicsActivity"
+            android:name=".Topics.OpticsActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".Chooseing_theory_game_exercises"
+            android:name=".Topics.ThermodynamixActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".Exercise_example"
+            android:name=".Games.BuildBridgeActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuizAndQuestion.ShowQuestionsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".AddQuizAndQuestion.AddQuestionActivity"
+            android:exported="false" />
+        <activity
+            android:name=".Games.StartTestActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".Mexanics_classes"
+            android:name=".Manu.Settings"
+            android:exported="false" />
+        <activity
+            android:name=".RegAndLog.MainActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".Profile"
+            android:name=".RegAndLog.LoginActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".physics_lobby"
+            android:name=".Games.GameActivity"
+            android:exported="false" />
+        <activity
+            android:name=".RegAndLog.RegistrationActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".SplashScreenActivity"
+            android:name=".Topics.TopicsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Topics.Chooseing_theory_game_exercises"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Topics.Exercise_example"
+            android:exported="false" />
+        <activity
+            android:name=".Topics.Mexanics_classes"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.Profile"
+            android:exported="false" />
+        <activity
+            android:name=".Manu.physics_lobby"
+            android:exported="false" />
+        <activity
+            android:name=".RegAndLog.SplashScreenActivity"
             android:exported="true"
-            android:theme="@style/SplashScreenTheme">
+            android:theme="@style/Theme.Design.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
