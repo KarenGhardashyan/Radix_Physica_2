@@ -7,6 +7,7 @@
     <ImageView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
         android:id="@+id/modImage"
         android:layout_centerHorizontal="true"
         android:background="@drawable/moderator"/>
@@ -18,7 +19,7 @@
         android:layout_marginStart="16dp"
         android:layout_below="@id/buttonToModerQuestion"
         android:layout_marginTop="20dp"
-        android:text="Текст вопроса от пользователя" />
+        android:text="" />
 
 
 
@@ -33,7 +34,7 @@
             android:id="@+id/textViewAnswer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ответ1:"
+            android:text=""
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
@@ -41,7 +42,7 @@
             android:id="@+id/textViewAnswer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ответ2:"
+            android:text=""
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
@@ -49,7 +50,7 @@
             android:id="@+id/textViewAnswer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ответ3:"
+            android:text=""
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
@@ -57,7 +58,7 @@
             android:id="@+id/textViewAnswer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Ответ1:"
+            android:text=""
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
@@ -65,7 +66,7 @@
             android:id="@+id/textViewTrueAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Правельный ответ:"
+            android:text=""
             android:layout_marginTop="16dp"
             android:layout_marginStart="16dp"/>
 
@@ -135,6 +136,6 @@
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
         android:backgroundTint="#ECBD00"
-        android:text="Перейти в раздел с вопросами" />
+        android:text="перейти раздел с статьями" />
 
 </RelativeLayout>

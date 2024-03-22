@@ -12,27 +12,28 @@
         android:background="@color/background"
         android:padding="16dp">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/electricity"
+            android:textColor="@color/black"
             android:layout_width="250dp"
-            android:layout_gravity="center"
             android:transitionName="electricity"
-            android:layout_height="160dp"
-            android:background="@drawable/electricity"
-            android:contentDescription="Electricity button" />
-
-        <ImageView
-            android:layout_width="wrap_content"
+            android:layout_margin="5dp"
             android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:text="электричество"
+            android:padding="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/electrocircutwithlight"
-            android:contentDescription="image"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:drawableTop="@drawable/electrocircutwithlight"
+            android:drawablePadding="10dp"
+            android:fontFamily="sans-serif-black"
+            android:backgroundTint="#8F8CB8"
+            android:background="@drawable/buttons1"
+            android:contentDescription="opt... button" />
 
         <TextView
             android:id="@+id/electricity1"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Электричество - это явление, связанное с движением электрических зарядов. Оно играет важную роль в нашей повседневной жизни и используется в различных областях, таких как электроника, электротехника, электроэнергетика и т. д. В электричестве используются различные законы и принципы, позволяющие понять его поведение и применение."

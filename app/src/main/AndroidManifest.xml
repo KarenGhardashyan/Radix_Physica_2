@@ -15,23 +15,32 @@
         android:theme="@style/Theme.Material3.Dark"
         tools:targetApi="31">
         <activity
+            android:name=".Manu.UsersTopicsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
+        <activity
             android:name=".AddQuizAndQuestion.ModerateQuizActivity"
             android:exported="false" />
         <activity
             android:name=".AddQuizAndQuestion.AddModeratorActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".Manu.ModeratorsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".Games.LeaderboardActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".Games.GenerateQuizActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".AddQuizAndQuestion.AddQuiz"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".Topics.ElectricityActivity"
             android:exported="false"
@@ -49,17 +58,21 @@
             android:exported="false" />
         <activity
             android:name=".AddQuizAndQuestion.ShowQuestionsActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+
         <activity
-            android:name=".AddQuizAndQuestion.AddQuestionActivity"
-            android:exported="false" />
+            android:name=".AddQuizAndQuestion.AddTopicsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".Games.StartTestActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Manu.Settings"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar"/>
         <activity
             android:name=".RegAndLog.MainActivity"
             android:exported="false"
@@ -70,7 +83,8 @@
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Games.GameActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".RegAndLog.RegistrationActivity"
             android:exported="false"
@@ -85,17 +99,20 @@
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Topics.Exercise_example"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Topics.Mexanics_classes"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Manu.Profile"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".Manu.physics_lobby"
-            android:exported="false" />
+            android:name=".Manu.PysicsLobbyActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".RegAndLog.SplashScreenActivity"
             android:exported="true"

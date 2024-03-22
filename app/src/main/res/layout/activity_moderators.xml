@@ -19,7 +19,7 @@
         android:layout_marginStart="16dp"
         android:layout_below="@id/buttonToModerQuiz"
         android:layout_marginTop="20dp"
-        android:text="Текст вопроса от пользователя" />
+        android:text="" />
 
     <TextView
         android:id="@+id/textViewTopics"
@@ -28,7 +28,7 @@
         android:layout_marginStart="16dp"
         android:layout_below="@id/textViewQuestionContent"
         android:layout_marginTop="20dp"
-        android:text="Тема" />
+        android:text="" />
 
 
     <TextView
@@ -36,7 +36,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/textViewTopics"
-        android:text="Ответ:"
+        android:text=""
         android:layout_marginTop="16dp"
         android:layout_marginStart="16dp"/>
 
@@ -71,28 +71,20 @@
     </RelativeLayout>
 
 
-
     <Button
         android:id="@+id/addMod"
         android:layout_width="wrap_content"
-        android:visibility="invisible"
-        android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="16dp"
-        android:layout_margin="10dp"
-        android:layout_marginTop="16dp"
-        android:text="добавить другого модератора" />
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true"
-        android:background="@color/background"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
+        android:layout_centerHorizontal="true"
+        android:layout_margin="30dp"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="673dp"
+        android:text="добавить другого модератора"
+        android:visibility="invisible" />
+
 
     <Button
         android:layout_margin="10dp"

@@ -2,8 +2,10 @@ package com.example.radix_physica.AddQuizAndQuestion;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ListView;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -12,7 +14,7 @@ import androidx.fragment.app.Fragment;
 
 import com.example.radix_physica.Manu.Profile;
 import com.example.radix_physica.Manu.Settings;
-import com.example.radix_physica.Manu.physics_lobby;
+import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
@@ -36,10 +38,11 @@ public class ShowQuestionsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_show_questions);
 
-        databaseReference = FirebaseDatabase.getInstance().getReference("moderated_questions");
+        databaseReference = FirebaseDatabase.getInstance().getReference("moderatedQuiz");
 
         listViewQuestions = findViewById(R.id.listViewQuestions);
         questionList = new ArrayList<>();
+        TextView add = findViewById(R.id.ButtonText);
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, questionList);
         listViewQuestions.setAdapter(adapter);
@@ -53,7 +56,7 @@ public class ShowQuestionsActivity extends AppCompatActivity {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(getApplicationContext(), physics_lobby.class));
+                startActivity(new Intent(getApplicationContext(), PysicsLobbyActivity.class));
                 overridePendingTransition(0, 0);
             } else if (item.getItemId() == R.id.settings) {
                 startActivity(new Intent(getApplicationContext(), Settings.class));
@@ -72,12 +75,9 @@ public class ShowQuestionsActivity extends AppCompatActivity {
                 questionList.clear();
 
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
-                    String questionText = snapshot.child("question").getValue(String.class);
-                    String topic = snapshot.child("topic").getValue(String.class);
-                    String correctAnswer = snapshot.child("answer").getValue(String.class);
-
-                    if (questionText != null && topic != null && correctAnswer != null) {
-                        String fullQuestion = "Тема: " + topic + "\nВопрос: " + questionText + "\nПравильный ответ: " + correctAnswer;
+                    Quiz quiz = snapshot.getValue(Quiz.class);
+                    if (quiz != null) {
+                        String fullQuestion = "\nВопрос: " + quiz.getQuestion() + "\nПравильный ответ: " + quiz.getCorrectAnswer();
                         questionList.add(fullQuestion);
                     }
                 }
@@ -90,5 +90,14 @@ public class ShowQuestionsActivity extends AppCompatActivity {
                 Toast.makeText(ShowQuestionsActivity.this, "Ошибка: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });
+
+        add.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), AddQuiz.class);
+                startActivity(intent);
+            }
+        });
+
     }
 }

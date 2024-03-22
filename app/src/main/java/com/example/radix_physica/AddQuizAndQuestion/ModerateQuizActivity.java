@@ -14,7 +14,7 @@ import android.widget.Toast;
 import com.example.radix_physica.Manu.ModeratorsActivity;
 import com.example.radix_physica.Manu.Profile;
 import com.example.radix_physica.Manu.Settings;
-import com.example.radix_physica.Manu.physics_lobby;
+import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -51,31 +51,6 @@ public class ModerateQuizActivity extends AppCompatActivity {
 
         databaseReference = FirebaseDatabase.getInstance().getReference("AddQuiz");
         moderatedQuizRef = FirebaseDatabase.getInstance().getReference("moderatedQuiz");
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.moderator).setChecked(true);
-
-        getRandomQuestionFromDatabase();
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-
-            if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(getApplicationContext(), physics_lobby.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.settings) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), Profile.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.exercises) {
-                startActivity(new Intent(getApplicationContext(), AddQuestionActivity.class));
-                overridePendingTransition(0, 0);
-            }
-
-            return true;
-        });
 
         to.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -175,19 +150,22 @@ public class ModerateQuizActivity extends AppCompatActivity {
     }
 
     public void destroyActorFromNotModeratedQuestions() {
-        questionSnapshot.getRef().removeValue()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-                        //Toast.makeText(ModerateQuizActivity.this, "Вопрос удален из базы не пройденных модерацию:", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                        Toast.makeText(ModerateQuizActivity.this, "Ошибка при удалении вопроса: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+        if (questionSnapshot != null) {
+            questionSnapshot.getRef().removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(ModerateQuizActivity.this, "Ошибка при удалении вопроса: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(ModerateQuizActivity.this, "Ошибка: questionSnapshot является null", Toast.LENGTH_SHORT).show();
+        }
     }
+
 }

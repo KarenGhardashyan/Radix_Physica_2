@@ -1,5 +1,6 @@
 package com.example.radix_physica.Manu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -9,20 +10,29 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
-import com.example.radix_physica.AddQuizAndQuestion.AddQuestionActivity;
+import com.example.radix_physica.AddQuizAndQuestion.AddQuiz;
+import com.example.radix_physica.AddQuizAndQuestion.TopicModel;
 import com.example.radix_physica.R;
 import com.example.radix_physica.RegAndLog.LoginActivity;
+import com.google.android.gms.tasks.OnFailureListener;
+import com.google.android.gms.tasks.OnSuccessListener;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
 
     FirebaseAuth auth;
-    Button logOutButton;
+    ImageButton logOutButton;
     TextView textView, textViewProgress;
     ProgressBar progressBarQuiz;
     FirebaseUser user;
@@ -32,6 +42,9 @@ public class Profile extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_profile);
+
+        String userEmail = user.getEmail();
+        DatabaseReference moderatorsRef = FirebaseDatabase.getInstance().getReference().child("Moderators");
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
@@ -51,23 +64,20 @@ public class Profile extends AppCompatActivity {
 
         progressBarQuiz.setProgress(highScore );
 
+        bottomNavigationView.getMenu().findItem(R.id.profile).setCheckable(false);
         bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
             Fragment selectedFragment = null;
 
             if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(Profile.this, physics_lobby.class));
+                startActivity(new Intent(getApplicationContext(), PysicsLobbyActivity.class));
                 overridePendingTransition(0, 0);
             } else if (item.getItemId() == R.id.settings) {
-                startActivity(new Intent(Profile.this, Settings.class));
+                startActivity(new Intent(getApplicationContext(), Settings.class));
                 overridePendingTransition(0, 0);
-            }else if (item.getItemId() == R.id.exercises) {
-                startActivity(new Intent(Profile.this, AddQuestionActivity.class));
-                overridePendingTransition(0, 0);
-            }else if (item.getItemId() == R.id.moderator) {
-                startActivity(new Intent(Profile.this, ModeratorsActivity.class));
+            } else if (item.getItemId() == R.id.exercises) {
+                startActivity(new Intent(getApplicationContext(), AddQuiz.class));
                 overridePendingTransition(0, 0);
             }
-
             return true;
         });
 
@@ -77,7 +87,8 @@ public class Profile extends AppCompatActivity {
             startActivity(intent);
             finish();
         }else {
-            textView.setText(user.getEmail());
+            textView.setText(user.getDisplayName());
+
         }
         logOutButton.setOnClickListener(new View.OnClickListener() {
             @Override

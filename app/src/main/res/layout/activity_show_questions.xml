@@ -7,37 +7,31 @@
         android:id="@+id/questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:gravity="center"
-        android:text="здаесь вы можете увидеть все задания которые добавили пользователи"
-        android:drawablePadding="10dp"
-        android:textSize="20dp"
-        android:transitionName="showquestions"
-        android:drawableLeft="@drawable/questionicon"
-        android:padding="20dp"
+        android:layout_centerHorizontal="true"
+        android:layout_marginStart="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
         android:background="@drawable/buttons1"
-        android:backgroundTint="#A762B3"
-        android:fontFamily="sans-serif-light"
-        android:textColor="@color/white"
-        android:layout_margin="10dp"/>
-
-    <TextView
-        android:id="@+id/Header"
-        android:layout_below="@id/questions"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
+        android:backgroundTint="#F46262"
+        android:drawableTop="@drawable/brain"
+        android:drawablePadding="10dp"
+        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:text="Все Задания" />
+        android:padding="10dp"
+        android:text="все   задания"
+        android:textColor="@color/white"
+        android:textSize="18dp"
+        android:transitionName="showquestions" />
+
+
 
     <TextView
         android:id="@+id/ButtonText"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
-        android:layout_below="@id/Header"
+        android:layout_below="@id/questions"
         android:layout_marginEnd="16dp"
         android:layout_marginBottom="16dp"
         android:gravity="center"
@@ -49,7 +43,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="30dp"
-        android:divider="#1F1E23"
+        android:divider="#001F1E23"
         android:layout_above="@+id/bottom_navigation"/>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView

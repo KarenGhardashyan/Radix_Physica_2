@@ -5,168 +5,290 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    android:background="@color/background">
+    android:background="@drawable/gradient_background_main">
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_above="@+id/bottom_navigation">
 
-        <LinearLayout
+
+
+        <RelativeLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
-            android:gravity="center">
+            android:orientation="vertical">
+
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/img_9" />
+
+            <TextView
+                android:id="@+id/text_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Изучайте физику"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:layout_marginTop="16dp"
+                android:layout_marginStart="16dp"
+                android:background="#80000000"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingTop="4dp"
+                android:paddingBottom="4dp"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentStart="true" />
+
+            <TextView
+                android:id="@+id/text_overlay2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/text_overlay"
+                android:text="Прямо сейчас"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp"
+                android:layout_marginStart="16dp"
+                android:background="#80000000"
+                android:paddingStart="8dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp" />
+
+
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_below="@id/logo_image"
+                android:layout_height="wrap_content"
+                android:id="@+id/textHead"
+                android:layout_marginTop="10dp"
+                android:layout_centerHorizontal="true"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:fontFamily="sans-serif-light"
+                android:text="Выберите тему по физике"
+                />
 
 
             <HorizontalScrollView
-                android:id="@+id/scrollView"
+                android:id="@+id/horizon_topics"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
+                android:layout_below="@id/textHead"
+                android:layout_marginBottom="20dp"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent">
 
                 <LinearLayout
-                    android:layout_width="wrap_content"
+                    android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="horizontal">
 
-                    <ImageButton
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/mechanics"
                         android:layout_width="250dp"
-                        android:layout_height="160dp"
+                        android:layout_height="wrap_content"
                         android:transitionName="mexanics"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/mexanics_button"
-                        android:contentDescription="Mechanics button"
-                        app:layout_constraintStart_toEndOf="@id/thermodynamics"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_margin="5dp"
+                        android:drawableTop="@drawable/constructions"
+                        android:text="Механика"
+                        android:textColor="@color/black"
+                        android:padding="10dp"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:backgroundTint="#E1A94F"
+                        android:background="@drawable/buttons1"
+                        android:contentDescription="Mechanics button" />
 
-                    <ImageButton
+
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/thermodynamics"
                         android:layout_width="250dp"
                         android:transitionName="thermodynamics"
-                        android:layout_height="160dp"
-                        android:background="@drawable/thermodynamics"
-                        android:contentDescription="Termodynamics button"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:text="Термодинамика"
+                        android:padding="10dp"
+                        android:textColor="@color/black"
+                        android:drawableTop="@drawable/hot"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:backgroundTint="#C84E54"
+                        android:background="@drawable/buttons1"
+                        android:contentDescription="Thermod... button"/>
 
 
-                </LinearLayout>
-            </HorizontalScrollView>
-
-            <HorizontalScrollView
-                android:id="@+id/scrollView4"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="20dp"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent">
-
-                <LinearLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:orientation="horizontal">
-
-
-                    <ImageButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/optics"
                         android:transitionName="optics"
                         android:layout_width="250dp"
-                        android:layout_height="160dp"
-                        android:layout_marginLeft="20dp"
-                        android:background="@drawable/optic"
-                        android:contentDescription="Optics button"
-                        app:layout_constraintStart_toEndOf="@id/mechanics"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:layout_height="wrap_content"
+                        android:layout_margin="5dp"
+                        android:textColor="@color/black"
+                        android:text="Оптика"
+                        android:padding="10dp"
+                        android:drawableTop="@drawable/opticicon"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:backgroundTint="#669AAA"
+                        android:background="@drawable/buttons1"
+                        android:contentDescription="opt... button" />
 
-                    <ImageButton
+                    <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/electricity"
+                        android:textColor="@color/black"
                         android:layout_width="250dp"
                         android:transitionName="electricity"
-                        android:layout_height="160dp"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
                         android:layout_marginRight="20dp"
-                        android:background="@drawable/electricity"
-                        android:contentDescription="Electricity button"
-                        app:layout_constraintStart_toEndOf="@id/optics"
-                        app:layout_constraintTop_toTopOf="parent" />
+                        android:text="электричество"
+                        android:padding="10dp"
+                        android:drawableTop="@drawable/electrocircutwithlight"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:backgroundTint="#8F8CB8"
+                        android:background="@drawable/buttons1"
+                        android:contentDescription="opt... button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/other"
+                        android:textColor="@color/black"
+                        android:layout_width="250dp"
+                        android:transitionName="electricity"
+                        android:layout_margin="5dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginRight="20dp"
+                        android:text="Работы пользователей"
+                        android:padding="10dp"
+                        android:drawableTop="@drawable/userswork"
+                        android:drawablePadding="10dp"
+                        android:fontFamily="sans-serif-black"
+                        android:backgroundTint="#E16CBA"
+                        android:background="@drawable/buttons1"
+                        android:contentDescription="opt... button" />
 
                 </LinearLayout>
             </HorizontalScrollView>
 
-            <Space
-                android:layout_width="match_parent"
-                android:layout_height="30dp" />
-
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/startTest"
+            <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:gravity="center"
-                android:drawablePadding="10dp"
-                android:drawableLeft="@drawable/testicon"
-                android:text="контрольный тест это тест где вы можете узнать уровень ваших знаниий"
-                android:textSize="20dp"
-                android:padding="20dp"
-                android:background="@drawable/buttons1"
-                android:backgroundTint="#716F6F"
+                android:id="@+id/textHead2"
+                android:layout_centerHorizontal="true"
+                android:textSize="18dp"
+                android:padding="10dp"
+                android:layout_below="@id/horizon_topics"
                 android:fontFamily="sans-serif-light"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
+                android:text="другие функции"
+                />
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/Quiztest"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:transitionName="quiz"
-                android:text="Сгенерированный Контрольный опрос"
-                android:textSize="20dp"
-                android:padding="20dp"
-                android:drawableLeft="@drawable/generate"
-                android:drawablePadding="10dp"
+
+            <LinearLayout
+                android:id="@+id/buttons_left"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@id/textHead2"
+                android:layout_marginTop="10dp"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="#2F000000"
                 android:background="@drawable/buttons1"
-                android:backgroundTint="#716F6F"
-                android:fontFamily="sans-serif-light"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
+                android:layout_weight="1"
+                android:orientation="vertical"
+                android:gravity="left">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/questions"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="здаесь вы можете увидеть все задания которые добавили пользователи"
-                android:drawablePadding="10dp"
-                android:transitionName="showquestions"
-                android:textSize="20dp"
-                android:drawableLeft="@drawable/questionicon"
-                android:padding="20dp"
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/Quiztest"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:transitionName="quiz"
+                    android:text="пройти опрос"
+                    android:textSize="18dp"
+                    android:padding="10dp"
+                    android:drawableTop="@drawable/robot"
+                    android:drawablePadding="10dp"
+                    android:background="@drawable/buttons1"
+                    android:backgroundTint="#737A8D"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
+
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/questions"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:gravity="center"
+                    android:text="все   задания"
+                    android:drawablePadding="10dp"
+                    android:transitionName="showquestions"
+                    android:textSize="18dp"
+                    android:drawableTop="@drawable/brain"
+                    android:padding="10dp"
+                    android:background="@drawable/buttons1"
+                    android:backgroundTint="#F46262"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/buttons_right"
+                android:layout_width="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_height="match_parent"
+                android:layout_below="@id/textHead2"
+                android:layout_marginLeft="30dp"
+                android:backgroundTint="#2F000000"
                 android:background="@drawable/buttons1"
-                android:backgroundTint="#A762B3"
-                android:fontFamily="sans-serif-light"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
+                android:orientation="vertical"
+                android:gravity="right"
+                android:layout_alignParentRight="true">
 
-            <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/leaderboards"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="лидерборды"
-                android:textSize="20dp"
-                android:drawablePadding="30dp"
-                android:drawableRight="@drawable/leaderboardicon"
-                android:padding="20dp"
-                android:background="@drawable/buttons1"
-                android:backgroundTint="#FE5300"
-                android:fontFamily="sans-serif-medium"
-                android:textColor="@color/white"
-                android:layout_margin="10dp"/>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addTopic"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="добавить знания"
+                    android:transitionName="addropic"
+                    android:textSize="18dp"
+                    android:layout_gravity="right"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/addtopivn2"
+                    android:padding="10dp"
+                    android:background="@drawable/buttons1"
+                    android:backgroundTint="#DC5C6E"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
 
-        </LinearLayout>
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/leaderboards"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="лидерборды участников"
+                    android:textSize="18dp"
+                    android:transitionName="leaders"
+                    android:layout_gravity="right"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/lead"
+                    android:padding="10dp"
+                    android:background="@drawable/buttons1"
+                    android:backgroundTint="#EA9605"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
+
+            </LinearLayout>
+
+        </RelativeLayout>
     </ScrollView>
 
 

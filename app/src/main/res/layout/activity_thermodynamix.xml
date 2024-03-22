@@ -12,26 +12,26 @@
         android:background="@color/background"
         android:padding="16dp">
 
-        <ImageButton
-            android:id="@+id/thermodynamicsbutton"
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/thermodynamics"
             android:layout_width="250dp"
             android:transitionName="thermodynamics"
-            android:layout_height="160dp"
-            android:layout_gravity="center"
-            android:background="@drawable/thermodynamics"
-            android:contentDescription="Termodynamics button" />
-
-        <ImageView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Термодинамика"
             android:layout_gravity="center"
-            android:background="@drawable/rules"
-            android:contentDescription="image"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:padding="10dp"
+            android:textColor="@color/black"
+            android:drawableTop="@drawable/hot"
+            android:drawablePadding="10dp"
+            android:fontFamily="sans-serif-black"
+            android:backgroundTint="#C84E54"
+            android:background="@drawable/buttons1"
+            android:contentDescription="Thermod... button"/>
+
 
         <TextView
-            android:id="@+id/thermodynamics"
+            android:id="@+id/thermodynamics23"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:padding="10dp"

@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.example.radix_physica.AddQuizAndQuestion.Quiz;
 import com.example.radix_physica.R;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -24,9 +26,11 @@ public class GenerateQuizActivity extends AppCompatActivity {
     private Button option1Button, option2Button, option3Button, option4Button, nextButton;
     private DatabaseReference mDatabase;
     private ArrayList<Quiz> quizList;
-    private int currentQuestionIndex = -1;
+    private int currentQuestionIndex = 0;
     private int incorrectAnswers = 0;
     private int score = 0;
+    FirebaseUser user;
+    FirebaseAuth auth;
 
     private SharedPreferences sharedPreferences;
     private int highScore;
@@ -35,6 +39,9 @@ public class GenerateQuizActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_generate_quiz);
+
+        auth = FirebaseAuth.getInstance();
+        user = auth.getCurrentUser();
 
         questionTextView = findViewById(R.id.questionTextView);
         option1Button = findViewById(R.id.option1Button);
@@ -169,6 +176,18 @@ public class GenerateQuizActivity extends AppCompatActivity {
             SharedPreferences.Editor editor = sharedPreferences.edit();
             editor.putInt("HighScore", highScore);
             editor.apply();
+
+            String name = user.getDisplayName();
+            FirebaseUser currentUser = FirebaseAuth.getInstance().getCurrentUser();
+            if (currentUser != null) {
+                String userId = currentUser.getUid();
+
+                DatabaseReference userRef = FirebaseDatabase.getInstance().getReference().child("users").child(userId);
+                userRef.child("username").setValue(name);
+                userRef.child("highScore").setValue(highScore);
+            }
         }
+
+
     }
 }

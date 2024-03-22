@@ -12,7 +12,7 @@ import android.widget.Toast;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.radix_physica.Manu.physics_lobby;
+import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
@@ -44,7 +44,7 @@ public class LoginActivity extends AppCompatActivity {
         FirebaseUser user = mAuth.getCurrentUser();
 
         if (user != null && user.isEmailVerified()) {
-            startActivity(new Intent(LoginActivity.this, physics_lobby.class));
+            startActivity(new Intent(LoginActivity.this, PysicsLobbyActivity.class));
             finish();
             return;
         } else {
@@ -88,7 +88,7 @@ public class LoginActivity extends AppCompatActivity {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
                             if (user != null && user.isEmailVerified()) {
-                                startActivity(new Intent(LoginActivity.this, physics_lobby.class));
+                                startActivity(new Intent(LoginActivity.this, PysicsLobbyActivity.class));
                                 finish();
                             } else {
                                 Toast.makeText(LoginActivity.this, "Пожайлуста проверьте ел. почту", Toast.LENGTH_SHORT).show();

@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
 import com.example.radix_physica.AddQuizAndQuestion.AddModeratorActivity;
-import com.example.radix_physica.AddQuizAndQuestion.AddQuestionActivity;
+import com.example.radix_physica.AddQuizAndQuestion.AddTopicsActivity;
 import com.example.radix_physica.AddQuizAndQuestion.ModerateQuizActivity;
-import com.example.radix_physica.AddQuizAndQuestion.QuestionModel;
+import com.example.radix_physica.AddQuizAndQuestion.TopicModel;
 import com.example.radix_physica.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
@@ -31,10 +31,9 @@ import java.util.Random;
 
 public class ModeratorsActivity extends AppCompatActivity {
 
-    Button addModerator, approve, reject, to;
-    TextView  questionTextView, answerTextView, topicTextView;
+    private Button addModerator, approve, reject, to;
+    private TextView questionTextView, answerTextView, topicTextView;
     private DatabaseReference databaseReference;
-
     private DataSnapshot questionSnapshot;
 
     @Override
@@ -42,9 +41,8 @@ public class ModeratorsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moderators);
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.moderator).setChecked(true);
-        databaseReference = FirebaseDatabase.getInstance().getReference("questions");
+
+        databaseReference = FirebaseDatabase.getInstance().getReference("topics");
 
         to = findViewById(R.id.buttonToModerQuiz);
         questionTextView = findViewById(R.id.textViewQuestionContent);
@@ -58,29 +56,12 @@ public class ModeratorsActivity extends AppCompatActivity {
         FirebaseUser user = auth.getCurrentUser();
         String userEmail = user.getEmail();
         DatabaseReference moderatorsRef = FirebaseDatabase.getInstance().getReference().child("Moderators");
-        DatabaseReference moderatedQuestionsRef = FirebaseDatabase.getInstance().getReference().child("moderated_questions");
+        DatabaseReference moderatedQuestionsRef = FirebaseDatabase.getInstance().getReference().child("moderated_topics");
 
-        getRandomQuestionFromDatabase();
+        getRandomTopicFromDatabase();
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-
-            if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(getApplicationContext(), physics_lobby.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.settings) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), Profile.class));
-                overridePendingTransition(0, 0);
-            }else if (item.getItemId() == R.id.exercises) {
-                startActivity(new Intent(getApplicationContext(), AddQuestionActivity.class));
-                overridePendingTransition(0, 0);
-            }
-
-            return true;
-        });
+        approve.setVisibility(View.INVISIBLE);
+        reject.setVisibility(View.INVISIBLE);
 
         to.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -109,6 +90,14 @@ public class ModeratorsActivity extends AppCompatActivity {
                     approve.setVisibility(View.VISIBLE);
                     reject.setVisibility(View.VISIBLE);
 
+                    reject.setOnClickListener(new View.OnClickListener() {
+                        @Override
+                        public void onClick(View v) {
+                            recreate();
+                            destroyArticleFromUnmoderated();
+                        }
+                    });
+
                     approve.setOnClickListener(new View.OnClickListener() {
                         @Override
                         public void onClick(View v) {
@@ -118,33 +107,24 @@ public class ModeratorsActivity extends AppCompatActivity {
                             String answer = answerTextView.getText().toString();
                             String topic = topicTextView.getText().toString();
 
-                            QuestionModel moderatedQuestion = new QuestionModel(question, answer, topic);
-                            moderatedQuestion.setModerated(true);
+                            TopicModel moderatedQuestion = new TopicModel(question, answer, topic);
 
                             newModeratedQuestionRef.setValue(moderatedQuestion)
                                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                                         @Override
                                         public void onSuccess(Void aVoid) {
 
-                                            Toast.makeText(ModeratorsActivity.this, "Вопрос одобрен и добавлен в базу", Toast.LENGTH_SHORT).show();
-
-                                            destrocActorFromNotModeratedQuestions();
+                                            Toast.makeText(ModeratorsActivity.this, "Статья одобрена и добавлена в базу", Toast.LENGTH_SHORT).show();
+                                            recreate();
+                                            destroyArticleFromUnmoderated();
                                         }
                                     })
                                     .addOnFailureListener(new OnFailureListener() {
                                         @Override
                                         public void onFailure(@NonNull Exception e) {
-
                                             Toast.makeText(ModeratorsActivity.this, "Ошибка: " + e.getMessage(), Toast.LENGTH_SHORT).show();
                                         }
                                     });
-
-                            reject.setOnClickListener(new View.OnClickListener() {
-                                @Override
-                                public void onClick(View v) {
-                                    destrocActorFromNotModeratedQuestions();
-                                }
-                            });
                         }
                     });
                 } else {
@@ -165,17 +145,17 @@ public class ModeratorsActivity extends AppCompatActivity {
         });
     }
 
-    private void getRandomQuestionFromDatabase() {
-        DatabaseReference questionsRef = FirebaseDatabase.getInstance().getReference().child("questions");
+    private void getRandomTopicFromDatabase() {
+        DatabaseReference questionsRef = FirebaseDatabase.getInstance().getReference().child("topics");
 
         questionsRef.addListenerForSingleValueEvent(new ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot dataSnapshot) {
                 if (dataSnapshot.exists()) {
-                    long numberOfQuestions = dataSnapshot.getChildrenCount();
+                    long numberOfTopics = dataSnapshot.getChildrenCount();
 
                     Random random = new Random();
-                    long randomIndex = random.nextLong() % numberOfQuestions;
+                    long randomIndex = random.nextLong() % numberOfTopics;
 
                     int currentIndex = 0;
                     for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
@@ -183,10 +163,10 @@ public class ModeratorsActivity extends AppCompatActivity {
                         if (currentIndex == randomIndex) {
 
                             questionSnapshot = snapshot;
-                            QuestionModel randomQuestion = snapshot.getValue(QuestionModel.class);
-                            String questionContent = randomQuestion.getQuestion();
-                            String answer = randomQuestion.getAnswer();
-                            String topic = randomQuestion.getTopic();
+                            TopicModel randomTopic = snapshot.getValue(TopicModel.class);
+                            String questionContent = randomTopic.getTopicContent();
+                            String answer = randomTopic.getWebLinks();
+                            String topic = randomTopic.getTopicHead();
 
                             questionTextView.setText(questionContent);
                             answerTextView.setText(answer);
@@ -197,7 +177,7 @@ public class ModeratorsActivity extends AppCompatActivity {
                         currentIndex++;
                     }
                 } else {
-                    Toast.makeText(getApplicationContext(), "Список вопросов пуст", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(getApplicationContext(), "Список статей пуст", Toast.LENGTH_SHORT).show();
                 }
             }
 
@@ -208,22 +188,24 @@ public class ModeratorsActivity extends AppCompatActivity {
         });
     }
 
-    public void destrocActorFromNotModeratedQuestions(){
-        questionSnapshot.getRef().removeValue()
-                .addOnSuccessListener(new OnSuccessListener<Void>() {
-                    @Override
-                    public void onSuccess(Void aVoid) {
-
-                        Toast.makeText(ModeratorsActivity.this, "Вопрос удален из базы данных", Toast.LENGTH_SHORT).show();
-                    }
-                })
-                .addOnFailureListener(new OnFailureListener() {
-                    @Override
-                    public void onFailure(@NonNull Exception e) {
-
-                        Toast.makeText(ModeratorsActivity.this, "Ошибка при удалении вопроса: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                    }
-                });
+    public void destroyArticleFromUnmoderated() {
+        if (questionSnapshot != null) {
+            questionSnapshot.getRef().removeValue()
+                    .addOnSuccessListener(new OnSuccessListener<Void>() {
+                        @Override
+                        public void onSuccess(Void aVoid) {
+                            Toast.makeText(ModeratorsActivity.this, "Статья удалена из базы данных", Toast.LENGTH_SHORT).show();
+                        }
+                    })
+                    .addOnFailureListener(new OnFailureListener() {
+                        @Override
+                        public void onFailure(@NonNull Exception e) {
+                            Toast.makeText(ModeratorsActivity.this, "Ошибка при удалении статьи: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                        }
+                    });
+        } else {
+            Toast.makeText(ModeratorsActivity.this, "Ошибка: questionSnapshot является null", Toast.LENGTH_SHORT).show();
+        }
     }
 
 }

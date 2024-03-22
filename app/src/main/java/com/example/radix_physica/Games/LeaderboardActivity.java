@@ -1,27 +1,65 @@
 package com.example.radix_physica.Games;
 
-import android.content.Context;
-import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.widget.TextView;
+import android.widget.Toast;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.radix_physica.R;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
 
 public class LeaderboardActivity extends AppCompatActivity {
-    private TextView highScoreTextView;
+    private RecyclerView recyclerView;
+    private LeaderboardAdapter adapter;
+    private ArrayList<LeaderboardUser> userList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_leaderboard);
 
-        highScoreTextView = findViewById(R.id.highScoreTextView);
+        recyclerView = findViewById(R.id.recyclerView);
+        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        userList = new ArrayList<>();
+        adapter = new LeaderboardAdapter(userList);
+        recyclerView.setAdapter(adapter);
 
-        SharedPreferences sharedPreferences = getSharedPreferences("QuizPrefs", Context.MODE_PRIVATE);
-        int highScore = sharedPreferences.getInt("HighScore", 0);
+        DatabaseReference leaderboardRef = FirebaseDatabase.getInstance().getReference().child("users");
+        leaderboardRef.orderByChild("highScore").addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                userList.clear();
+                for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                    String username = snapshot.child("username").getValue(String.class);
+                    int score = snapshot.child("highScore").getValue(Integer.class);
+                    LeaderboardUser user = new LeaderboardUser(username , score);
+                    userList.add(user);
+                }
+                Collections.sort(userList, new Comparator<LeaderboardUser>() {
+                    @Override
+                    public int compare(LeaderboardUser user1, LeaderboardUser user2) {
+                        return user2.getScore() - user1.getScore();
+                    }
+                });
+                adapter.notifyDataSetChanged();
+            }
 
-        highScoreTextView.setText("High Score: " + highScore);
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+                Toast.makeText(LeaderboardActivity.this, "Ошибка !", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 }

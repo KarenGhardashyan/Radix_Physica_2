@@ -10,14 +10,15 @@
         android:visible="true" />
 
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/baseline_emoji_people_24"
-        android:title="Profile"
-        android:visible="true"/>
-    <item
         android:id="@+id/exercises"
         android:icon="@drawable/baseline_add_circle_outline_24"
         android:title="Exercises"
+        android:visible="true"/>
+
+    <item
+        android:id="@+id/profile"
+        android:icon="@drawable/baseline_emoji_people_24"
+        android:title="Profile"
         android:visible="true"/>
 
     <item
@@ -27,11 +28,5 @@
         android:title="Settings"
         android:visible="true" />
 
-    <item
-        android:id="@+id/moderator"
-        android:enabled="true"
-        android:icon="@drawable/baseline_rule_24"
-        android:title="Moderation"
-        android:visible="true" />
 </menu>
 

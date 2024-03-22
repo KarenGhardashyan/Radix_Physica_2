@@ -18,6 +18,7 @@ import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegistrationActivity extends AppCompatActivity {
 
@@ -57,8 +58,14 @@ public class RegistrationActivity extends AppCompatActivity {
     }
 
     private void registerUser() {
-        String email = editTextEmail.getText().toString().trim();
+        final String name = editTextName.getText().toString().trim();
+        final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+
+        if (TextUtils.isEmpty(name)) {
+            editTextName.setError("Введите имя пользователя");
+            return;
+        }
 
         if (TextUtils.isEmpty(email)) {
             editTextEmail.setError("Введите имейл");
@@ -76,7 +83,21 @@ public class RegistrationActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            sendVerificationEmail(user);
+                            if (user != null) {
+                                UserProfileChangeRequest profileUpdates = new UserProfileChangeRequest.Builder()
+                                        .setDisplayName(name)
+                                        .build();
+
+                                user.updateProfile(profileUpdates)
+                                        .addOnCompleteListener(new OnCompleteListener<Void>() {
+                                            @Override
+                                            public void onComplete(@NonNull Task<Void> task) {
+                                                if (task.isSuccessful()) {
+                                                    sendVerificationEmail(user);
+                                                }
+                                            }
+                                        });
+                            }
                         } else {
                             Toast.makeText(RegistrationActivity.this, "Ошибка Входа", Toast.LENGTH_SHORT).show();
                         }

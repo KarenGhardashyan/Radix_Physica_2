@@ -10,13 +10,13 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:background="@color/background">
+        android:layout_height="wrap_content">
 
         <Button
             android:id="@+id/switchToAddQuiz"
             android:layout_centerHorizontal="true"
             android:transitionName="addquiz"
+            android:layout_marginTop="10dp"
             android:fontFamily="sans-serif-medium"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -34,8 +34,8 @@
             android:gravity="center"
             android:text="KAREN KRAKIN GMAIL.com" />
 
-        <EditText
-            android:id="@+id/editTextQuestion"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTopicHead"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
@@ -43,91 +43,48 @@
             android:layout_below="@id/Header"
             android:layout_marginEnd="16dp"
             android:layout_marginBottom="16dp"
-            android:hint="Введите задание"
+            android:hint="Назване статьи"
             android:inputType="textMultiLine"
             android:minLines="3" />
 
 
-        <EditText
-            android:id="@+id/editTextAnswer"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextTopic"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editTextQuestion"
+            android:layout_below="@id/editTextTopicHead"
             android:layout_margin="16dp"
             android:layout_marginTop="77dp"
             android:layout_marginBottom="16dp"
-            android:hint="Введите ответ"
+            android:hint="Соодержимое статьи"
             android:inputType="textMultiLine"
             android:minLines="3" />
 
-        <RadioGroup
-            android:id="@+id/radioGroupTopic"
+        <com.google.android.material.textfield.TextInputEditText
+            android:id="@+id/editTextWebCode"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@id/editTextAnswer"
+            android:layout_below="@id/editTextTopic"
             android:layout_margin="16dp"
-            android:orientation="vertical">
-
-            <RadioButton
-                android:id="@+id/radioButtonMexanics"
-                android:layout_width="wrap_content"
-                android:layout_below="@+id/editTextAnswer"
-                android:layout_centerHorizontal="true"
-                android:layout_gravity="center"
-                android:layout_height="wrap_content"
-                android:drawableRight="@drawable/mexanicsicon"
-                android:drawablePadding="58dp"
-                android:text="Механика" />
-
-            <RadioButton
-                android:id="@+id/radioButtonOptics"
-                android:layout_gravity="center"
-                android:layout_width="wrap_content"
-                android:drawableRight="@drawable/opticicon"
-                android:layout_height="wrap_content"
-                android:drawablePadding="10dp"
-                android:layout_below="@+id/radioButtonThermodynamics"
-                android:layout_centerHorizontal="true"
-                android:text="Геометр. Оптика" />
-
-            <RadioButton
-                android:id="@+id/radioButtonThermodynamics"
-                android:layout_width="wrap_content"
-                android:drawableRight="@drawable/thermodynamicsicon"
-                android:layout_below="@+id/radioButtonElectricity"
-                android:drawablePadding="10dp"
-                android:layout_gravity="center"
-                android:layout_centerHorizontal="true"
-                android:layout_height="wrap_content"
-                android:text="Термодинамика" />
-
-            <RadioButton
-                android:id="@+id/radioButtonElectricity"
-                android:layout_width="wrap_content"
-                android:drawableRight="@drawable/electrocity"
-                android:layout_height="wrap_content"
-                android:drawablePadding="20dp"
-                android:layout_below="@+id/radioButtonMexanics"
-                android:layout_gravity="center"
-                android:text="Электричество" />
-
-
-
-        </RadioGroup>
+            android:layout_marginTop="77dp"
+            android:layout_marginBottom="16dp"
+            android:hint="Ссылки связаные с вашей статьей"
+            android:inputType="textMultiLine"
+            android:minLines="3" />
 
 
 
         <Button
-            android:id="@+id/buttonAddQuestion"
+            android:id="@+id/buttonAddTopics"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/radioGroupTopic"
+            android:layout_below="@id/editTextWebCode"
             android:backgroundTint="#CFBBFE"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/baseline_add_circle_outline_24"
             android:drawableRight="@drawable/baseline_add_circle_outline_24"
-            android:text="Добавить задание" />
+            android:text="Добавить статью на рассмотрение" />
 
 
         <Button
@@ -135,7 +92,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:backgroundTint="#CFBBFE"
-            android:layout_below="@id/buttonAddQuestion"
+            android:layout_below="@id/buttonAddTopics"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="16dp"
             android:drawableLeft="@drawable/baseline_architecture_24"

@@ -12,28 +12,28 @@
         android:background="@color/background"
         android:padding="16dp">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/optics"
             android:transitionName="optics"
             android:layout_width="250dp"
-            android:layout_gravity="center"
-            android:layout_height="160dp"
-            android:background="@drawable/optic"
-            android:contentDescription="Optics button" />
-
-        <ImageView
-            android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:textColor="@color/black"
+            android:text="Оптика"
+            android:padding="10dp"
             android:layout_gravity="center"
-            android:background="@drawable/look"
-            android:contentDescription="image"
-            android:layout_marginTop="10dp"
-            android:layout_marginBottom="20dp"/>
+            android:drawableTop="@drawable/opticicon"
+            android:drawablePadding="10dp"
+            android:fontFamily="sans-serif-black"
+            android:backgroundTint="#669AAA"
+            android:background="@drawable/buttons1"
+            android:contentDescription="opt... button" />
 
 
         <TextView
             android:id="@+id/optics1"
             android:layout_width="match_parent"
+            android:layout_marginTop="10dp"
             android:layout_height="wrap_content"
             android:padding="10dp"
             android:text="Оптика - это раздел физики, изучающий свет и его взаимодействие с материей. Она описывает явления, такие как отражение, преломление, дифракция и интерференция, а также свойства света, такие как его скорость, длина волны и частота. В оптике также изучаются оптические приборы, такие как линзы, зеркала и призмы, и их применение в различных областях, включая фотографию, микроскопию и телекоммуникации."
