@@ -1,5 +1,6 @@
 package com.example.radix_physica.Manu;
 
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
 
@@ -14,11 +15,18 @@ import android.widget.ProgressBar;
 import android.widget.TextView;
 
 import com.example.radix_physica.AddQuizAndQuestion.AddQuizActivity;
+import com.example.radix_physica.AddQuizAndQuestion.ModerateQuizActivity;
+import com.example.radix_physica.AddQuizAndQuestion.Moderator;
 import com.example.radix_physica.R;
 import com.example.radix_physica.RegAndLog.LoginActivity;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
+import com.google.firebase.database.DatabaseReference;
+import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
 
 public class Profile extends AppCompatActivity {
 
@@ -41,11 +49,14 @@ public class Profile extends AppCompatActivity {
         progressBarQuiz = findViewById(R.id.progressBarQuiz);
         textViewProgress = findViewById(R.id.textView3);
         Button settingsPage = findViewById(R.id.settings);
+        Button moderatorsPage = findViewById(R.id.moderatorsPage);
+
+
 
         settingsPage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
+                startActivity(new Intent(getApplicationContext(), UserSettingsActivity.class));
             }
         });
 
@@ -56,7 +67,37 @@ public class Profile extends AppCompatActivity {
             return;
         }
 
-        // If user is not null, continue with setting up UI and listeners
+        DatabaseReference databaseReference = FirebaseDatabase.getInstance().getReference().child("Moderators");
+
+        databaseReference.addListenerForSingleValueEvent(new ValueEventListener() {
+            @Override
+            public void onDataChange(@NonNull DataSnapshot dataSnapshot) {
+                if (dataSnapshot.exists()) {
+                    for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
+                        Moderator moderator = snapshot.getValue(Moderator.class);
+                        if (moderator != null && moderator.getEmail().equals(user.getEmail())) {
+
+                            moderatorsPage.setVisibility(View.VISIBLE);
+                            moderatorsPage.setEnabled(true);
+
+                            moderatorsPage.setOnClickListener(new View.OnClickListener() {
+                                @Override
+                                public void onClick(View v) {
+                                    startActivity(new Intent(getApplicationContext(), ModerateQuizActivity.class));
+                                }
+                            });
+                            return;
+                        }
+                    }
+                }
+            }
+
+            @Override
+            public void onCancelled(@NonNull DatabaseError databaseError) {
+
+            }
+        });
+
         textView.setText(user.getDisplayName());
 
         SharedPreferences sharedPreferences = getSharedPreferences("QuizPrefs", Context.MODE_PRIVATE);

@@ -10,13 +10,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import com.example.radix_physica.Manu.ModeratorsActivity;
-import com.example.radix_physica.Manu.Profile;
-import com.example.radix_physica.Manu.Settings;
-import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
-import com.example.radix_physica.RegAndLog.LoginActivity;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;

@@ -1,107 +1,122 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="@drawable/gradient_background_main">
 
-    <ImageView
-        android:id="@+id/logo_image"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="210dp"
-        android:layout_centerHorizontal="true"
-        android:scaleType="centerCrop"
-        app:srcCompat="@drawable/writing23" />
-
-    <TextView
-        android:id="@+id/text_overlay"
-        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Добавить вопрос"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:layout_marginTop="16dp"
-        android:layout_marginStart="16dp"
-        android:background="#80000000"
-        android:paddingStart="8dp"
-        android:paddingEnd="8dp"
-        android:paddingTop="4dp"
-        android:paddingBottom="4dp"
+        android:layout_above="@id/bottom_navigation"
         android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:id="@+id/logo_image"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:layout_centerHorizontal="true"
+                android:scaleType="centerCrop"
+                app:srcCompat="@drawable/writing23" />
+
+            <TextView
+                android:id="@+id/text_overlay"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:background="#80000000"
+                android:paddingStart="8dp"
+                android:paddingTop="4dp"
+                android:paddingEnd="8dp"
+                android:paddingBottom="4dp"
+                android:text="Добавить вопрос"
+                android:textColor="#FFFFFF"
+                android:textSize="24sp" />
 
 
-    <EditText
-        android:id="@+id/questionEditText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:layout_below="@id/logo_image"
-        android:hint="Напишите Вопрос" />
+            <EditText
+                android:id="@+id/questionEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/logo_image"
+                android:layout_margin="15dp"
+                android:hint="Напишите Вопрос" />
 
-    <EditText
-        android:id="@+id/option1EditText"
-        android:layout_width="match_parent"
-        android:layout_margin="15dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/questionEditText"
-        android:hint="Ответ 1" />
+            <EditText
+                android:id="@+id/option1EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/questionEditText"
+                android:layout_margin="15dp"
+                android:hint="Ответ 1" />
 
-    <EditText
-        android:id="@+id/option2EditText"
-        android:layout_margin="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/option1EditText"
-        android:hint="Ответ 2" />
+            <EditText
+                android:id="@+id/option2EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option1EditText"
+                android:layout_margin="15dp"
+                android:hint="Ответ 2" />
 
-    <EditText
-        android:id="@+id/option3EditText"
-        android:layout_width="match_parent"
-        android:layout_margin="15dp"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/option2EditText"
-        android:hint="Ответ 3" />
+            <EditText
+                android:id="@+id/option3EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option2EditText"
+                android:layout_margin="15dp"
+                android:hint="Ответ 3" />
 
-    <EditText
-        android:id="@+id/option4EditText"
-        android:layout_margin="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/option3EditText"
-        android:hint="Ответ 4" />
+            <EditText
+                android:id="@+id/option4EditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option3EditText"
+                android:layout_margin="15dp"
+                android:hint="Ответ 4" />
 
-    <EditText
-        android:id="@+id/correctAnswerEditText"
-        android:layout_margin="15dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/option4EditText"
-        android:hint="Правильный Ответ" />
+            <EditText
+                android:id="@+id/correctAnswerEditText"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/option4EditText"
+                android:layout_margin="15dp"
+                android:hint="Правильный Ответ" />
 
-    <Button
-        android:id="@+id/addButton"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_below="@id/correctAnswerEditText"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:background="@drawable/button_background_gradient"
-        android:layout_marginBottom="15dp"
-        android:text="Добавить на рассмотрение" />
 
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/correctAnswerEditText"
+                android:layout_centerHorizontal="true"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="15dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="15dp"
+                android:background="@drawable/button_background_gradient"
+                android:text="Добавить на рассмотрение" />
+
+        </RelativeLayout>
+    </ScrollView>
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
+        android:layout_margin="10dp"
         android:background="@drawable/bottom_naviagion_bar_background"
-        app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
+        app:itemTextColor="@color/white"
         app:menu="@menu/bottom_nav_menu" />
 
 </RelativeLayout>

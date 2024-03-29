@@ -1,23 +1,16 @@
 package com.example.radix_physica.AddQuizAndQuestion;
 
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.ImageButton;
 import android.widget.ListView;
-import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
-import com.example.radix_physica.Manu.Profile;
-import com.example.radix_physica.Manu.Settings;
-import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;

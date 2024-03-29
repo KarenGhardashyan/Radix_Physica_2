@@ -54,4 +54,5 @@ dependencies {
     implementation("com.sendgrid:sendgrid-java:4.8.2")
     implementation("com.sun.mail:android-mail:1.6.7")
     implementation("com.sun.mail:android-activation:1.6.7")
+    implementation ("com.squareup.picasso:picasso:2.71828")
 }

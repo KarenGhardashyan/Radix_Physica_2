@@ -2,24 +2,22 @@ package com.example.radix_physica.AddQuizAndQuestion;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.ImageButton;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import com.example.radix_physica.Manu.ModeratorsActivity;
-import com.example.radix_physica.Manu.Profile;
-import com.example.radix_physica.Manu.Settings;
-import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
 import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
@@ -31,6 +29,7 @@ import java.util.Random;
 public class ModerateQuizActivity extends AppCompatActivity {
 
     private Button to, approve, reject;
+    ImageView quizImage;
     private TextView textViewQuestion, textViewAnswer1, textViewAnswer2, textViewAnswer3, textViewAnswer4, textViewtrueAnswer;
     private DatabaseReference databaseReference, moderatedQuizRef;
     private DataSnapshot questionSnapshot;
@@ -49,11 +48,29 @@ public class ModerateQuizActivity extends AppCompatActivity {
         textViewAnswer3 = findViewById(R.id.textViewAnswer3);
         textViewAnswer4 = findViewById(R.id.textViewAnswer4);
         textViewtrueAnswer = findViewById(R.id.textViewTrueAnswer);
+        Button addModerator = findViewById(R.id.addMod);
+
 
         databaseReference = FirebaseDatabase.getInstance().getReference("AddQuiz");
         moderatedQuizRef = FirebaseDatabase.getInstance().getReference("moderatedQuiz");
 
+        FirebaseAuth auth = FirebaseAuth.getInstance();
+        FirebaseUser user = auth.getCurrentUser();
+        String userEmail = user.getEmail();
+
         ImageButton back = findViewById(R.id.backButton);
+
+
+        if (user.getEmail().equalsIgnoreCase("karenkrakin@gmail.com")) {
+            addModerator.setVisibility(View.VISIBLE);
+            addModerator.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View v) {
+                    Intent intent = new Intent(getApplicationContext(), AddModeratorActivity.class);
+                    startActivity(intent);
+                }
+            });
+        }
 
         back.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -79,6 +96,7 @@ public class ModerateQuizActivity extends AppCompatActivity {
                 String answer3 = textViewAnswer3.getText().toString();
                 String answer4 = textViewAnswer4.getText().toString();
                 String trueAnswer = textViewtrueAnswer.getText().toString();
+
 
                 Quiz moderatedQuiz = new Quiz(question, answer1, answer2, answer3, answer4, trueAnswer);
 
