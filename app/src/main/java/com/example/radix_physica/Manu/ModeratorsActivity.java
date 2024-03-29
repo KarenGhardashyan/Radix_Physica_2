@@ -1,9 +1,11 @@
 package com.example.radix_physica.Manu;
 
 import android.content.Intent;
+import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -62,6 +64,14 @@ public class ModeratorsActivity extends AppCompatActivity {
 
         approve.setVisibility(View.INVISIBLE);
         reject.setVisibility(View.INVISIBLE);
+
+        ImageButton back = findViewById(R.id.backButton);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         to.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -207,5 +217,4 @@ public class ModeratorsActivity extends AppCompatActivity {
             Toast.makeText(ModeratorsActivity.this, "Ошибка: questionSnapshot является null", Toast.LENGTH_SHORT).show();
         }
     }
-
 }

@@ -98,12 +98,11 @@
                         android:layout_margin="5dp"
                         android:drawableTop="@drawable/constructions"
                         android:text="Механика"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textcolor"
                         android:padding="10dp"
                         android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:backgroundTint="#E1A94F"
-                        android:background="@drawable/buttons1"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
                         android:contentDescription="Mechanics button" />
 
 
@@ -115,12 +114,11 @@
                         android:layout_margin="5dp"
                         android:text="Термодинамика"
                         android:padding="10dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textcolor"
                         android:drawableTop="@drawable/hot"
                         android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:backgroundTint="#C84E54"
-                        android:background="@drawable/buttons1"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
                         android:contentDescription="Thermod... button"/>
 
 
@@ -130,19 +128,18 @@
                         android:layout_width="250dp"
                         android:layout_height="wrap_content"
                         android:layout_margin="5dp"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textcolor"
                         android:text="Оптика"
                         android:padding="10dp"
                         android:drawableTop="@drawable/opticicon"
                         android:drawablePadding="10dp"
                         android:fontFamily="sans-serif-black"
-                        android:backgroundTint="#669AAA"
-                        android:background="@drawable/buttons1"
+                        android:background="@drawable/button_background_gradient"
                         android:contentDescription="opt... button" />
 
                     <androidx.appcompat.widget.AppCompatButton
                         android:id="@+id/electricity"
-                        android:textColor="@color/black"
+                        android:textColor="@color/textcolor"
                         android:layout_width="250dp"
                         android:transitionName="electricity"
                         android:layout_margin="5dp"
@@ -152,27 +149,26 @@
                         android:padding="10dp"
                         android:drawableTop="@drawable/electrocircutwithlight"
                         android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:backgroundTint="#8F8CB8"
-                        android:background="@drawable/buttons1"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
                         android:contentDescription="opt... button" />
 
-                    <androidx.appcompat.widget.AppCompatButton
-                        android:id="@+id/other"
-                        android:textColor="@color/black"
-                        android:layout_width="250dp"
-                        android:transitionName="electricity"
-                        android:layout_margin="5dp"
-                        android:layout_height="wrap_content"
-                        android:layout_marginRight="20dp"
-                        android:text="Работы пользователей"
-                        android:padding="10dp"
-                        android:drawableTop="@drawable/userswork"
-                        android:drawablePadding="10dp"
-                        android:fontFamily="sans-serif-black"
-                        android:backgroundTint="#E16CBA"
-                        android:background="@drawable/buttons1"
-                        android:contentDescription="opt... button" />
+<!--                    <androidx.appcompat.widget.AppCompatButton-->
+<!--                        android:id="@+id/other"-->
+<!--                        android:textColor="@color/textcolor"-->
+<!--                        android:layout_width="250dp"-->
+<!--                        android:transitionName="usersadded"-->
+<!--                        android:layout_margin="5dp"-->
+<!--                        android:visibility=""-->
+<!--                        android:layout_height="wrap_content"-->
+<!--                        android:layout_marginRight="20dp"-->
+<!--                        android:text="Работы пользователей"-->
+<!--                        android:padding="10dp"-->
+<!--                        android:drawableTop="@drawable/userswork"-->
+<!--                        android:drawablePadding="10dp"-->
+<!--                        android:fontFamily="sans-serif-black"-->
+<!--                        android:background="@drawable/main_element_2"-->
+<!--                        android:contentDescription="opt... button" />-->
 
                 </LinearLayout>
             </HorizontalScrollView>
@@ -214,8 +210,7 @@
                     android:padding="10dp"
                     android:drawableTop="@drawable/robot"
                     android:drawablePadding="10dp"
-                    android:background="@drawable/buttons1"
-                    android:backgroundTint="#737A8D"
+                    android:background="@drawable/main_element_2"
                     android:fontFamily="sans-serif-black"
                     android:textColor="@color/white"
                     android:layout_margin="10dp"/>
@@ -231,8 +226,7 @@
                     android:textSize="18dp"
                     android:drawableTop="@drawable/brain"
                     android:padding="10dp"
-                    android:background="@drawable/buttons1"
-                    android:backgroundTint="#F46262"
+                    android:background="@drawable/main_element_2"
                     android:fontFamily="sans-serif-black"
                     android:textColor="@color/white"
                     android:layout_margin="10dp"/>
@@ -245,29 +239,13 @@
                 android:layout_marginTop="10dp"
                 android:layout_height="match_parent"
                 android:layout_below="@id/textHead2"
-                android:layout_marginLeft="30dp"
+                android:layout_marginRight="30dp"
                 android:backgroundTint="#2F000000"
                 android:background="@drawable/buttons1"
                 android:orientation="vertical"
                 android:gravity="right"
                 android:layout_alignParentRight="true">
 
-                <androidx.appcompat.widget.AppCompatButton
-                    android:id="@+id/addTopic"
-                    android:layout_width="150dp"
-                    android:layout_height="wrap_content"
-                    android:text="добавить знания"
-                    android:transitionName="addropic"
-                    android:textSize="18dp"
-                    android:layout_gravity="right"
-                    android:drawablePadding="10dp"
-                    android:drawableTop="@drawable/addtopivn2"
-                    android:padding="10dp"
-                    android:background="@drawable/buttons1"
-                    android:backgroundTint="#DC5C6E"
-                    android:fontFamily="sans-serif-black"
-                    android:textColor="@color/white"
-                    android:layout_margin="10dp"/>
 
                 <androidx.appcompat.widget.AppCompatButton
                     android:id="@+id/leaderboards"
@@ -280,24 +258,40 @@
                     android:drawablePadding="10dp"
                     android:drawableTop="@drawable/lead"
                     android:padding="10dp"
-                    android:background="@drawable/buttons1"
-                    android:backgroundTint="#EA9605"
+                    android:background="@drawable/main_element_2"
                     android:fontFamily="sans-serif-black"
                     android:textColor="@color/white"
                     android:layout_margin="10dp"/>
 
+                <androidx.appcompat.widget.AppCompatButton
+                    android:id="@+id/addTopic"
+                    android:layout_width="150dp"
+                    android:layout_height="wrap_content"
+                    android:text="добавить Статью"
+                    android:transitionName="addropic"
+                    android:textSize="18dp"
+                    android:visibility="invisible"
+                    android:enabled="false"
+                    android:layout_gravity="right"
+                    android:drawablePadding="10dp"
+                    android:drawableTop="@drawable/addtopivn2"
+                    android:padding="10dp"
+                    android:background="@drawable/main_element_2"
+                    android:fontFamily="sans-serif-black"
+                    android:textColor="@color/white"
+                    android:layout_margin="10dp"/>
             </LinearLayout>
 
         </RelativeLayout>
     </ScrollView>
 
-
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="10dp"
         android:layout_alignParentBottom="true"
-        android:background="@color/background"
+        android:background="@drawable/bottom_naviagion_bar_background"
         app:itemTextColor="@color/white"
         app:itemIconTint="@color/white"
         app:menu="@menu/bottom_nav_menu" />

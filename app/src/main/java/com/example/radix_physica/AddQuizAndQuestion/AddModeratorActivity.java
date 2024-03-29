@@ -2,8 +2,10 @@ package com.example.radix_physica.AddQuizAndQuestion;
 
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +29,16 @@ public class AddModeratorActivity extends AppCompatActivity {
 
         Button buttonAddModerator = findViewById(R.id.buttonAddModerator);
         buttonAddModerator.setOnClickListener(v -> addModeratorToFirebase());
+
+
+        ImageButton back = findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
     }
 

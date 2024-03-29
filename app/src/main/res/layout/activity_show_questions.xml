@@ -3,57 +3,41 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:background="@null"
+        android:src="@drawable/baseline_arrow_back_ios_24"
+        android:contentDescription="Назад" />
+
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/questions"
-        android:layout_width="match_parent"
+        android:layout_width="150dp"
         android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:background="@drawable/buttons1"
-        android:backgroundTint="#F46262"
-        android:drawableTop="@drawable/brain"
-        android:drawablePadding="10dp"
-        android:fontFamily="sans-serif-black"
         android:gravity="center"
-        android:padding="10dp"
         android:text="все   задания"
-        android:textColor="@color/white"
+        android:drawablePadding="10dp"
+        android:layout_centerHorizontal="true"
+        android:transitionName="showquestions"
         android:textSize="18dp"
-        android:transitionName="showquestions" />
+        android:drawableTop="@drawable/brain"
+        android:padding="10dp"
+        android:background="@drawable/main_element_2"
+        android:fontFamily="sans-serif-black"
+        android:textColor="@color/white"
+        android:layout_margin="10dp"/>
 
-
-
-    <TextView
-        android:id="@+id/ButtonText"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_below="@id/questions"
-        android:layout_marginEnd="16dp"
-        android:layout_marginBottom="16dp"
-        android:gravity="center"
-        android:text="Добавте свои задания ?" />
 
     <ListView
         android:id="@+id/listViewQuestions"
-        android:layout_below="@id/ButtonText"
+        android:layout_below="@id/questions"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:dividerHeight="30dp"
-        android:divider="#001F1E23"
-        android:layout_above="@+id/bottom_navigation"/>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/background"
-        app:itemTextColor="@color/white"
-        app:itemIconTint="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
+        android:divider="#001F1E23"/>
 
 </RelativeLayout>

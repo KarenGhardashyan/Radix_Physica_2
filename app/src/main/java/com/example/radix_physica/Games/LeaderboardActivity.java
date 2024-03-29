@@ -1,6 +1,8 @@
 package com.example.radix_physica.Games;
 
 import android.os.Bundle;
+import android.view.View;
+import android.widget.ImageButton;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
@@ -35,6 +37,16 @@ public class LeaderboardActivity extends AppCompatActivity {
         userList = new ArrayList<>();
         adapter = new LeaderboardAdapter(userList);
         recyclerView.setAdapter(adapter);
+
+
+        ImageButton back = findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         DatabaseReference leaderboardRef = FirebaseDatabase.getInstance().getReference().child("users");
         leaderboardRef.orderByChild("highScore").addListenerForSingleValueEvent(new ValueEventListener() {

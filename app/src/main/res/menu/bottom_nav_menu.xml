@@ -12,7 +12,7 @@
     <item
         android:id="@+id/exercises"
         android:icon="@drawable/baseline_add_circle_outline_24"
-        android:title="Exercises"
+        android:title="Add Exercises"
         android:visible="true"/>
 
     <item
@@ -20,13 +20,6 @@
         android:icon="@drawable/baseline_emoji_people_24"
         android:title="Profile"
         android:visible="true"/>
-
-    <item
-        android:id="@+id/settings"
-        android:enabled="true"
-        android:icon="@drawable/baseline_settings_24"
-        android:title="Settings"
-        android:visible="true" />
 
 </menu>
 

@@ -2,7 +2,9 @@ package com.example.radix_physica.AddQuizAndQuestion;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -42,33 +44,20 @@ public class AddTopicsActivity extends AppCompatActivity {
         editTextTopic = findViewById(R.id.editTextTopic);
         editTextWeb = findViewById(R.id.editTextWebCode);
         buttonAddTopic = findViewById(R.id.buttonAddTopics);
-        textView = findViewById(R.id.Header);
         buttonShowTopics = findViewById(R.id.buttonShowQuestions);
 
         auth = FirebaseAuth.getInstance();
         user = auth.getCurrentUser();
 
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.exercises).setChecked(true);
+        ImageButton back = findViewById(R.id.backButton);
 
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(getApplicationContext(), PysicsLobbyActivity.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.settings) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), Profile.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.moderator) {
-                startActivity(new Intent(getApplicationContext(), ModeratorsActivity.class));
-                overridePendingTransition(0, 0);
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
             }
-            return true;
         });
 
-        setHeaderText();
 
         buttonShowTopics.setOnClickListener(v -> startActivity(new Intent(getApplicationContext(), ShowQuestionsActivity.class)));
 
@@ -104,15 +93,5 @@ public class AddTopicsActivity extends AppCompatActivity {
         editTextTopicHead.setText("");
         editTextTopic.setText("");
         editTextWeb.setText("");
-    }
-
-    private void setHeaderText() {
-        if (user == null) {
-            Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
-            startActivity(intent);
-            finish();
-        } else {
-            textView.setText("Add a new topic: " + user.getEmail());
-        }
     }
 }

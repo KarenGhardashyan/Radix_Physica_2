@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.ArrayAdapter;
+import android.widget.ImageButton;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -29,6 +30,7 @@ import java.util.List;
 public class ShowQuestionsActivity extends AppCompatActivity {
 
     private ListView listViewQuestions;
+    private ImageButton back;
     private DatabaseReference databaseReference;
     private List<String> questionList;
     private ArrayAdapter<String> adapter;
@@ -42,32 +44,9 @@ public class ShowQuestionsActivity extends AppCompatActivity {
 
         listViewQuestions = findViewById(R.id.listViewQuestions);
         questionList = new ArrayList<>();
-        TextView add = findViewById(R.id.ButtonText);
 
         adapter = new ArrayAdapter<>(this, android.R.layout.simple_list_item_1, questionList);
         listViewQuestions.setAdapter(adapter);
-
-        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
-        bottomNavigationView.getMenu().findItem(R.id.exercises).setChecked(true);
-        bottomNavigationView.getMenu().findItem(R.id.exercises).setCheckable(false);
-
-
-        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            Fragment selectedFragment = null;
-
-            if (item.getItemId() == R.id.home) {
-                startActivity(new Intent(getApplicationContext(), PysicsLobbyActivity.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.settings) {
-                startActivity(new Intent(getApplicationContext(), Settings.class));
-                overridePendingTransition(0, 0);
-            } else if (item.getItemId() == R.id.profile) {
-                startActivity(new Intent(getApplicationContext(), Profile.class));
-                overridePendingTransition(0, 0);
-            }
-
-            return true;
-        });
 
         databaseReference.addValueEventListener(new ValueEventListener() {
             @Override
@@ -91,13 +70,16 @@ public class ShowQuestionsActivity extends AppCompatActivity {
             }
         });
 
-        add.setOnClickListener(new View.OnClickListener() {
+        back = findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddQuiz.class);
-                startActivity(intent);
+                finish();
             }
         });
-
     }
+
+
+
 }

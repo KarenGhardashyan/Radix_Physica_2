@@ -15,32 +15,36 @@
         android:theme="@style/Theme.Material3.Dark"
         tools:targetApi="31">
         <activity
+            android:name=".Topics.UsersAddedTopicsActivity"
+            android:exported="false" />
+        <activity
             android:name=".Manu.UsersTopicsActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".AddQuizAndQuestion.ModerateQuizActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".AddQuizAndQuestion.AddModeratorActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Manu.ModeratorsActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Games.LeaderboardActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Games.GenerateQuizActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".AddQuizAndQuestion.AddQuiz"
+            android:name=".AddQuizAndQuestion.AddQuizActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Topics.ElectricityActivity"
             android:exported="false"
@@ -55,16 +59,16 @@
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Games.BuildBridgeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".AddQuizAndQuestion.ShowQuestionsActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
-
         <activity
             android:name=".AddQuizAndQuestion.AddTopicsActivity"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Games.StartTestActivity"
             android:exported="false"
@@ -72,7 +76,7 @@
         <activity
             android:name=".Manu.Settings"
             android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar"/>
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".RegAndLog.MainActivity"
             android:exported="false"

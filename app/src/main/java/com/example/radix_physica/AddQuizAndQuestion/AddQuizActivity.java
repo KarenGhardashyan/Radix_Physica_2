@@ -1,17 +1,22 @@
 package com.example.radix_physica.AddQuizAndQuestion;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.Fragment;
 
+import com.example.radix_physica.Manu.Profile;
+import com.example.radix_physica.Manu.PysicsLobbyActivity;
 import com.example.radix_physica.R;
+import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 
-public class AddQuiz extends AppCompatActivity {
+public class AddQuizActivity extends AppCompatActivity {
     private EditText questionEditText, option1EditText, option2EditText, option3EditText, option4EditText, correctAnswerEditText;
     private Button addButton;
     private DatabaseReference mDatabase;
@@ -30,6 +35,24 @@ public class AddQuiz extends AppCompatActivity {
         addButton = findViewById(R.id.addButton);
 
         mDatabase = FirebaseDatabase.getInstance().getReference().child("AddQuiz");
+
+
+        BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
+
+        bottomNavigationView.getMenu().findItem(R.id.exercises).setChecked(true);
+        bottomNavigationView.getMenu().findItem(R.id.exercises).setCheckable(false);
+        bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
+            Fragment selectedFragment = null;
+
+            if (item.getItemId() == R.id.profile) {
+                startActivity(new Intent(getApplicationContext(), Profile.class));
+                overridePendingTransition(0, 0);
+            }else if (item.getItemId() == R.id.home) {
+                startActivity(new Intent(getApplicationContext(), PysicsLobbyActivity.class));
+                overridePendingTransition(0, 0);
+            }
+            return true;
+        });
 
         addButton.setOnClickListener(new View.OnClickListener() {
             @Override

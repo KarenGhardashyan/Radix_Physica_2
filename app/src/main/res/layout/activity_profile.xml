@@ -20,12 +20,11 @@
 
     <RelativeLayout
         android:id="@+id/score_quiz"
-        android:layout_width="wrap_content"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
         android:layout_height="wrap_content"
-        android:layout_margin="40dp"
-        android:background="@drawable/profile_elements"
+        android:background="@drawable/button_background_gradient"
         android:contentDescription="123"
-        android:gravity="center"
         android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -34,10 +33,11 @@
         <ProgressBar
             android:id="@+id/progressBarQuiz"
             style="?android:attr/progressBarStyleHorizontal"
-            android:layout_width="250dp"
-            android:layout_height="250dp"
-            android:layout_marginTop="1dp"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_centerHorizontal="true"
             android:indeterminate="false"
+            android:layout_below="@id/textView"
             android:max="100"
             android:progress="78"
             android:progressDrawable="@drawable/circular_progress_bar" />
@@ -46,29 +46,27 @@
             android:id="@+id/textView3"
             android:layout_width="0dp"
             android:layout_height="0dp"
+            android:layout_below="@+id/textView"
             android:layout_alignStart="@id/progressBarQuiz"
-            android:layout_alignTop="@id/progressBarQuiz"
             android:layout_alignEnd="@id/progressBarQuiz"
             android:layout_alignBottom="@id/progressBarQuiz"
-            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
             android:fontFamily="sans-serif-medium"
             android:gravity="center"
             android:text="150000"
             android:textColor="@color/white"
-            android:textSize="15dp" />
+            android:textSize="17dp" />
 
         <TextView
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_below="@id/progressBarQuiz"
             android:layout_centerHorizontal="true"
             android:padding="2dp"
-            android:text="Рекорд в опросах"
+            android:text="Ваш рекорд в опросах"
             android:textColor="@color/white"
-            android:textSize="15dp"
-            android:textStyle="italic"
-            app:layout_constraintEnd_toEndOf="@+id/progressBarQuiz"
+            android:textSize="17dp"
+            android:textStyle="bold"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/progressBarQuiz" />
 
@@ -78,8 +76,9 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:background="#002E2E2E"
+        android:background="@drawable/bottom_naviagion_bar_background"
         app:itemIconTint="@color/white"
+        android:layout_margin="10dp"
         app:itemTextColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -155,8 +154,42 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/info"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_marginTop="32dp"
+        android:background="@drawable/main_element_2"
+        android:drawableLeft="@drawable/baseline_perm_device_information_24"
+        android:drawableRight="@drawable/baseline_navigate_next_24"
+        android:drawableTint="#A7B2DD"
+        android:fontFamily="sans-serif-medium"
+        android:padding="10dp"
+        android:text="Информация пользователя"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.357"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/score_quiz" />
 
-
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/settings"
+        android:background="@drawable/main_element_2"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="12dp"
+        android:textStyle="bold"
+        android:drawableRight="@drawable/baseline_navigate_next_24"
+        android:drawableTint="#A7B2DD"
+        android:padding="10dp"
+        android:drawableLeft="@drawable/baseline_settings_24"
+        android:fontFamily="sans-serif-medium"
+        android:text="Настройки"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/info" />
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

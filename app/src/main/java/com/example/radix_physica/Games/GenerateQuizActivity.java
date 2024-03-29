@@ -5,6 +5,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -55,6 +56,16 @@ public class GenerateQuizActivity extends AppCompatActivity {
         mDatabase = FirebaseDatabase.getInstance().getReference().child("moderatedQuiz");
 
         quizList = new ArrayList<>();
+
+
+        ImageButton back = findViewById(R.id.backButton);
+
+        back.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
 
         loadQuizData();
 
