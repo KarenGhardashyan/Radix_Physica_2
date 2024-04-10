@@ -6,9 +6,11 @@ import androidx.fragment.app.Fragment;
 import android.app.ActivityOptions;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.Handler;
 import android.util.Pair;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ViewFlipper;
 
 
 import com.example.radix_physica.AddQuizAndQuestion.AddQuizActivity;
@@ -25,6 +27,10 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 
 public class PysicsLobbyActivity extends AppCompatActivity {
 
+    private ViewFlipper viewFlipper;
+    private Handler handler;
+
+    static int delay = 4500;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,29 +44,16 @@ public class PysicsLobbyActivity extends AppCompatActivity {
         Button electrocity = findViewById(R.id.electricity);
         Button question = findViewById(R.id.questions);
         Button leaders = findViewById(R.id.leaderboards);
-        Button topics = findViewById(R.id.addTopic);
+        Button plot = findViewById(R.id.plot);
+        Button aboutus = findViewById(R.id.aboutus);
 
-//        Button userstoppics = findViewById(R.id.other);
 
-//        userstoppics.setOnClickListener(new View.OnClickListener() {
-//            @Override
-//            public void onClick(View v) {
-//                Intent intent = new Intent(getApplicationContext(), UsersAddedTopicsActivity.class);
-//                Pair<View, String> pair = new Pair<>(userstoppics, "usersadded");
-//                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PysicsLobbyActivity.this, pair);
-//                startActivity(intent, options.toBundle());
-//            }
-//        });
+        viewFlipper = findViewById(R.id.viewFlipper);
+        handler = new Handler();
 
-        topics.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), AddTopicsActivity.class);
-                Pair<View, String> pair = new Pair<>(topics, "addropic");
-                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PysicsLobbyActivity.this, pair);
-                startActivity(intent, options.toBundle());
-            }
-        });
+        startImageSlideshow();
+
+
 
         BottomNavigationView bottomNavigationView = findViewById(R.id.bottom_navigation);
         Button quiztest = findViewById(R.id.Quiztest);
@@ -78,6 +71,23 @@ public class PysicsLobbyActivity extends AppCompatActivity {
                 overridePendingTransition(0, 0);
             }
             return true;
+        });
+
+        aboutus.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                startActivity(new Intent(getApplicationContext(), AboutUsActivity.class));
+            }
+        });
+
+        plot.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(getApplicationContext(), ChoseGraphycsActivity.class);
+                Pair<View, String> pair = new Pair<>(plot, "chart");
+                ActivityOptions options = ActivityOptions.makeSceneTransitionAnimation(PysicsLobbyActivity.this, pair);
+                startActivity(intent, options.toBundle());
+            }
         });
 
         question.setOnClickListener(new View.OnClickListener() {
@@ -147,5 +157,22 @@ public class PysicsLobbyActivity extends AppCompatActivity {
                 startActivity(intent, options.toBundle());
             }
         });
+    }
+
+    private void startImageSlideshow() {
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                viewFlipper.showNext();
+                handler.postDelayed(this, delay);
+            }
+        };
+
+        handler.postDelayed(runnable, delay);
+    }
+
+    protected void onDestroy() {
+        super.onDestroy();
+        handler.removeCallbacksAndMessages(null);
     }
 }

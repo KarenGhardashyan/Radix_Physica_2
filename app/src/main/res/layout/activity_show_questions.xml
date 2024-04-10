@@ -19,7 +19,7 @@
         android:layout_width="150dp"
         android:layout_height="wrap_content"
         android:gravity="center"
-        android:text="все   задания"
+        android:text="задания"
         android:drawablePadding="10dp"
         android:layout_centerHorizontal="true"
         android:transitionName="showquestions"

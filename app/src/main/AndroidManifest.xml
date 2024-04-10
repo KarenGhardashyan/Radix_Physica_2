@@ -5,7 +5,6 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
 
-
     <application
         android:allowBackup="true"
         android:dataExtractionRules="@xml/data_extraction_rules"
@@ -14,8 +13,32 @@
         android:label="Radix physica"
         android:roundIcon="@drawable/logo"
         android:supportsRtl="true"
-        android:theme="@style/Theme.Material3.Dark"
+        android:theme="@style/Theme.Material3.Dark.NoActionBar"
         tools:targetApi="31">
+        <activity
+            android:name=".Manu.AmplitudeGraphActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.VelocityGraphActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.ForceGraphActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.ChoseGraphycsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.AboutUsActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
+        <activity
+            android:name=".Manu.GraphActivity"
+            android:exported="false"
+            android:theme="@style/Theme.Design.NoActionBar" />
         <activity
             android:name=".Topics.UsersAddedTopicsActivity"
             android:exported="false" />

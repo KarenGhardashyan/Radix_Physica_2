@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main_scroll_view"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:id="@+id/main"
+        android:layout_width="match_parent"
+        android:orientation="vertical"
+        android:layout_height="wrap_content">
+
+        <ImageButton
+            android:id="@+id/backButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_margin="16dp"
+            android:background="@null"
+            android:contentDescription="Назад"
+            android:src="@drawable/baseline_arrow_back_ios_24" />
+
+        <RelativeLayout
+            android:id="@id/Quiztest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/Quiztest"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="опрос"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:drawableTop="@drawable/robot"
+                android:drawablePadding="10dp"
+                android:background="@drawable/main_element_2"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="fill_horizontal"/>
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/Quiztest"
+                android:text="Здесь вы сможете пройти опрос который сгенерирован от вопросов пользователей" />
+
+        </RelativeLayout>
+
+
+        <RelativeLayout
+            android:id="@id/chart"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/chart"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="графики"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:drawableTop="@drawable/plot"
+                android:drawablePadding="10dp"
+                android:background="@drawable/main_element_2"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="fill_horizontal"/>
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/chart"
+                android:text="Этот инструмент поможет вам быстро и легко сделать график (чаще всего он понадовится для скорости и движения)" />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/showall"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/showall"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="задания"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:drawableTop="@drawable/brain"
+                android:drawablePadding="10dp"
+                android:background="@drawable/main_element_2"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="fill_horizontal"/>
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/showall"
+                android:text="Это книга вопросов от пользователя с ответами. Вы сможете порешать задачи от других пользователей." />
+
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:id="@id/leader"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/leader"
+                android:layout_width="150dp"
+                android:layout_height="wrap_content"
+                android:text="лидерборд"
+                android:padding="10dp"
+                android:textSize="18dp"
+                android:drawableTop="@drawable/lead"
+                android:drawablePadding="10dp"
+                android:background="@drawable/main_element_2"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/white"
+                android:layout_margin="10dp"
+                android:layout_column="0"
+                android:layout_row="0"
+                android:layout_gravity="fill_horizontal"/>
+
+            <TextView
+                android:id="@+id/textView5"
+                android:layout_width="wrap_content"
+                android:layout_margin="10dp"
+                android:textSize="17dp"
+                android:textColor="@color/white"
+                android:fontFamily="sans-serif-medium"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_toRightOf="@+id/leader"
+                android:text="Тут вы сможете увидеть статистику пользователей которые прошли опрос." />
+
+        </RelativeLayout>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:layout_gravity="center"
+            android:gravity="center"
+            android:textSize="20dp"
+            android:text="используйте свое время с умом и достигните знаний с Radix Physica"/>
+
+        <ImageView
+            android:layout_width="match_parent"
+            android:layout_height="396dp"
+            android:layout_marginBottom="20dp"
+            android:background="@drawable/physica"
+            android:layout_margin="10dp"/>
+    </LinearLayout>
+</ScrollView>

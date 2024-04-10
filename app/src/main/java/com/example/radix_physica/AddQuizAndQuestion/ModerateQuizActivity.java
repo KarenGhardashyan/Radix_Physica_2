@@ -126,6 +126,8 @@ public class ModerateQuizActivity extends AppCompatActivity {
                 destroyActorFromNotModeratedQuestions();
             }
         });
+
+        getRandomQuestionFromDatabase();
     }
 
     private void getRandomQuestionFromDatabase() {

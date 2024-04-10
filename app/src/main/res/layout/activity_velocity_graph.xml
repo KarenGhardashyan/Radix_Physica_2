@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/chart"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="10dp"
+        android:layout_marginBottom="10dp"
+        android:background="@drawable/chart_background_gradient" />
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/aValue"
+        android:layout_marginTop="30dp"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:id="@+id/aedittext"
+            android:layout_height="wrap_content"
+            android:inputType="numberDecimal|numberSigned"
+            android:textColor="@color/white"
+            android:hint="Ускорение a" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/tValue"
+        android:layout_below="@+id/aValue"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:id="@+id/tedittext"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_height="wrap_content"
+            android:hint="Время t" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <com.google.android.material.textfield.TextInputLayout
+        android:layout_width="match_parent"
+        android:id="@+id/vValue"
+        android:layout_below="@+id/tValue"
+        android:layout_marginLeft="200dp"
+        android:layout_marginRight="30dp"
+        android:layout_height="wrap_content">
+
+        <com.google.android.material.textfield.TextInputEditText
+            android:layout_width="match_parent"
+            android:textColor="@color/white"
+            android:id="@+id/vedittext"
+            android:inputType="numberDecimal|numberSigned"
+            android:layout_height="wrap_content"
+            android:hint="Начальная V" />
+    </com.google.android.material.textfield.TextInputLayout>
+
+    <androidx.appcompat.widget.AppCompatButton
+        android:id="@+id/addPointButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/vValue"
+        android:layout_marginRight="30dp"
+        android:backgroundTint="#14FFFFFF"
+        android:layout_alignParentEnd="true"
+        android:layout_marginTop="10dp"
+        android:background="@drawable/button_background_gradient"
+        android:drawableLeft="@drawable/baseline_addchart_24"
+        android:drawablePadding="10dp"
+        android:gravity="center"
+        android:padding="10dp"
+        android:text="добавить точку" />
+
+    <ImageButton
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentTop="true"
+        android:layout_margin="16dp"
+        android:background="@null"
+        android:contentDescription="Назад"
+        android:src="@drawable/baseline_arrow_back_ios_24" />
+
+</RelativeLayout>

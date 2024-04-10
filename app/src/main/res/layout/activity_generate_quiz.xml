@@ -30,7 +30,7 @@
         android:gravity="center"
         android:layout_centerHorizontal="true"
         android:padding="10dp"
-        android:text="пройти опрос"
+        android:text="опрос"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:transitionName="quiz" />

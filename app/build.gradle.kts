@@ -44,6 +44,7 @@ dependencies {
     implementation("com.google.firebase:firebase-auth:22.3.1")
     implementation("com.google.firebase:firebase-storage:20.3.0")
     implementation("com.google.firebase:firebase-firestore:24.10.3")
+    implementation("androidx.activity:activity:1.8.0")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")
@@ -55,4 +56,27 @@ dependencies {
     implementation("com.sun.mail:android-mail:1.6.7")
     implementation("com.sun.mail:android-activation:1.6.7")
     implementation ("com.squareup.picasso:picasso:2.71828")
+
+    implementation("androidx.legacy:legacy-support-v4:1.0.0")
+    implementation("com.google.android.material:material:1.0.0")
+    implementation("com.google.firebase:firebase-auth:19.0.0")
+    implementation("com.google.firebase:firebase-database:19.1.0")
+    implementation("com.google.firebase:firebase-core:17.2.0")
+    implementation("androidx.cardview:cardview:1.0.0")
+    implementation("com.rengwuxian.materialedittext:library:2.1.4")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+
+    implementation("com.github.bumptech.glide:glide:4.12.0")
+    implementation("de.hdodenhof:circleimageview:3.1.0")
+    implementation("androidx.recyclerview:recyclerview:1.2.1")
+
+    implementation("com.github.PhilJay:MPAndroidChart:v3.1.0")
+
+    implementation("org.mariuszgromada.math:MathParser.org-mXparser:4.4.0")
+
+    implementation ("com.androidplot:androidplot-core:1.5.7")
+
+    implementation("com.opencsv:opencsv:4.6")
+
+    implementation ("com.google.android.material:material:1.5.0")
 }

@@ -55,9 +55,12 @@ public class LeaderboardActivity extends AppCompatActivity {
                 userList.clear();
                 for (DataSnapshot snapshot : dataSnapshot.getChildren()) {
                     String username = snapshot.child("username").getValue(String.class);
-                    int score = snapshot.child("highScore").getValue(Integer.class);
-                    LeaderboardUser user = new LeaderboardUser(username , score);
-                    userList.add(user);
+                    Integer scoreInteger = snapshot.child("highScore").getValue(Integer.class);
+                    if (username != null && scoreInteger != null) {
+                        int score = scoreInteger.intValue();
+                        LeaderboardUser user = new LeaderboardUser(username, score);
+                        userList.add(user);
+                    }
                 }
                 Collections.sort(userList, new Comparator<LeaderboardUser>() {
                     @Override

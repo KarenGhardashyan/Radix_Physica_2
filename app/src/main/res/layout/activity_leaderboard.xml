@@ -33,7 +33,7 @@
         android:fontFamily="sans-serif-black"
         android:gravity="center"
         android:padding="10dp"
-        android:text="лидерборды участников"
+        android:text="лидерборд"
         android:textColor="@color/white"
         android:textSize="18dp"
         android:transitionName="leaders" />
