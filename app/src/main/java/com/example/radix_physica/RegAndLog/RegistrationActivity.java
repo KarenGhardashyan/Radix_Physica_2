@@ -22,7 +22,7 @@ import com.google.firebase.auth.UserProfileChangeRequest;
 
 public class RegistrationActivity extends AppCompatActivity {
 
-    private EditText editTextName, editTextEmail, editTextPassword;
+    private EditText editTextName, editTextEmail, editTextPassword, editTextCorrectPassword;
     private Button buttonRegister;
     private TextView textViewLogin;
 
@@ -40,7 +40,7 @@ public class RegistrationActivity extends AppCompatActivity {
         editTextPassword = findViewById(R.id.editTextPassword);
         buttonRegister = findViewById(R.id.buttonRegister);
         textViewLogin = findViewById(R.id.textViewLogin);
-
+        editTextCorrectPassword = findViewById(R.id.editTextCorrectPassword);
 
         buttonRegister.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -61,6 +61,7 @@ public class RegistrationActivity extends AppCompatActivity {
         final String name = editTextName.getText().toString().trim();
         final String email = editTextEmail.getText().toString().trim();
         String password = editTextPassword.getText().toString().trim();
+        String correctpassword = editTextCorrectPassword.getText().toString().trim();
 
         if (TextUtils.isEmpty(name)) {
             editTextName.setError("Введите имя пользователя");
@@ -68,12 +69,17 @@ public class RegistrationActivity extends AppCompatActivity {
         }
 
         if (TextUtils.isEmpty(email)) {
-            editTextEmail.setError("Введите имейл");
+            editTextEmail.setError("Введите имейл!");
             return;
         }
 
         if (TextUtils.isEmpty(password)) {
-            editTextPassword.setError("Введите пароль");
+            editTextPassword.setError("Введите пароль!");
+            return;
+        }
+
+        if (!correctpassword.equals(password)) {
+            editTextCorrectPassword.setError("Несовпадающий пароль!");
             return;
         }
 

@@ -45,6 +45,17 @@
         android:hint="Password"
         android:inputType="textPassword" />
 
+    <EditText
+        android:id="@+id/editTextCorrectPassword"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:drawableLeft="@drawable/baseline_app_blocking_24"
+        android:padding="10dp"
+        android:drawablePadding="10dp"
+        android:hint="Password"
+        android:inputType="textPassword" />
+
     <Button
         android:id="@+id/buttonRegister"
         android:layout_width="match_parent"

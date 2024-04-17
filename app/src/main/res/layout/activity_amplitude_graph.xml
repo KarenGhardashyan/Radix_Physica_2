@@ -8,6 +8,7 @@
         android:id="@+id/chart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:layout_below="@+id/addPointButton"
         android:layout_margin="10dp"
         android:layout_marginBottom="10dp"
         android:background="@drawable/chart_background_gradient" />
@@ -15,9 +16,8 @@
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="200dp"
         android:id="@+id/lengthValue"
-        android:layout_marginTop="30dp"
-        android:layout_marginLeft="200dp"
-        android:layout_marginRight="30dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginStart="40dp"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -26,15 +26,14 @@
             android:layout_height="wrap_content"
             android:inputType="numberDecimal|numberSigned"
             android:textColor="@color/white"
-            android:hint="длина маяатника L" />
+            android:hint="длина маятника L" />
     </com.google.android.material.textfield.TextInputLayout>
 
     <com.google.android.material.textfield.TextInputLayout
         android:layout_width="200dp"
         android:id="@+id/tValue"
+        android:layout_marginStart="40dp"
         android:layout_below="@+id/lengthValue"
-        android:layout_marginLeft="200dp"
-        android:layout_marginRight="30dp"
         android:layout_height="wrap_content">
 
         <com.google.android.material.textfield.TextInputEditText
@@ -51,16 +50,15 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@id/tValue"
-        android:layout_marginRight="30dp"
+        android:layout_marginStart="40dp"
         android:backgroundTint="#14FFFFFF"
-        android:layout_alignParentEnd="true"
         android:layout_marginTop="10dp"
         android:background="@drawable/button_background_gradient"
         android:drawableLeft="@drawable/baseline_addchart_24"
         android:drawablePadding="10dp"
         android:gravity="center"
         android:padding="10dp"
-        android:text="добавить точку" />
+        android:text="Построить граф." />
 
     <ImageButton
         android:id="@+id/backButton"

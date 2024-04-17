@@ -1,5 +1,7 @@
 package com.example.radix_physica.Manu;
 
+import static android.graphics.Color.WHITE;
+
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.fragment.app.Fragment;
@@ -7,6 +9,7 @@ import androidx.fragment.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
+import android.graphics.Color;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -19,6 +22,14 @@ import com.example.radix_physica.AddQuizAndQuestion.ModerateQuizActivity;
 import com.example.radix_physica.AddQuizAndQuestion.Moderator;
 import com.example.radix_physica.R;
 import com.example.radix_physica.RegAndLog.LoginActivity;
+import com.github.mikephil.charting.charts.LineChart;
+import com.github.mikephil.charting.components.Description;
+import com.github.mikephil.charting.components.Legend;
+import com.github.mikephil.charting.components.XAxis;
+import com.github.mikephil.charting.components.YAxis;
+import com.github.mikephil.charting.data.Entry;
+import com.github.mikephil.charting.data.LineData;
+import com.github.mikephil.charting.data.LineDataSet;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
@@ -27,6 +38,9 @@ import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
 import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 public class Profile extends AppCompatActivity {
 
@@ -52,6 +66,52 @@ public class Profile extends AppCompatActivity {
         Button moderatorsPage = findViewById(R.id.moderatorsPage);
 
 
+        LineChart chart = findViewById(R.id.chart);
+
+        List<Entry> entries = new ArrayList<>();
+        entries.add(new Entry(0, 30));
+        entries.add(new Entry(1, 50));
+        entries.add(new Entry(2, 60));
+        entries.add(new Entry(3, 20));
+        entries.add(new Entry(4, 80));
+
+        LineDataSet dataSet = new LineDataSet(entries, "Время использования по дням");
+        dataSet.setColor(Color.BLUE);
+        dataSet.setValueTextColor(Color.BLACK);
+        dataSet.setCircleColor(Color.RED);
+        dataSet.setCircleRadius(5);
+        dataSet.setLineWidth(2);
+        dataSet.setValueTextSize(12);
+
+        LineData lineData = new LineData(dataSet);
+
+        chart.setData(lineData);
+
+        XAxis xAxis = chart.getXAxis();
+        xAxis.setPosition(XAxis.XAxisPosition.BOTTOM);
+        xAxis.setTextSize(12);
+
+        YAxis yAxis = chart.getAxisLeft();
+        yAxis.setTextSize(12);
+
+        Description description = new Description();
+        description.setText("График времени использования по дням");
+        description.setTextSize(14);
+        chart.setDescription(description);
+
+        Legend legend = chart.getLegend();
+        legend.setTextSize(12);
+
+        chart.setDragEnabled(true);
+
+        chart.setScaleEnabled(true);
+        chart.setDrawBorders(true);
+
+        chart.setPinchZoom(true);
+
+        chart.getAxisLeft().setDrawGridLines(true);
+        chart.getAxisLeft().setGridColor(Color.parseColor("#00C853"));
+        chart.getLegend().setTextColor(Color.parseColor("#FF0000"));
 
         settingsPage.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -185,6 +185,7 @@ public class ModerateQuizActivity extends AppCompatActivity {
                     .addOnSuccessListener(new OnSuccessListener<Void>() {
                         @Override
                         public void onSuccess(Void aVoid) {
+                            Toast.makeText(ModerateQuizActivity.this, "Удолена успещно !", Toast.LENGTH_SHORT).show();
                         }
                     })
                     .addOnFailureListener(new OnFailureListener() {

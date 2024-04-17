@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Manu.UserSettingsActivity"
-    android:background="@drawable/gradient_background_main">
+    android:background="@drawable/gradient_background_main"
+    tools:context=".Manu.UserSettingsActivity">
 
     <ImageView
         android:id="@+id/logo_image"
@@ -76,8 +76,8 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:orientation="vertical"
         android:layout_margin="10dp"
+        android:orientation="vertical"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/logo_image">
@@ -88,33 +88,32 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:textColor="@color/white"
-            android:padding="10dp"
-            android:textColorHint="#ADFFFFFF"
             android:background="@drawable/button_background_gradient"
-            android:hint="Ваш новый имейл"/>
+            android:hint="Ваш новый имейл"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#ADFFFFFF" />
 
         <EditText
             android:id="@+id/editTextName"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_margin="16dp"
-            android:textColor="@color/white"
-            android:padding="10dp"
-            android:textColorHint="#ADFFFFFF"
             android:background="@drawable/button_background_gradient"
-            android:hint="Ваше новое имя"/>
-
+            android:hint="Ваше новое имя"
+            android:padding="10dp"
+            android:textColor="@color/white"
+            android:textColorHint="#ADFFFFFF" />
 
 
         <Button
             android:id="@+id/buttonSave"
             android:layout_width="wrap_content"
-            android:layout_gravity="center"
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
+            android:layout_gravity="center"
             android:layout_marginTop="16dp"
-            android:text="Save"/>
+            android:text="Save" />
 
 
     </LinearLayout>

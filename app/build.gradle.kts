@@ -79,4 +79,5 @@ dependencies {
     implementation("com.opencsv:opencsv:4.6")
 
     implementation ("com.google.android.material:material:1.5.0")
+    implementation ("com.android.support:appcompat-v7:28.0.0")
 }

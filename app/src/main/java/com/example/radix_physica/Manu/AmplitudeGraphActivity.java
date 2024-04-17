@@ -115,25 +115,10 @@ public class AmplitudeGraphActivity extends AppCompatActivity {
             float g = 9.8F;
 
             float period = (float) (2 * pi * Math.sqrt(lengthValue / g));
-            float timeStep = 0.1f;
 
-
-            for (float t = 0; t <= period; t += timeStep) {
+            for (float t = 0; t <= tValue; t += 0.1f) {
                 float amplitude = (float) (g / (4 * Math.PI * Math.PI) * lengthValue);
                 periodEntries.add(new Entry(t, (float) (amplitude * Math.cos(2 * pi * t / period))));
-            }
-
-            float desiredXValue = tValue;
-            float maxXValue = period;
-
-
-            while (maxXValue < desiredXValue) {
-                maxXValue += period;
-
-                for (float t = period; t <= maxXValue; t += timeStep) {
-                    float amplitude = (float) (g / (4 * Math.PI * Math.PI) * lengthValue);
-                    periodEntries.add(new Entry(t, (float) (amplitude * Math.cos(2 * pi * t / period))));
-                }
             }
 
             entries.addAll(periodEntries);
@@ -146,25 +131,24 @@ public class AmplitudeGraphActivity extends AppCompatActivity {
 
 
 
-
-
     private void updateGraph() {
-
-        String tText = tEditText.getText().toString();
-        float tValue = Float.parseFloat(tText);
-
         LineDataSet dataSet = new LineDataSet(entries, "Points");
         dataSet.setColor(Color.GREEN);
         dataSet.setDrawCircles(true);
         dataSet.setValueTextColor(WHITE);
         dataSet.setValueTextSize(14f);
 
-
         LineData lineData = new LineData(dataSet);
 
         chart.setData(lineData);
 
-        chart.getXAxis().setAxisMaximum(tValue);
+        float maxXValue = Float.MIN_VALUE;
+        for (Entry entry : entries) {
+            if (entry.getX() > maxXValue) {
+                maxXValue = entry.getX();
+            }
+        }
+        chart.getXAxis().setAxisMaximum(maxXValue);
 
         Description description = new Description();
         description.setText("Graph");
