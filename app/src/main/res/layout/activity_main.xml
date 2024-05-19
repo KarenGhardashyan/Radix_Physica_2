@@ -16,6 +16,7 @@
         android:background="@drawable/button_background_gradient"
         android:fontFamily="sans-serif-black"
         android:text="log in"
+        android:drawableLeft="@drawable/baseline_login_24"
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/Registration_act"
         app:layout_constraintEnd_toEndOf="parent"
@@ -26,28 +27,29 @@
         android:id="@+id/Registration_act"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="12dp"
+        android:layout_marginBottom="8dp"
         android:background="@drawable/button_background_gradient"
+        android:drawableLeft="@drawable/baseline_how_to_reg_24"
         android:fontFamily="sans-serif-black"
         android:text=" REGISTRATION "
         android:textColor="@color/white"
         app:layout_constraintBottom_toTopOf="@+id/GuestMode"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
+        app:layout_constraintHorizontal_bias="0.491"
         app:layout_constraintStart_toStartOf="parent" />
 
     <androidx.appcompat.widget.AppCompatButton
         android:id="@+id/GuestMode"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginBottom="16dp"
+        android:layout_marginBottom="28dp"
         android:background="@drawable/button_background_gradient"
+        android:drawableLeft="@drawable/baseline_face_retouching_off_24"
         android:fontFamily="sans-serif-black"
         android:text="  Guest Mode  "
         android:textColor="@color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.498"
         app:layout_constraintStart_toStartOf="parent" />
 
     <ImageView
