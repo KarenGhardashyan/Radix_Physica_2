@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/gradient_background_main">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ViewFlipper
+                android:id="@+id/viewFlipper"
+                android:layout_width="match_parent"
+                android:layout_height="280dp"
+                android:inAnimation="@anim/slide_in"
+                android:outAnimation="@anim/slide_out">
+
+                <RelativeLayout
+                    android:id="@id/imageView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView3"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/img_9" />
+
+                    <TextView
+                        android:id="@+id/text3"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentTop="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginTop="30dp"
+                        android:background="#80000000"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingStart="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="6dp"
+                        android:text="Решите задания других пользователей"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@id/imageView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView2"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/photo2" />
+
+                    <TextView
+                        android:id="@+id/text2"
+                        android:layout_width="220dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentTop="true"
+                        android:layout_alignParentEnd="true"
+                        android:layout_marginTop="30dp"
+                        android:layout_marginEnd="20dp"
+                        android:background="#80000000"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingStart="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="6dp"
+                        android:text="Связь физики и природы"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:id="@id/imageView1"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:id="@+id/imageView1"
+                        android:layout_width="match_parent"
+                        android:layout_height="280dp"
+                        android:scaleType="centerCrop"
+                        app:srcCompat="@drawable/photo3" />
+
+                    <TextView
+                        android:id="@+id/text1"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentStart="true"
+                        android:layout_alignParentBottom="true"
+                        android:layout_marginStart="20dp"
+                        android:layout_marginBottom="20dp"
+                        android:background="#80000000"
+                        android:fontFamily="sans-serif-light"
+                        android:paddingStart="10dp"
+                        android:paddingTop="6dp"
+                        android:paddingEnd="10dp"
+                        android:paddingBottom="6dp"
+                        android:text="Весело изучайте физику"
+                        android:textColor="#FFFFFF"
+                        android:textSize="24sp" />
+                </RelativeLayout>
+            </ViewFlipper>
+
+            <TextView
+                android:id="@+id/textHead"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/viewFlipper"
+                android:layout_marginTop="20dp"
+                android:layout_centerHorizontal="true"
+                android:padding="16dp"
+                android:textSize="22sp"
+                android:fontFamily="sans-serif-light"
+                android:text="Выберите тему по физике" />
+
+            <HorizontalScrollView
+                android:id="@+id/horizon_topics"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/textHead"
+                android:layout_marginBottom="30dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/mechanics"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawableTop="@drawable/constructions"
+                        android:text="Механика"
+                        android:textColor="@color/textcolor"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
+                        android:contentDescription="Mechanics button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/thermodynamics"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawableTop="@drawable/hot"
+                        android:text="Термодинамика"
+                        android:textColor="@color/textcolor"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
+                        android:contentDescription="Thermodynamics button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/optics"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawableTop="@drawable/opticicon"
+                        android:text="Оптика"
+                        android:textColor="@color/textcolor"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
+                        android:contentDescription="Optics button" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/electricity"
+                        android:layout_width="300dp"
+                        android:layout_height="wrap_content"
+                        android:layout_margin="10dp"
+                        android:drawableTop="@drawable/electrocircutwithlight"
+                        android:text="Электричество"
+                        android:textColor="@color/textcolor"
+                        android:padding="16dp"
+                        android:drawablePadding="16dp"
+                        android:fontFamily="sans-serif-medium"
+                        android:background="@drawable/button_background_gradient"
+                        android:contentDescription="Electricity button" />
+                </LinearLayout>
+            </HorizontalScrollView>
+
+            <TextView
+                android:id="@+id/textHead2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:textSize="22sp"
+                android:padding="16dp"
+                android:layout_below="@id/horizon_topics"
+                android:fontFamily="sans-serif-light"
+                android:text="Другие функции" />
+
+            <FrameLayout
+                android:id="@id/gird"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/textHead2">
+
+                <GridLayout
+                    android:id="@+id/gird"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/textHead2"
+                    android:layout_marginTop="20dp"
+                    android:columnCount="2"
+                    android:rowCount="2"
+                    android:orientation="horizontal"
+                    android:padding="16dp"
+                    android:backgroundTint="#2F000000"
+                    android:gravity="center"
+                    android:background="@drawable/buttons1">
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/Quiztest"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Опрос"
+                        android:padding="16dp"
+                        android:textSize="20sp"
+                        android:drawableTop="@drawable/robot"
+                        android:drawablePadding="16dp"
+                        android:background="@drawable/main_element_2"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="fill_horizontal" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/questions"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Задания"
+                        android:padding="16dp"
+                        android:textSize="20sp"
+                        android:drawableTop="@drawable/brain"
+                        android:drawablePadding="16dp"
+                        android:background="@drawable/main_element_2"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="fill_horizontal" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/plot"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Графики"
+                        android:padding="16dp"
+                        android:textSize="20sp"
+                        android:drawableTop="@drawable/plot"
+                        android:drawablePadding="16dp"
+                        android:background="@drawable/main_element_2"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="fill_horizontal" />
+
+                    <androidx.appcompat.widget.AppCompatButton
+                        android:id="@+id/leaderboards"
+                        android:layout_width="200dp"
+                        android:layout_height="wrap_content"
+                        android:text="Лидерборд"
+                        android:padding="16dp"
+                        android:textSize="20sp"
+                        android:drawableTop="@drawable/lead"
+                        android:drawablePadding="16dp"
+                        android:background="@drawable/main_element_2"
+                        android:fontFamily="sans-serif-medium"
+                        android:textColor="@color/white"
+                        android:layout_margin="16dp"
+                        android:layout_gravity="fill_horizontal" />
+                </GridLayout>
+            </FrameLayout>
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:id="@+id/aboutus"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/button_background_gradient"
+                android:padding="16dp"
+                android:layout_margin="40dp"
+                android:drawableLeft="@drawable/baseline_functions_24"
+                android:layout_below="@+id/gird"
+                android:text="О функциях программы" />
+        </RelativeLayout>
+    </ScrollView>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottom_navigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_margin="10dp"
+        android:layout_alignParentBottom="true"
+        android:background="@drawable/bottom_naviagion_bar_background"
+        app:itemTextColor="@color/white"
+        app:itemIconTint="@color/white"
+        app:menu="@menu/bottom_nav_menu" />
+</RelativeLayout>

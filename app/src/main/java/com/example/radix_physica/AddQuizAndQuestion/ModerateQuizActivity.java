@@ -28,7 +28,8 @@ import java.util.Random;
 
 public class ModerateQuizActivity extends AppCompatActivity {
 
-    private Button to, approve, reject;
+    private Button approve, reject;
+    private Boolean thereIsQuestion = false;
     ImageView quizImage;
     private TextView textViewQuestion, textViewAnswer1, textViewAnswer2, textViewAnswer3, textViewAnswer4, textViewtrueAnswer;
     private DatabaseReference databaseReference, moderatedQuizRef;
@@ -39,7 +40,6 @@ public class ModerateQuizActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_moderate_quiz);
 
-        to = findViewById(R.id.buttonToModerQuestion);
         approve = findViewById(R.id.buttonApprove);
         reject = findViewById(R.id.buttonReject);
         textViewQuestion = findViewById(R.id.textViewQuestionContent);
@@ -61,8 +61,9 @@ public class ModerateQuizActivity extends AppCompatActivity {
         ImageButton back = findViewById(R.id.backButton);
 
 
-        if (user.getEmail().equalsIgnoreCase("karenkrakin@gmail.com")) {
+        if (user.getEmail().equalsIgnoreCase("karenkrakin@gmail.com")||userEmail.equalsIgnoreCase("radixphysica@gmail.com")) {
             addModerator.setVisibility(View.VISIBLE);
+            addModerator.setEnabled(true);
             addModerator.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
@@ -79,51 +80,52 @@ public class ModerateQuizActivity extends AppCompatActivity {
             }
         });
 
-        to.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(getApplicationContext(), ModeratorsActivity.class);
-                startActivity(intent);
-            }
-        });
 
         approve.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                String question = textViewQuestion.getText().toString();
-                String answer1 = textViewAnswer1.getText().toString();
-                String answer2 = textViewAnswer2.getText().toString();
-                String answer3 = textViewAnswer3.getText().toString();
-                String answer4 = textViewAnswer4.getText().toString();
-                String trueAnswer = textViewtrueAnswer.getText().toString();
+                if (!thereIsQuestion) {
+                    Toast.makeText(ModerateQuizActivity.this, "Ошибка: Нет вопросов", Toast.LENGTH_SHORT).show();
+                } else {
+                    String question = textViewQuestion.getText().toString();
+                    String answer1 = textViewAnswer1.getText().toString();
+                    String answer2 = textViewAnswer2.getText().toString();
+                    String answer3 = textViewAnswer3.getText().toString();
+                    String answer4 = textViewAnswer4.getText().toString();
+                    String trueAnswer = textViewtrueAnswer.getText().toString();
 
 
-                Quiz moderatedQuiz = new Quiz(question, answer1, answer2, answer3, answer4, trueAnswer);
+                    Quiz moderatedQuiz = new Quiz(question, answer1, answer2, answer3, answer4, trueAnswer);
 
-                moderatedQuizRef.push().setValue(moderatedQuiz)
-                        .addOnSuccessListener(new OnSuccessListener<Void>() {
-                            @Override
-                            public void onSuccess(Void aVoid) {
+                    moderatedQuizRef.push().setValue(moderatedQuiz)
+                            .addOnSuccessListener(new OnSuccessListener<Void>() {
+                                @Override
+                                public void onSuccess(Void aVoid) {
 
-                                Toast.makeText(ModerateQuizActivity.this, "Вопрос одобрен и добавлен в базу", Toast.LENGTH_SHORT).show();
+                                    Toast.makeText(ModerateQuizActivity.this, "Вопрос одобрен и добавлен в базу", Toast.LENGTH_SHORT).show();
 
-                                destroyActorFromNotModeratedQuestions();
-                            }
-                        })
-                        .addOnFailureListener(new OnFailureListener() {
-                            @Override
-                            public void onFailure(@NonNull Exception e) {
+                                    destroyActorFromNotModeratedQuestions();
+                                }
+                            })
+                            .addOnFailureListener(new OnFailureListener() {
+                                @Override
+                                public void onFailure(@NonNull Exception e) {
 
-                                Toast.makeText(ModerateQuizActivity.this, "Ошибка: " + e.getMessage(), Toast.LENGTH_SHORT).show();
-                            }
-                        });
+                                    Toast.makeText(ModerateQuizActivity.this, "Ошибка: " + e.getMessage(), Toast.LENGTH_SHORT).show();
+                                }
+                            });
+                }
             }
         });
 
         reject.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                destroyActorFromNotModeratedQuestions();
+                if (!thereIsQuestion) {
+                    Toast.makeText(ModerateQuizActivity.this, "Ошибка: Нет вопросов", Toast.LENGTH_SHORT).show();
+                }else {
+                    destroyActorFromNotModeratedQuestions();
+                }
             }
         });
 
@@ -163,17 +165,23 @@ public class ModerateQuizActivity extends AppCompatActivity {
                             textViewAnswer4.setText(answer4);
                             textViewtrueAnswer.setText(trueAnswer);
 
+                            thereIsQuestion = true;
+
+
                             break;
                         }
                         currentIndex++;
                     }
                 } else {
+                    thereIsQuestion = false;
                     Toast.makeText(getApplicationContext(), "Список вопросов пуст", Toast.LENGTH_SHORT).show();
                 }
             }
 
             @Override
             public void onCancelled(DatabaseError databaseError) {
+                thereIsQuestion = false;
+
                 Toast.makeText(getApplicationContext(), "Ошибка загрузки данных: " + databaseError.getMessage(), Toast.LENGTH_SHORT).show();
             }
         });

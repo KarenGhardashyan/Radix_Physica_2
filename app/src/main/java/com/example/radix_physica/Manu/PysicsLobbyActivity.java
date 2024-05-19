@@ -5,6 +5,7 @@ import androidx.fragment.app.Fragment;
 
 import android.app.ActivityOptions;
 import android.content.Intent;
+import android.content.res.Configuration;
 import android.os.Bundle;
 import android.os.Handler;
 import android.util.Pair;
@@ -34,7 +35,11 @@ public class PysicsLobbyActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_pysics_lobby);
+        if (isTablet()) {
+            setContentView(R.layout.activity_lobby_tablet);
+        } else {
+            setContentView(R.layout.activity_pysics_lobby);
+        }
 
 
         Button mechanicsButton = findViewById(R.id.mechanics);
@@ -171,7 +176,11 @@ public class PysicsLobbyActivity extends AppCompatActivity {
 
         handler.postDelayed(runnable, delay);
     }
-
+    private boolean isTablet() {
+        return (getResources().getConfiguration().screenLayout
+                & Configuration.SCREENLAYOUT_SIZE_MASK)
+                >= Configuration.SCREENLAYOUT_SIZE_LARGE;
+    }
     protected void onDestroy() {
         super.onDestroy();
         handler.removeCallbacksAndMessages(null);

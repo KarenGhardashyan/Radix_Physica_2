@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    android:layout_height="match_parent">
 
     <ImageButton
         android:id="@+id/backButton"
@@ -12,103 +12,107 @@
         android:layout_alignParentTop="true"
         android:layout_margin="16dp"
         android:background="@null"
-        android:src="@drawable/baseline_arrow_back_ios_24"
-        android:contentDescription="Назад" />
+        android:contentDescription="Назад"
+        android:src="@drawable/baseline_arrow_back_ios_24" />
 
     <ImageView
+        android:id="@+id/modImage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:id="@+id/modImage"
         android:layout_centerHorizontal="true"
-        android:background="@drawable/moderator"/>
+        android:layout_marginTop="20dp"
+        android:background="@drawable/moderator" />
 
     <TextView
         android:id="@+id/textViewQuestionContent"
         android:layout_width="match_parent"
+        android:layout_centerHorizontal="true"
         android:layout_height="wrap_content"
+        android:layout_below="@+id/addMod"
+        android:layout_margin="10dp"
         android:layout_marginStart="16dp"
-        android:layout_below="@id/buttonToModerQuestion"
-        android:layout_marginTop="20dp"
-        android:text="23" />
-
+        android:text="Если будут вопросы на проверку то вопрос будет здесь" />
 
 
     <LinearLayout
-        android:layout_below="@+id/textViewQuestionContent"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/answers"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/textViewQuestionContent"
+        android:layout_centerHorizontal="true"
+        android:layout_margin="10dp"
         android:orientation="vertical">
 
         <TextView
             android:id="@+id/textViewAnswer1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="12"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Вариант ответа один" />
 
         <TextView
             android:id="@+id/textViewAnswer2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="23"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Вариант ответа два" />
 
         <TextView
             android:id="@+id/textViewAnswer3"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="45"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Варианты ответа три" />
 
         <TextView
             android:id="@+id/textViewAnswer4"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="67"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Вариант ответа четыре" />
 
         <TextView
             android:id="@+id/textViewTrueAnswer"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="11"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
-            android:layout_marginStart="16dp"/>
+            android:text="Верный ответ из вариантов" />
 
     </LinearLayout>
 
 
     <RelativeLayout
-        android:layout_width="wrap_content"
         android:id="@+id/buttonsaproveandreject"
-        android:layout_centerHorizontal="true"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_below="@id/answers"
-        android:layout_margin="20dp"
-        android:layout_height="wrap_content">
+        android:layout_centerHorizontal="true"
+        android:layout_margin="20dp">
 
         <Button
             android:id="@+id/buttonApprove"
             android:layout_width="wrap_content"
-            android:backgroundTint="#58D874"
             android:layout_height="wrap_content"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
+            android:backgroundTint="#58D874"
+            android:drawableLeft="@drawable/baseline_add_circle_outline_24"
             android:text="Одобрить" />
 
         <Button
             android:id="@+id/buttonReject"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:backgroundTint="#D8586B"
             android:layout_marginStart="16dp"
             android:layout_marginTop="16dp"
             android:layout_toEndOf="@id/buttonApprove"
+            android:backgroundTint="#D8586B"
+            android:drawableRight="@drawable/baseline_delete_24"
             android:text="Отклонить" />
 
     </RelativeLayout>
@@ -118,40 +122,15 @@
         android:id="@+id/addMod"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/bottom_navigation"
+        android:layout_below="@+id/modImage"
         android:layout_centerHorizontal="true"
         android:layout_marginStart="10dp"
         android:layout_marginTop="10dp"
         android:layout_marginEnd="10dp"
         android:layout_marginBottom="10dp"
-        android:text="добавить другого модератора"
+        android:enabled="false"
+        android:text="Добавить модератора"
         android:visibility="invisible" />
 
-
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottom_navigation"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:background="@color/background"
-        app:itemIconTint="@color/white"
-        app:itemTextColor="@color/white"
-        app:menu="@menu/bottom_nav_menu" />
-
-    <Button
-        android:id="@+id/buttonToModerQuestion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:visibility="invisible"
-        android:enabled="false"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/modImage"
-        android:layout_marginStart="10dp"
-        android:layout_marginTop="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_marginBottom="10dp"
-        android:backgroundTint="#ECBD00"
-        android:text="перейти раздел с статьями" />
 
 </RelativeLayout>

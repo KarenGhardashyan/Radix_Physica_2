@@ -177,11 +177,6 @@
             android:textSize="20dp"
             android:text="используйте свое время с умом и достигните знаний с Radix Physica"/>
 
-        <ImageView
-            android:layout_width="match_parent"
-            android:layout_height="396dp"
-            android:layout_marginBottom="20dp"
-            android:background="@drawable/physica"
-            android:layout_margin="10dp"/>
+
     </LinearLayout>
 </ScrollView>
