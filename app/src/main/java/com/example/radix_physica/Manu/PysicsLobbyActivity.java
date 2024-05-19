@@ -14,7 +14,6 @@ import android.widget.ViewFlipper;
 
 
 import com.example.radix_physica.AddQuizAndQuestion.AddQuizActivity;
-import com.example.radix_physica.AddQuizAndQuestion.AddTopicsActivity;
 import com.example.radix_physica.Games.LeaderboardActivity;
 import com.example.radix_physica.Topics.ElectricityActivity;
 import com.example.radix_physica.Games.GenerateQuizActivity;

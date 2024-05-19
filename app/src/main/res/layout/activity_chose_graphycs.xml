@@ -4,7 +4,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Manu.ChoseGraphycsActivity">
+    tools:context=".Manu.ChoseGraphycsActivity"
+    android:padding="16dp">
 
 
 

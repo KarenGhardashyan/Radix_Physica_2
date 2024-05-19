@@ -91,10 +91,6 @@
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />
         <activity
-            android:name=".AddQuizAndQuestion.AddTopicsActivity"
-            android:exported="false"
-            android:theme="@style/Theme.Design.NoActionBar" />
-        <activity
             android:name=".Games.StartTestActivity"
             android:exported="false"
             android:theme="@style/Theme.Design.NoActionBar" />

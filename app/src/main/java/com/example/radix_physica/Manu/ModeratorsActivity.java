@@ -1,7 +1,6 @@
 package com.example.radix_physica.Manu;
 
 import android.content.Intent;
-import android.media.Image;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
@@ -11,16 +10,13 @@ import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
-import androidx.fragment.app.Fragment;
 
 import com.example.radix_physica.AddQuizAndQuestion.AddModeratorActivity;
-import com.example.radix_physica.AddQuizAndQuestion.AddTopicsActivity;
 import com.example.radix_physica.AddQuizAndQuestion.ModerateQuizActivity;
 import com.example.radix_physica.AddQuizAndQuestion.TopicModel;
 import com.example.radix_physica.R;
 import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
-import com.google.android.material.bottomnavigation.BottomNavigationView;
 import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DataSnapshot;
