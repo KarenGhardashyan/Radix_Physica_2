@@ -22,6 +22,7 @@ import com.example.radix_physica.AddQuizAndQuestion.ModerateQuizActivity;
 import com.example.radix_physica.AddQuizAndQuestion.Moderator;
 import com.example.radix_physica.R;
 import com.example.radix_physica.RegAndLog.LoginActivity;
+import com.example.radix_physica.RegAndLog.MainActivity;
 import com.github.mikephil.charting.charts.LineChart;
 import com.github.mikephil.charting.components.Description;
 import com.github.mikephil.charting.components.Legend;
@@ -186,7 +187,7 @@ public class Profile extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 FirebaseAuth.getInstance().signOut();
-                Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
+                Intent intent = new Intent(getApplicationContext(), MainActivity.class);
                 startActivity(intent);
                 finish();
             }

@@ -20,10 +20,12 @@ import com.google.firebase.auth.FirebaseUser;
 
 public class MainActivity extends AppCompatActivity {
 
-    Button guestMode, registration, login;
+    Button guestMode,moderatorMode, registration, login;
     private FirebaseAuth mAuth;
-    private static final String GUEST_EMAIL = "radixphysica@gmail.com";
-    private static final String GUEST_PASSWORD = "12345678";
+    private static final String GUEST_EMAIL = "sictst1@gmail.com";
+    private static final String MODERATOR_EMAIL = "sictst4@gmail.com";
+    private static final String GUEST_PASSWORD = "Samsung2023";
+    private static final String MODERATOR_PASSWORD = "Samsung2023";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -35,6 +37,7 @@ public class MainActivity extends AppCompatActivity {
 
         registration = findViewById(R.id.Registration_act);
         guestMode = findViewById(R.id.GuestMode);
+        moderatorMode = findViewById(R.id.ModeratorMode);
         login = findViewById(R.id.login);
 
 //        FirebaseUser user = mAuth.getCurrentUser();
@@ -68,6 +71,13 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(intent);
             }
         });
+
+        moderatorMode.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                signInAsModerator();
+            }
+        });
     }
 
     private void signInAsGuest() {
@@ -77,7 +87,24 @@ public class MainActivity extends AppCompatActivity {
                     public void onComplete(@NonNull Task<AuthResult> task) {
                         if (task.isSuccessful()) {
                             FirebaseUser user = mAuth.getCurrentUser();
-                            Toast.makeText(MainActivity.this, "Guest login successful.", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(MainActivity.this, "Вы зашли как гость.", Toast.LENGTH_SHORT).show();
+                            startActivity(new Intent(MainActivity.this, PysicsLobbyActivity.class));
+                            finish();
+                        } else {
+                            Log.w("MainActivity", "signInWithEmail:failure", task.getException());
+                            Toast.makeText(MainActivity.this, "Authentication failed.", Toast.LENGTH_SHORT).show();
+                        }
+                    }
+                });
+    }
+    private void signInAsModerator() {
+        mAuth.signInWithEmailAndPassword(MODERATOR_EMAIL, MODERATOR_PASSWORD)
+                .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
+                    @Override
+                    public void onComplete(@NonNull Task<AuthResult> task) {
+                        if (task.isSuccessful()) {
+                            FirebaseUser user = mAuth.getCurrentUser();
+                            Toast.makeText(MainActivity.this, "Вы зашли как модератор.", Toast.LENGTH_SHORT).show();
                             startActivity(new Intent(MainActivity.this, PysicsLobbyActivity.class));
                             finish();
                         } else {

@@ -61,7 +61,7 @@ public class ModerateQuizActivity extends AppCompatActivity {
         ImageButton back = findViewById(R.id.backButton);
 
 
-        if (user.getEmail().equalsIgnoreCase("karenkrakin@gmail.com")||userEmail.equalsIgnoreCase("radixphysica@gmail.com")) {
+        if (user.getEmail().equalsIgnoreCase("karenkrakin@gmail.com")||userEmail.equalsIgnoreCase("sictst4@gmail.com")) {
             addModerator.setVisibility(View.VISIBLE);
             addModerator.setEnabled(true);
             addModerator.setOnClickListener(new View.OnClickListener() {

@@ -20,6 +20,7 @@ public class UserSettingsActivity extends AppCompatActivity {
     private FirebaseAuth mAuth;
     private EditText editTextName;
     private EditText editTextEmail;
+    private EditText editTextPassword;
     private Button buttonSave;
 
     @Override
@@ -44,7 +45,14 @@ public class UserSettingsActivity extends AppCompatActivity {
         buttonSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                saveUserSettings();
+                if (editTextName.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(UserSettingsActivity.this, "Введите имя пользователя", Toast.LENGTH_SHORT).show();
+                }else if (editTextEmail.getText().toString().trim().isEmpty()) {
+                    Toast.makeText(UserSettingsActivity.this, "Введите электронную почту", Toast.LENGTH_SHORT).show();
+                }else  {
+                    saveUserSettings();
+                }
+
             }
         });
 
